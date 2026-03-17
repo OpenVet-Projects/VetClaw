@@ -23,6 +23,13 @@ Species-specific anesthesia protocols including premedication, induction, mainte
 4. Consider breed predispositions relevant to this domain.
 5. Reference current veterinary guidelines and cite sources.
 
+## Breed-Specific Safety Alerts
+
+- **Boxers:** Acepromazine sensitivity — risk of profound, prolonged hypotension. Use alternative sedation (e.g., dexmedetomidine, butorphanol).
+- **Sighthounds (Greyhounds, Whippets, etc.):** Thiopental recovery delay due to low body fat and impaired hepatic metabolism. Propofol is the preferred induction agent.
+- **MDR1-Mutant Breeds (Collies, Aussies, Shelties, etc.):** Exercise caution with acepromazine, butorphanol, and other P-glycoprotein substrates. Dose-reduce or substitute. Test MDR1 status when possible.
+- **Brachycephalics (Bulldogs, Pugs, Persians):** High risk for upper-airway obstruction. Pre-oxygenate, have multiple endotracheal tube sizes ready, avoid heavy sedation, and delay extubation until strong swallow reflex.
+
 ## Key Species Differences
 
 Clinical approaches, drug choices, normal parameters, and common disease presentations differ by species. Never assume cross-species equivalence without explicit verification.

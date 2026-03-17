@@ -27,7 +27,7 @@ Interpret veterinary laboratory results with species-specific reference ranges. 
 - Greyhounds/Sighthounds have unique normals: lower WBC, higher PCV (55-65%), lower T4, higher creatinine
 
 **Feline:**
-- Stress hyperglycemia is extremely common (glucose up to 300+ mg/dL from handling stress alone). Fructosamine differentiates stress from true diabetes
+- Stress hyperglycemia is extremely common (glucose up to 300+ mg/dL from handling stress alone). Fructosamine differentiates stress from true diabetes: values > 400 umol/L strongly suggest true diabetes; values < 340 umol/L suggest stress hyperglycemia; 340-400 umol/L is a gray zone requiring clinical correlation
 - fPLI (Spec fPL) for pancreatitis, not lipase/amylase
 - SDMA rises before creatinine in early renal disease (IRIS staging incorporates SDMA)
 - Total T4 may be falsely normal in hyperthyroid cats with concurrent illness ("euthyroid sick")
