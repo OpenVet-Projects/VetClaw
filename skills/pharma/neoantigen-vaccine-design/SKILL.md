@@ -181,6 +181,101 @@ This skill walks through each step: from tumor biopsy to sequencing, through com
 - Blood chemistry and CBC for safety monitoring
 - Imaging for metastatic disease assessment
 
+## Practical Guide: How to Get Started
+
+### Who Is This For?
+
+This pipeline is relevant for three audiences with different entry points:
+
+| Audience | Starting Point | What They Need |
+| --- | --- | --- |
+| **Pet owner with a cancer diagnosis** | "My dog has advanced cancer, chemo isn't working" | Start at "Talking to Your Vet" below |
+| **Veterinary oncologist** | "I want to explore personalized immunotherapy for a patient" | Start at Step 1, coordinate with a genomics lab |
+| **Researcher / bioinformatician** | "I have sequencing data and want to run the neoantigen pipeline" | Start at Step 3, you already have the VCF |
+
+### Talking to Your Veterinarian (For Pet Owners)
+
+Most veterinarians have not yet encountered personalized neoantigen vaccines. If you want to explore this option, here is how to frame the conversation:
+
+1. **Ask for a referral to a veterinary oncologist.** General practice vets typically do not manage experimental immunotherapy. You need a board-certified veterinary oncologist (DACVIM-Oncology or DECVIM-CA).
+2. **Frame it as "compassionate use" or "experimental therapy."** The language matters. Vets understand compassionate use protocols for cases where standard therapy has failed or is not an option.
+3. **Key questions to ask your oncologist:**
+   - "Is my pet's cancer type a good candidate for immunotherapy?" (High mutational burden tumors like mast cell tumors, melanoma, and hemangiosarcoma are better candidates than lymphoma.)
+   - "Can you collect and ship a fresh-frozen tumor sample and matched blood sample to a genomics lab?"
+   - "Are you willing to collaborate with a research group for an experimental treatment?"
+   - "What institutional or ethics requirements apply in our jurisdiction?"
+4. **Be realistic about cost.** This is currently a $7,000-56,000+ experimental process with no guarantee of success. See the cost table below.
+5. **Be realistic about timeline.** From biopsy to vaccine administration is typically 2-4 months. Rapidly progressing cancers may not allow enough time.
+
+### Where to Get Sequencing Done (Veterinary-Friendly Labs)
+
+Most genomics labs process human samples but will accept veterinary samples with advance coordination. Key considerations: specify the species and reference genome, confirm they can return raw FASTQ or BAM files (not just a clinical report), and request both WES and RNA-seq.
+
+| Lab / Service | Location | Notes |
+| --- | --- | --- |
+| UNSW Ramaciotti Centre for Genomics | Sydney, Australia | Processed the Rosie case. Research pricing available. |
+| Novogene | Global (US, EU, Asia hubs) | Commercial sequencing, accepts veterinary samples, competitive pricing |
+| BGI Genomics | Global (Shenzhen HQ) | Large-scale sequencing, veterinary-compatible |
+| Azenta (formerly Genewiz) | US, EU, Asia | WES + RNA-seq services, will process non-human samples |
+| Veterinary Genetics Laboratory (UC Davis) | California, USA | Specializes in veterinary genomics |
+| Integrated Canine Data Commons (ICDC) | NIH / NCI | Free access to existing canine cancer genomic datasets for research |
+
+**What to request from the lab:**
+- Whole Exome Sequencing (WES): tumor + matched normal, 300X / 150X depth
+- RNA-seq: tumor only, 100M reads minimum, poly-A capture
+- Deliverables: raw FASTQ files, aligned BAM files, and basic QC report
+- Reference genome: specify CanFam3.1 or CanFam4 (dog), felCat9 (cat), EquCab3.0 (horse)
+
+### Running the Bioinformatics Pipeline (For Researchers)
+
+If you have sequencing data and want to run the computational analysis yourself, there are two approaches:
+
+**Option A: Use the OpenVax pipeline (recommended for beginners)**
+
+The OpenVax neoantigen vaccine pipeline (https://github.com/openvax/neoantigen-vaccine-pipeline) is a Dockerized, Snakemake-based workflow that chains variant calling through neoantigen prediction. It was built for human samples but can be adapted for veterinary use by substituting the reference genome.
+
+Requirements: Docker, 32GB+ RAM, 8+ CPU cores, 500GB+ storage for reference genomes and intermediate files.
+
+**Option B: Run individual tools manually**
+
+For more control, run each step separately:
+
+1. Align reads: `bwa mem -t 8 CanFam3.1.fa tumor_R1.fq.gz tumor_R2.fq.gz | samtools sort -o tumor.bam`
+2. Call variants: Run both Strelka2 and Mutect2, intersect results
+3. Annotate: VEP (Variant Effect Predictor) with the Ensembl canine database
+4. Predict neoantigens: `pvacseq run input.vcf SAMPLE_NAME "DLA-88*50101" NetMHCpan output_dir -e1 8,9,10,11`
+5. Prioritize: Filter by IC50 < 500nM, expression > 1 TPM, DAI score
+
+**Compute options:**
+- Local workstation: Feasible for a single case with 32GB RAM
+- Cloud: AWS/GCP with spot instances, approximately $20-50 per case for compute
+- University HPC: Most research universities provide free compute for affiliated researchers
+
+### Where to Get mRNA Synthesized (The Wet Lab Step)
+
+This is the most expensive and least accessible step. mRNA synthesis and LNP formulation require specialized laboratory equipment (clean room, HPLC, lipid mixing).
+
+| Partner Type | Examples | Approximate Cost | Notes |
+| --- | --- | --- | --- |
+| University RNA lab | UNSW RNA Institute, MIT Koch Institute, UPenn Gene Therapy | $5,000-15,000 | Research pricing, requires collaboration agreement |
+| Contract RNA manufacturer | TriLink BioTechnologies, APExBIO, Integrated DNA Technologies | $10,000-50,000+ | Commercial pricing, faster turnaround |
+| Peptide synthesis (SLP alternative) | GenScript, Peptide 2.0, CPC Scientific | $2,000-8,000 | Cheaper than mRNA, no LNP needed, but may be less effective |
+
+**Important:** Most synthesis partners will require institutional affiliation or a collaboration with a licensed veterinarian. They will not synthesize a vaccine for an individual without institutional oversight.
+
+### Decision Tree: Is This Right for My Patient?
+
+**Start here:**
+
+1. Is the cancer confirmed by histopathology? If NO: stop, get a definitive diagnosis first.
+2. Has the cancer failed or is it expected to fail standard therapy (surgery, chemo, radiation)? If NO: pursue standard therapy first. Personalized vaccines are experimental and should not replace proven treatments.
+3. Is the expected survival time long enough for the pipeline (2-4 months minimum from biopsy to first dose)? If NO: this approach may not be feasible. Consider palliative care.
+4. Is the cancer type likely to have high mutational burden? Good candidates: mast cell tumor, melanoma, hemangiosarcoma, osteosarcoma, transitional cell carcinoma. Poor candidates: lymphoma (lower TMB), round cell tumors.
+5. Can the owner commit $7,000-56,000+ with no guarantee of response? If NO: this is not currently an accessible option. Discuss with oncologist.
+6. Is there a veterinary oncologist willing to oversee the case? If NO: do not proceed without specialist involvement.
+
+If all answers are favorable: proceed to Step 1 (tumor biopsy and sample collection).
+
 ## Available Resources and Databases
 
 | Resource | URL | Purpose |

@@ -157,6 +157,18 @@ description: One-line description used for agent skill matching.
 ## Limitations     -- what this skill cannot do
 ```
 
+## Roadmap: From Skills to Tools
+
+VetClaw skills are reasoning templates today. Here is where we are headed:
+
+**Now (v0.1 — Skill Library):** 51 structured skills covering clinical workflows, drug safety, species medicine, and personalized oncology. The neoantigen vaccine design skill includes a complete practical guide: decision trees, lab directories, bioinformatics commands, and synthesis partner options. This is the most comprehensive open-source resource for veterinary personalized oncology that exists.
+
+**Next (v0.2 — Computational Analysis Tool):** A web interface where veterinary oncologists upload sequencing data (VCF files) and receive ranked neoantigen candidate lists. Built on open-source tools (pVACtools, NetMHCpan, OpenVax pipeline) adapted for canine DLA and feline FLA typing.
+
+**Future (v0.3 — Integrated Pipeline):** Partnerships with veterinary genomics labs and RNA synthesis facilities to offer a coordinated pathway from tumor biopsy through neoantigen analysis to vaccine candidate delivery. Not end-to-end automation (wet lab steps remain physical), but a guided, connected workflow.
+
+If you are a veterinary oncologist, genomics researcher, or RNA synthesis facility interested in collaborating on v0.2 or v0.3, contact us at [openvet.ai](https://openvet.ai).
+
 ## Related Projects
 
 | Repository | Relationship |
