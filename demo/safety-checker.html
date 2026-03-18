@@ -82,7 +82,7 @@
         <option value="Ethylene Glycol (Antifreeze)">
         <option value="Onions / Garlic">
         <option value="Meloxicam">
-        <option value="Carprofen">
+        <option value="Carprofen (Rimadyl)">
         <option value="5-Fluorouracil (5-FU / Efudex)">
         <option value="Marijuana / THC">
         <option value="Macadamia Nuts">
@@ -320,6 +320,14 @@ const DB = {
     rabbit: { level: "caution", title: "Limited Data", body: "Meloxicam 0.6-1 mg/kg PO/SC BID used anecdotally in rabbits. Monitor GI function." },
     bird: { level: "caution", title: "Limited Data", body: "Some avian use reported. Consult an avian veterinarian for dosing." },
     cattle: { level: "safe", title: "Used in Practice", body: "Used in cattle. Observe withdrawal times for food-producing animals." }
+  },
+  carprofen: {
+    dog: { level: "safe", title: "Safe — FDA Approved", body: "<strong>Carprofen (Rimadyl)</strong> is FDA-approved for dogs at <strong>2-4 mg/kg PO daily</strong> (can be divided BID). COX-2 preferential (mild). Check renal and hepatic function before starting. Rare idiosyncratic hepatotoxicity reported. Do not combine with corticosteroids or other NSAIDs." },
+    cat: { level: "caution", title: "Limited Use — Monitor Closely", body: "Carprofen is used in cats at <strong>1-2 mg/kg</strong> but with limited feline data. Cats have reduced glucuronidation capacity. Meloxicam is generally preferred for feline NSAID therapy. Monitor renal function closely." },
+    horse: { level: "safe", title: "Used in Practice", body: "Carprofen is used in equine practice for anti-inflammatory and analgesic purposes." },
+    rabbit: { level: "unknown", title: "Limited Data", body: "Insufficient data for carprofen in rabbits. Meloxicam is the preferred NSAID for rabbits." },
+    bird: { level: "unknown", title: "Limited Data", body: "Insufficient data. Meloxicam preferred for avian patients." },
+    cattle: { level: "caution", title: "Withdrawal Times Apply", body: "Used in cattle but observe withdrawal times for food-producing animals. Consult FARAD." }
   }
 };
 
@@ -339,7 +347,7 @@ const ALIASES = {
   ptfe: "ptfe", teflon: "ptfe", "non-stick": "ptfe", "nonstick": "ptfe",
   onion: "onion", onions: "onion", garlic: "onion", "onions / garlic": "onion",
   meloxicam: "meloxicam", metacam: "meloxicam",
-  carprofen: "meloxicam", rimadyl: "meloxicam"
+  carprofen: "carprofen", rimadyl: "carprofen"
 };
 
 function checkSafety() {
