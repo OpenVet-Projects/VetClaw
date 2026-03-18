@@ -2,10 +2,10 @@
 
 **The first veterinary AI skill library for OpenClaw and compatible agent frameworks.**
 
-[![Skills](https://img.shields.io/badge/skills-48-blue?style=flat-square)](/skills)
+[![Skills](https://img.shields.io/badge/skills-50-blue?style=flat-square)](/skills)
 [![Clinical](https://img.shields.io/badge/%F0%9F%A9%BA_clinical-17-brightgreen?style=flat-square)](/skills/clinical)
 [![Pharma](https://img.shields.io/badge/%F0%9F%92%8A_pharma-7-blueviolet?style=flat-square)](/skills/pharma)
-[![Species](https://img.shields.io/badge/%F0%9F%90%BE_species-8-orange?style=flat-square)](/skills/species)
+[![Species](https://img.shields.io/badge/%F0%9F%90%BE_species-10-orange?style=flat-square)](/skills/species)
 [![Literature](https://img.shields.io/badge/%F0%9F%93%9A_literature-7-purple?style=flat-square)](/skills/literature)
 [![Safety](https://img.shields.io/badge/%F0%9F%9B%A1_safety-5-red?style=flat-square)](/skills/safety)
 [![Databases](https://img.shields.io/badge/%F0%9F%97%84_databases-4-cyan?style=flat-square)](/skills/databases)
@@ -42,7 +42,7 @@ VetClaw skills are AI reasoning templates only. They are **not** a substitute fo
 | --- | --- | --- |
 | [Clinical](/skills/clinical) | **17** | Differential diagnosis, emergency triage, clinical guidelines, exam workflows, cardiology, dermatology, ophthalmology, orthopedics, pain, nutrition, dental, anesthesia, wound management, fluid therapy, personalized oncology |
 | [Pharma](/skills/pharma) | **7** | Drug lookup, FDA Green Book, drug interactions, adverse event reporting, withdrawal times, compounding, precision medicine/mRNA design |
-| [Species](/skills/species) | **8** | Breed predisposition, species-aware reasoning, exotic/wildlife, canine, feline, equine, ruminant, avian |
+| [Species](/skills/species) | **10** | Breed predisposition, species-aware reasoning, exotic/wildlife, canine, feline, equine, ruminant, avian, camelid, swine |
 | [Literature](/skills/literature) | **7** | Veterinary PubMed search, evidence grading, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology |
 | [Safety](/skills/safety) | **5** | Toxicology calculator, lethal variance detection, contraindication checking, anesthesia safety, NSAID safety |
 | [Databases](/skills/databases) | **4** | openFDA Animal, FARAD, OBO Foundry ontologies, NCBI Taxonomy |
@@ -98,7 +98,7 @@ VetClaw/
 └── skills/
     ├── clinical/       # 17 skills: diagnosis, triage, guidelines, exams, specialty workups, personalized oncology
     ├── pharma/         # 7 skills: drug lookup, FDA Green Book, interactions, adverse events, withdrawal, compounding, mRNA design
-    ├── species/        # 8 skills: breed predisposition, species reasoning, canine, feline, equine, ruminant, avian, exotic
+    ├── species/        # 10 skills: breed predisposition, species reasoning, canine, feline, equine, ruminant, avian, exotic, camelid, swine
     ├── literature/     # 7 skills: PubMed search, evidence grading, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology
     ├── safety/         # 5 skills: toxicology, lethal variance, contraindications, anesthesia safety, NSAID safety
     └── databases/      # 4 skills: openFDA, FARAD, OBO Foundry, NCBI Taxonomy
