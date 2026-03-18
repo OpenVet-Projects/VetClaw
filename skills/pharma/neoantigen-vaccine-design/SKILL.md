@@ -7,7 +7,7 @@ description: Guide the computational pipeline for designing personalized neoanti
 
 ## Overview
 
-Guide the end-to-end computational pipeline for designing personalized neoantigen cancer vaccines for veterinary patients. This is the same approach used in human precision oncology (Moderna/Merck Phase III trials), adapted for veterinary species. In March 2026, the first personalized mRNA cancer vaccine for a dog was successfully designed using this pipeline, resulting in 75% tumor shrinkage in a canine mast cell cancer case (Conyngham et al., UNSW/UQ, 2025-2026).
+Guide the end-to-end computational pipeline for designing personalized neoantigen cancer vaccines for veterinary patients. This is the same approach used in human precision oncology (Moderna/Merck Phase III trials), adapted for veterinary species. In March 2026, the first personalized mRNA cancer vaccine for a dog was successfully designed using this pipeline, reportedly resulting in significant tumor shrinkage (~50-75% reported in press) in a canine mast cell cancer case (Conyngham/UNSW, 2025-2026; not yet peer-reviewed).
 
 This skill walks through each step: from tumor biopsy to sequencing, through computational neoantigen prediction, to candidate selection for vaccine design. The key veterinary-specific challenge is that dogs use DLA (Dog Leukocyte Antigen) instead of HLA, requiring adapted MHC binding prediction tools.
 

@@ -50,6 +50,19 @@ Interpret veterinary laboratory results with species-specific reference ranges. 
 - Pepsinogen for abomasal parasite burden
 - Glutamate dehydrogenase (GLDH) most specific liver enzyme
 
+## IRIS Staging for Chronic Kidney Disease
+
+IRIS (International Renal Interest Society) staging is the standard for classifying CKD severity in dogs and cats. Stage based on fasting creatinine (confirmed on at least 2 occasions in a stable, hydrated patient). SDMA can be used as a complementary biomarker.
+
+| Stage | Creatinine (Dog) | Creatinine (Cat) | SDMA | Clinical Signs |
+| --- | --- | --- | --- | --- |
+| I | < 1.4 mg/dL | < 1.6 mg/dL | < 18 ug/dL | Non-azotemic; other renal abnormality present (proteinuria, abnormal imaging, poor concentrating ability) |
+| II | 1.4-2.8 mg/dL | 1.6-2.8 mg/dL | 18-35 ug/dL | Mild azotemia; mild or no clinical signs |
+| III | 2.9-5.0 mg/dL | 2.9-5.0 mg/dL | 36-54 ug/dL | Moderate azotemia; clinical signs often present (PU/PD, weight loss, decreased appetite) |
+| IV | > 5.0 mg/dL | > 5.0 mg/dL | > 54 ug/dL | Severe azotemia; significant clinical signs (uremic crisis risk, nausea, anorexia) |
+
+**Substaging:** Further classify by proteinuria (UPC ratio) and blood pressure. UPC > 0.5 (dog) or > 0.4 (cat) = proteinuric. Systolic BP > 160 mmHg = hypertensive.
+
 ## Common Diagnostic Patterns
 
 | Pattern | Consider |

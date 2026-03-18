@@ -39,6 +39,9 @@ Evaluate potential drug-drug interactions in veterinary patients. Drug interacti
 - **Metoclopramide + opioids:** Antagonistic effects on GI motility
 - **Fluoroquinolones + divalent cations (sucralfate, antacids):** Chelation reduces absorption
 - **Cisapride + azole antifungals:** QT prolongation risk
+- **Selegiline (Anipryl) + serotonergic drugs (tramadol, SSRIs, TCAs):** Serotonin syndrome risk. Selegiline is an MAO-B inhibitor used for canine cognitive dysfunction. Do not combine with tramadol, fluoxetine, clomipramine, or amitriptyline. Allow 2-week washout between discontinuation and starting a serotonergic drug.
+- **Metronidazole + phenobarbital:** Phenobarbital induces metronidazole metabolism; may require dose adjustment
+- **Cyclosporine + ketoconazole:** Ketoconazole intentionally used to reduce cyclosporine dose (cost-saving strategy in vet practice, but requires monitoring)
 
 ## Output Format
 

@@ -67,6 +67,9 @@ Rapid triage assessment and initial stabilization guidance for veterinary emerge
 - [Common mistakes to avoid for this presentation]
 
 **Reference:** RECOVER Guidelines, JVECC
+
+**⚠ IF IN DOUBT, GO TO AN EMERGENCY VET NOW. DO NOT WAIT FOR SIGNS TO WORSEN.**
+Emergency Poison Control: ASPCA 888-426-4435 | Pet Poison Helpline 855-764-7661
 ```
 
 ## Limitations
