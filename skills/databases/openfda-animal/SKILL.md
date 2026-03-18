@@ -108,8 +108,8 @@ outcome:"Fatal"
 
 ## Rate Limits
 
-- **Free Tier (no API key):** 40 requests per minute per IP address
-- **Registered API Key:** 120 requests per minute per key (free registration)
+- **Without API key:** 240 requests per minute, 1,000 requests per day
+- **With API key (free):** 240 requests per minute, 120,000 requests per day
 - **Rate Limit Headers:** Response includes `X-Rate-Limit-Limit`, `X-Rate-Limit-Remaining`
 - **Exceeding Limits:** Server returns HTTP 429 (Too Many Requests); implement exponential backoff retry
 
@@ -118,50 +118,40 @@ https://open.fda.gov/apis/authentication/
 
 ## VetClaw SDK Integration
 
-**Python SDK Example (hypothetical vetclaw.fda module):**
+VetClaw includes reference clients for this API. See `sdk/` in the repo root.
+
+**Python** (`sdk/python/openfda_vet.py`):
 ```python
-from vetclaw.fda import OpenFDAClient
+from openfda_vet import OpenFDAVet
 
-client = OpenFDAClient(api_key="YOUR_KEY")
+client = OpenFDAVet(api_key="YOUR_KEY")
 
-# Query adverse events for a drug
-events = client.adverse_events(
-    drug_name="amoxicillin",
-    animal_species="canine",
-    limit=100
-)
+# Search adverse events by species and drug
+events = client.search(species="Dog", drug="Amoxicillin", limit=100)
+
+# Count adverse events by reaction for a specific drug
+reactions = client.top_reactions("Cat", drug="Methimazole")
 
 # Count adverse events by outcome
-outcomes = client.adverse_events_count(
-    field="reaction.outcome",
-    search=f'drug.name:"amoxicillin" AND animal.species:"feline"'
-)
-
-# Get approved products
-approved = client.approved_drug_products(
-    generic_name="doxycycline",
-    species="equine"
-)
+outcomes = client.count("reaction.outcome", species="Dog", drug="Ivermectin")
 ```
 
-**TypeScript SDK Example (hypothetical vetclaw.fda module):**
+**TypeScript** (`sdk/typescript/openfda-vet.ts`):
 ```typescript
-import { OpenFDAClient } from 'vetclaw/fda';
+import { OpenFDAVet } from "./openfda-vet";
 
-const client = new OpenFDAClient({ apiKey: 'YOUR_KEY' });
+const client = new OpenFDAVet("YOUR_KEY");
 
 // Search adverse events
-const events = await client.adverseEvents({
-  drugName: 'methimazole',
-  animalSpecies: 'feline',
-  limit: 50
-});
+const events = await client.search({ species: "Dog", drug: "Amoxicillin", limit: 100 });
 
-// Aggregate safety data
-const hepatotoxicityRates = await client.countEvents({
-  search: 'reaction.veddra_term_name:"hepatotoxicity" AND drug.name:"methimazole"',
-  groupBy: 'animal.species'
-});
+// Count top reactions
+const reactions = await client.topReactions("Cat", "Methimazole");
+
+// Paginate through results
+for await (const page of client.paginate({ species: "Dog", drug: "Ivermectin" })) {
+  for (const event of page) console.log(event.safetyreportid);
+}
 ```
 
 ## Practical Query Examples

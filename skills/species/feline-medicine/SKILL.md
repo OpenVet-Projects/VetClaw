@@ -33,7 +33,7 @@ Feline-specific clinical medicine addressing the unique metabolic vulnerabilitie
 ## Metabolic Vulnerabilities: Glucuronidation Deficiency
 
 Cats are **deficient in hepatic UDP-glucuronosyltransferase (UDP-GT)** activity. This critical metabolic pathway detoxifies:
-- **Acetaminophen:** Extremely toxic. Lethal dose is 50-100 mg/kg; clinical signs at >150 mg/kg. Causes methemoglobinemia, hemolytic anemia, hepatotoxicity. No safe dose.
+- **Acetaminophen:** Extremely toxic. Clinical signs (methemoglobinemia, facial/paw edema, cyanosis) reported at doses as low as 10 mg/kg. Hepatotoxicity and death at 50-100 mg/kg. There is no established safe dose. Do not use in cats under any circumstances.
 - **Permethrin:** Neurotoxin in cats. Tremors, seizures, death at concentrations safe in dogs (topical flea treatments cause toxicity).
 - **Phenolic compounds:** Disinfectants, essential oils (tea tree, citrus, eucalyptus, lavender), aspirin (minor).
 - **Certain NSAIDs:** Ibuprofen metabolized by glucuronidation; use only feline-approved drugs (carprofen, meloxicam) at lowest effective doses.

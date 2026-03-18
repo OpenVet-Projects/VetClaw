@@ -22,8 +22,8 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 | **Meloxicam** | Dog | 0.1-0.2 mg/kg | PO/IV/SC | Daily | COX-2 preferential | Longer half-life (12-18h); IV/SC option; first-line many practices |
 | | Cat | 0.1 mg/kg | PO/SC/IV | Daily | COX-2 preferential | **CONTROVERSIAL dosing**: 0.3-0.5 mg/kg q48h alternative; GI risk lower than dogs at low dose; renal monitoring mandatory |
 | | Rabbit | 0.6-1 mg/kg | PO/SC | BID | COX-2 preferential | Limited data; anecdotal use; monitor renal/GI closely |
-| **Carprofen** | Dog | 2-4 mg/kg | PO/IV | BID-TID | COX-1/COX-2 non-selective | Rapid GI absorption; shorter half-life (8 hours); hepatotoxicity rare but reported |
-| | Cat | 1-2 mg/kg | PO/IV | BID | COX-1/COX-2 non-selective | Limited feline data; less commonly used in cats; GI ulceration risk higher than meloxicam |
+| **Carprofen** | Dog | 2-4 mg/kg | PO/IV | BID-TID | COX-2 preferential (mild) | Rapid GI absorption; shorter half-life (8 hours); hepatotoxicity rare but reported |
+| | Cat | 1-2 mg/kg | PO/IV | BID | COX-2 preferential (mild) | Limited feline data; less commonly used in cats; GI ulceration risk higher than meloxicam |
 | **Deracoxib** | Dog | 1-2 mg/kg | PO | Daily | COX-2 selective | Food-dependent absorption (give with food); 5-7 day max acute, 30 days chronic (FDA restriction) |
 | **Firocoxib** | Dog | 5 mg/kg | PO | Daily | COX-2 highly selective | Equine label (5 mg/kg); less GI ulceration than carprofen; excellent for orthopedic pain; expensive |
 | | Horse | 0.1 mg/kg IV/5 mg/kg PO | PO/IV | Daily | COX-2 highly selective | Superior to phenylbutazone in some studies; longer plasma half-life |
@@ -37,7 +37,7 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 **COX-2 Functions**: Inflammation, fever, pain; also renal and gastric roles in chronic settings
 - **Selectivity advantage**: Lower GI ulceration risk; some renal protective effects at lower doses
 
-**Clinical Implication**: COX-2 selective agents (meloxicam, firocoxib, deracoxib, robenacoxib) safer GI profiles than non-selective (carprofen) in short-term use; long-term use blunts selectivity advantage
+**Clinical Implication**: COX-2 selective agents (meloxicam, firocoxib, deracoxib, robenacoxib) safer GI profiles than less-selective agents (carprofen) in short-term use; long-term use blunts selectivity advantage
 
 ## GI Ulceration Risk Factors
 
@@ -159,7 +159,7 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 
 1. **Assess renal function baseline**: Serum creatinine, BUN, USG; exclude if abnormal
 2. **Assess GI risk**: History of ulceration, concurrent medications, age, dehydration status
-3. **Select appropriate NSAID**: COX-2 selective (meloxicam, firocoxib) preferred over non-selective; meloxicam for cats with renal monitoring
+3. **Select appropriate NSAID**: COX-2 selective (meloxicam, firocoxib) preferred over less-selective agents; meloxicam for cats with renal monitoring
 4. **Verify no corticosteroid within 1 week**: Washout period essential
 5. **Establish monitoring plan**: Recheck creatinine/BUN at 7-10 days if new prescription; q2-4 weeks if chronic; assess appetite/vomiting at each visit
 6. **Educate owner**: Signs of GI ulceration (vomiting, melena, anorexia); signs of renal disease (polyuria, polydipsia, lethargy); importance of monitoring

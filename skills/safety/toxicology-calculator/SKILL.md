@@ -37,10 +37,10 @@ Calculate dose-dependent toxicity risk when an animal has ingested a potentially
 - Theobromine half-life in dogs: ~17.5 hours
 
 **Xylitol (dogs):**
-- Hypoglycemia threshold: 0.1 g/kg (100 mg/kg)
+- Hypoglycemia threshold: 0.1 g/kg (100 mg/kg); some reports suggest sensitivity at doses as low as 0.05 g/kg. Treat any significant xylitol ingestion as an emergency.
 - Hepatotoxicity threshold: 0.5 g/kg (500 mg/kg)
-- Onset of hypoglycemia: 30-60 minutes
-- Note: Cats appear less susceptible but data is limited
+- Onset of hypoglycemia: 30-60 minutes (can be delayed with some xylitol-containing products)
+- Note: Cats appear less susceptible but data is limited; increasing prevalence in sugar-free foods, dental products, and peanut butters
 
 **Grapes/Raisins (dogs):**
 - No established safe dose. Any ingestion in dogs should be treated as potentially toxic.
@@ -58,6 +58,19 @@ Calculate dose-dependent toxicity risk when an animal has ingested a potentially
 - Lethal dose dogs: ~6.6 mL/kg
 - Lethal dose cats: ~1.5 mL/kg (cats are 4x more sensitive)
 - Treatment window: 8-12 hours (dogs), 3 hours (cats) for antidote efficacy
+
+**THC / Marijuana (dogs primarily):**
+- Dogs are significantly more sensitive than humans; toxicity reported at 0.5-3 g/kg of marijuana plant material
+- Edibles (brownies, gummies, butter) are the most common exposure route and may contain additional toxicants (chocolate, xylitol)
+- Clinical signs: Ataxia, urinary incontinence, mydriasis, bradycardia, hypothermia, stupor. Onset 30-90 minutes (edibles may be delayed).
+- Severe cases: Seizures, coma, death (rare but reported, especially with concentrated products)
+- Treatment: Supportive care, IV fluids, anti-emetics (if early), lipid emulsion therapy for severe cases
+
+**Macadamia nuts (dogs):**
+- Toxic dose: 2.4-62.4 g/kg (wide range; individual sensitivity varies)
+- Clinical signs: Weakness (especially hindlimb), vomiting, tremors, hyperthermia. Onset 6-12 hours.
+- Duration: Self-limiting, typically resolves within 24-48 hours
+- Treatment: Supportive; rarely fatal but causes significant distress. Combined macadamia + chocolate ingestion increases severity.
 
 ## Workflow
 

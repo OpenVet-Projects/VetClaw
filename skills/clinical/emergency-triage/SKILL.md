@@ -32,7 +32,7 @@ Rapid triage assessment and initial stabilization guidance for veterinary emerge
 
 3. **Species-specific vital parameter reference:**
    - Dog: HR 60-160 bpm, RR 10-30, Temp 100-102.5F
-   - Cat: HR 140-220 bpm, RR 20-40, Temp 100-102.5F
+   - Cat: HR 140-220 bpm in clinical setting (resting: 110-140; stress elevates to 180-220), RR 20-40, Temp 100-102.5F
    - Horse: HR 28-44 bpm, RR 8-16, Temp 99-101.5F
    - (Provide ranges for the relevant species)
 

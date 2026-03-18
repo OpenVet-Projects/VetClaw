@@ -133,25 +133,27 @@ National Cancer Institute (USA) maintains comparative oncology program linking a
 5. Share data with human oncology trials (de-identified, preclinical validation)
 6. Transition promising therapies to human Phase 1 trials
 
-**Example Study: Tufts mRNA-ZOX40L (Rosie Case)**
+**Example: Personalized mRNA Neoantigen Vaccine (Rosie Case, 2025-2026)**
 ```
-Patient: rescue dog with mast cell cancer (Rosie)
+Patient: Rescue dog with aggressive mast cell cancer (Rosie)
 Intervention: Personalized mRNA neoantigen vaccine
-  - Tumor sequenced → identified unique mutations
-  - mRNA construct designed (5 tumor-specific neoantigens)
-  - Lipid nanoparticle formulation created
-  - Delivered as subcutaneous injection (3 doses)
+  - Tumor + normal tissue sequenced at UNSW
+  - AI tools used to identify neoantigens (ChatGPT, AlphaFold, Grok)
+  - mRNA construct designed and formulated in LNPs
+  - Collaboration: Paul Conyngham + Prof. Thordarson, UNSW RNA Institute
 
-Outcomes:
-  - Survival: >18 months (compared to 5-month median without treatment)
-  - Response: Tumor regression visible on imaging
-  - Immune Response: CD8+ T-cell activation documented
-  - Adverse Events: Minimal; injection-site reaction only
+Reported Outcomes (not yet peer-reviewed):
+  - Tumor shrinkage reported at 50-75%
+  - Dog returned to normal activity
+  - Minimal reported adverse events
 
-Translational Impact:
-  - NCI-led bridge to human mRNA vaccine trials
-  - Data inform Phase 1 human neoantigen vaccine design
-  - FDA fast-track designation for human application
+Translational Significance:
+  - First reported bespoke mRNA cancer vaccine for a veterinary patient
+  - Pipeline directly parallels human neoantigen vaccine approaches (Moderna/Merck)
+  - Demonstrates feasibility of AI-assisted vaccine design in non-human species
+
+Note: These outcomes are from press reporting (March 2026), not peer-reviewed
+publication. Specific survival data and immune correlates are not yet available.
 ```
 
 ## Clinical Trial Design in Comparative Oncology

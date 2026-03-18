@@ -133,7 +133,7 @@ class OpenFDAVet:
         if self.api_key:
             params["api_key"] = self.api_key
 
-        response = self.session.get(self.BASE_URL, params=params)
+        response = self.session.get(self.BASE_URL, params=params, timeout=30)
 
         if response.status_code == 429:
             raise RateLimitError(

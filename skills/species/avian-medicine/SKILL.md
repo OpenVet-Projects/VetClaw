@@ -103,6 +103,13 @@ Avian-specific medicine addressing companion birds (psittacines, passerines) and
 - **Diagnosis:** Radiographs, blood lead level (>10 μg/dL is abnormal).
 - **Management:** Remove source, chelation (calcium EDTA), supportive care.
 
+**PTFE/Teflon (polytetrafluoroethylene) toxicity:** Acutely fatal inhalation toxicosis. One of the most common causes of sudden death in household birds.
+- **Source:** Overheated non-stick cookware (pans, baking sheets, drip pans), self-cleaning ovens, heat lamps with PTFE coatings, some space heaters and hair dryers.
+- **Mechanism:** PTFE decomposes at temperatures above 280°C (536°F), releasing perfluorooctanoic acid (PFOA) and other toxic fumes. Birds' highly efficient respiratory system (cross-current gas exchange, air sacs) makes them exquisitely sensitive.
+- **Clinical signs:** Acute dyspnea, ataxia, seizures, death — often within minutes to hours of exposure. Birds may be found dead with no premonitory signs.
+- **Treatment:** Remove bird from environment immediately. Oxygen therapy, supportive care. Prognosis extremely poor once clinical signs develop.
+- **Prevention:** No non-stick cookware in homes with birds. This is the single most important household safety recommendation for bird owners.
+
 ## Prey Species Behavior and Illness Masking
 
 Birds are prey animals; survival instinct suppresses visible signs of illness until disease is severe. This is the single most important factor in avian patient assessment:
