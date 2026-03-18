@@ -7,7 +7,7 @@ description: Comprehensive precision medicine framework for veterinary cancer th
 
 ## Overview
 
-Precision veterinary medicine tailors cancer therapy to individual tumor genetics and patient pharmacogenomics. This skill covers three pillars: **(1) mRNA neoantigen vaccine design** for personalized immunotherapy, **(2) pharmacogenomics** for optimal drug dosing and efficacy prediction, and **(3) companion diagnostics** linking genetic markers to therapeutic response. Real-world example: Golden Retriever "Rosie" with spontaneous hemangiosarcoma treated with personalized mRNA vaccine.
+Precision veterinary medicine tailors cancer therapy to individual tumor genetics and patient pharmacogenomics. This skill covers three pillars: **(1) mRNA neoantigen vaccine design** for personalized immunotherapy, **(2) pharmacogenomics** for optimal drug dosing and efficacy prediction, and **(3) companion diagnostics** linking genetic markers to therapeutic response. Real-world example: rescue dog "Rosie" with aggressive mast cell cancer treated with personalized mRNA vaccine.
 
 ## When to Use
 
@@ -83,10 +83,10 @@ mRNA vaccine presents this epitope → CD8+ T cells attack tumor cells expressin
 
 5. **Depth requirements:** ≥100x coverage (tumor), ≥30x coverage (normal) for confident variant calling
 
-**Example: Canine Hemangiosarcoma Sequencing (Rosie Case)**
+**Example: Canine Mast Cell Tumor Sequencing (Rosie Case)**
 ```
-Patient: 11-year-old Golden Retriever with splenic hemangiosarcoma
-Sample: Fresh spleen tumor tissue (surgical resection)
+Patient: rescue dog with aggressive mast cell cancer
+Sample: Fresh tumor tissue (surgical excision)
 Normal comparison: Peripheral blood leukocytes
 Sequencing: WES (Illumina NovaSeq; 150x coverage)
 Tumor mutational burden: 8.3 mutations/Mb (moderately high)
@@ -351,14 +351,14 @@ Assessment: Strong, polyfunctional CD8+ T-cell response; suitable for therapy
 **Rosie's Clinical Course (Case Study):**
 ```
 Pre-treatment:
-  - Diagnosis: Splenic hemangiosarcoma (histopathology)
+  - Diagnosis: Mast cell cancer, confirmed by histopathology
   - Staging: Abdominal ultrasound, thoracic radiographs (no distant metastases)
   - Prognosis: ~5-month median survival without treatment
   - Performance: ECOG 1 (mild activity reduction)
 
 Treatment:
-  - Splenectomy (Day 0): Grossly resected primary tumor
-  - Pathology: Grade III hemangiosarcoma, necrotic foci, high mitotic index
+  - Surgical excision (Day 0): Primary tumor removed with margins
+  - Pathology: High-grade mast cell tumor, high mitotic index
   - mRNA vaccine (Days 10, 24, 38): 3-dose series, 100 µg each
   - Doxorubicin chemotherapy (Days 7, 21, 35, 49): Adjuvant 30 mg/m2 IV
 
@@ -738,7 +738,7 @@ Complete/partial tumor regression
   - Mealey, K.L. "ABCB1 (MDR1) in veterinary species." Drug Metab Reviews 2008
 
 - **Comparative Oncology Literature:**
-  - NCI Comparative Oncology Program publications (hemangiosarcoma mRNA vaccine case studies)
+  - NCI Comparative Oncology Program publications (mast cell cancer mRNA vaccine case studies)
   - Veterinary Comparative Oncology Society (VCOS) journals
 
 - **Computational Tools:**

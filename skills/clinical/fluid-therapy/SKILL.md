@@ -1,6 +1,6 @@
 ---
 name: fluid-therapy
-description: Dehydration assessment (skin turgor, CRT, mucous membranes), crystalloid vs. colloid selection, shock rates by species (dog 90 mL/kg/hr, cat 60 mL/kg/hr), maintenance calculation, electrolyte correction and potassium supplementation.
+description: Dehydration assessment, crystalloid vs. colloid selection, resuscitation bolus protocols by species, maintenance calculation, electrolyte correction and potassium supplementation.
 ---
 
 # Fluid Therapy
@@ -49,19 +49,21 @@ Systematic fluid assessment, calculation methodology, and species-specific resus
 **Dosing**: Hetastarch 10-20 mL/kg IV over 15-30 min; dextran 5-10 mL/kg; max 40 mL/kg/day total
 **Considerations**: Expense, short shelf-life (hetastarch), coagulation effects (dextran, high-dose hetastarch), infection risk lower than colloids
 
-## Shock Dose Rates (Hypovolemic Shock Resuscitation)
+## Resuscitation (Hypovolemic Shock)
 
-**Dogs**: 90 mL/kg/hour crystalloid (or divided boluses: 30 mL/kg IV over 15 min, reassess, repeat as needed)
-**Cats**: 60 mL/kg/hour crystalloid (more sensitive to volume overload; slow infusion safer)
-**Horses**: 80-100 mL/kg/hour
+**Modern approach: Incremental boluses, not full shock-dose infusion.** Historical "shock rates" (dog 90 mL/kg, cat 60 mL/kg total crystalloid volume) represent the approximate blood volume and are useful as a ceiling, but current RECOVER/critical care guidelines recommend smaller boluses with reassessment between each.
 
-**Protocol**: Administer over 15-30 minutes; reassess: CRT, mucous membrane color, urine output (>1 mL/kg/hr normal)
-**Goal**: Return to normal perfusion parameters; ongoing deficits replaced more slowly (over 24 hours if mild-moderate dehydration)
+**Dogs**: 10-20 mL/kg IV bolus over 15-20 minutes, reassess, repeat up to 3-4 times as needed. Total resuscitation volume should not exceed 80-90 mL/kg without reassessing for ongoing losses or considering colloids/blood products.
+**Cats**: 5-10 mL/kg IV bolus over 15-20 minutes, reassess. Cats are more sensitive to volume overload; total should not exceed 50-60 mL/kg without reassessment. Monitor for pulmonary edema.
+**Horses**: 10-20 mL/kg IV bolus, reassess. Large volumes required due to body size; hypertonic saline (4-5 mL/kg) can be used as a bridge.
 
-**Example (10 kg dog, 8% dehydration, hemorrhagic shock)**:
-- Deficit: 10 kg × 0.08 = 0.8 liters (800 mL)
-- Shock dose: 10 kg × 90 mL/kg/hr = 900 mL/hr
-- Initial bolus: 10 kg × 30 mL/kg = 300 mL over 15 min IV; then reassess
+**Reassessment targets between boluses**: Heart rate trending down, CRT improving toward <2 sec, mucous membrane color improving, urine output >1 mL/kg/hr, lactate decreasing.
+
+**Example (10 kg dog, hemorrhagic shock)**:
+- Initial bolus: 10 kg x 15 mL/kg = 150 mL LRS IV over 15 min
+- Reassess: HR still elevated, CRT still >2 sec → repeat bolus
+- Second bolus: 150 mL LRS IV over 15 min
+- Reassess: HR normalizing, CRT <2 sec → transition to deficit replacement rate
 
 ## Maintenance Calculation (Non-Dehydrated Patient)
 
@@ -155,8 +157,8 @@ Systematic fluid assessment, calculation methodology, and species-specific resus
 
 ## Species-Specific Considerations
 
-**Dogs**: Tolerate larger boluses (90 mL/kg/hr shock dose); less risk of volume overload
-**Cats**: More sensitive to volume; use 60 mL/kg/hr; monitor closely for pulmonary edema; prefer slow infusion over rapid bolus
+**Dogs**: Tolerate larger boluses (10-20 mL/kg increments); lower risk of volume overload than cats; total resuscitation ceiling ~80-90 mL/kg
+**Cats**: More sensitive to volume overload; use 5-10 mL/kg boluses; monitor closely for pulmonary edema; total resuscitation ceiling ~50-60 mL/kg
 **Rabbits**: Rapid dehydration common; slow crystalloid infusion preferred (interstitial space limited); glucose supplementation often needed
 **Horses**: Large volumes; central line access preferred; risk of dependent edema with prolonged standing; monitor carefully
 

@@ -135,7 +135,7 @@ National Cancer Institute (USA) maintains comparative oncology program linking a
 
 **Example Study: Tufts mRNA-ZOX40L (Rosie Case)**
 ```
-Patient: Golden Retriever with hemangiosarcoma (Rosie)
+Patient: rescue dog with mast cell cancer (Rosie)
 Intervention: Personalized mRNA neoantigen vaccine
   - Tumor sequenced → identified unique mutations
   - mRNA construct designed (5 tumor-specific neoantigens)

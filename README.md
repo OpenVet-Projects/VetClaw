@@ -161,11 +161,11 @@ description: One-line description used for agent skill matching.
 ## Limitations     -- what this skill cannot do
 ```
 
-## SDK: API Clients for Veterinary Data
+## SDK: Reference Clients for Veterinary Data
 
-VetClaw includes client libraries for the data sources referenced by skills. Start with real data, not just templates.
+VetClaw includes lightweight reference clients for the data sources referenced by skills. These are starter implementations for integrating real veterinary data into your workflows — not full production SDKs. Contributions to expand coverage and add tests are welcome.
 
-**openFDA Animal & Veterinary Adverse Events** — Python and TypeScript SDKs for querying the FDA's veterinary adverse event database. Search by species, breed, drug, reaction. Count, paginate, and aggregate.
+**openFDA Animal & Veterinary Adverse Events** — Python and TypeScript clients for querying the FDA's veterinary adverse event database. Search by species, breed, drug, reaction. Count, paginate, and aggregate.
 
 ```python
 from openfda_vet import OpenFDAVet
