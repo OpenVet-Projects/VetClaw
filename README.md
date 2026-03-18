@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/vetclaw-mascot.png" alt="VetClaw Mascot" width="200">
+</p>
+
 # VetClaw
 
 **The first veterinary AI skill library for OpenClaw and compatible agent frameworks.**
@@ -156,6 +160,21 @@ description: One-line description used for agent skill matching.
 ## Output Format   -- what the agent should produce
 ## Limitations     -- what this skill cannot do
 ```
+
+## SDK: API Clients for Veterinary Data
+
+VetClaw includes client libraries for the data sources referenced by skills. Start with real data, not just templates.
+
+**openFDA Animal & Veterinary Adverse Events** — Python and TypeScript SDKs for querying the FDA's veterinary adverse event database. Search by species, breed, drug, reaction. Count, paginate, and aggregate.
+
+```python
+from openfda_vet import OpenFDAVet
+client = OpenFDAVet(api_key="YOUR_KEY")
+client.top_reactions("Dog", drug="Ivermectin")
+client.search(species="Cat", drug="Amoxicillin", limit=10)
+```
+
+See [`sdk/`](/sdk) for full documentation, TypeScript client, and API reference.
 
 ## Roadmap: From Skills to Tools
 
