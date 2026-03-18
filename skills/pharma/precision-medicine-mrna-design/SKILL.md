@@ -17,6 +17,7 @@ Precision veterinary medicine tailors cancer therapy to individual tumor genetic
 - User selects targeted therapy matching tumor driver mutations (BRAF, KIT, TP53)
 - User understands mRNA construct design (5' cap, ORF, poly-A tail, delivery logistics)
 - Keywords: precision medicine, mRNA vaccine, neoantigen, pharmacogenomics, targeted therapy, companion diagnostics, personalized immunotherapy
+- **Related skill:** For the detailed 8-step neoantigen vaccine pipeline (sequencing, variant calling, DLA typing, prediction, synthesis), see `neoantigen-vaccine-design`. This skill covers the broader precision medicine framework; that skill covers the specific mRNA vaccine bioinformatics workflow.
 
 ## The Precision Medicine Framework
 

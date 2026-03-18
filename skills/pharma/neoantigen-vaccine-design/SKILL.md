@@ -21,6 +21,7 @@ This skill walks through each step: from tumor biopsy to sequencing, through com
 - User asks about the "Rosie" case or AI-designed veterinary cancer vaccines
 - User wants to understand the computational pipeline for personalized veterinary cancer immunotherapy
 - Keywords: neoantigen, mRNA vaccine, cancer vaccine, personalized, immunotherapy, tumor sequencing, DLA, MHC, WES, somatic mutation, AlphaFold
+- **Related skill:** For the broader precision medicine framework (pharmacogenomics, targeted therapy, companion diagnostics), see `precision-medicine-mrna-design`. This skill focuses specifically on the 8-step neoantigen vaccine bioinformatics pipeline.
 
 ## The Pipeline: Step by Step
 
@@ -304,7 +305,7 @@ Note: The Rosie case was performed at research cost through university collabora
 
 ## Current State of the Field
 
-- **Proven in principle:** The Rosie case (2025-2026) demonstrated the pipeline works in a canine patient with mast cell cancer.
+- **Proof of concept:** The Rosie case (2025-2026) reported successful pipeline application in a canine patient with mast cell cancer. Not yet peer-reviewed.
 - **Active research:** Canine melanoma neoantigen vaccines are being studied at multiple institutions (NC State, Colorado State, UPenn).
 - **DLA characterization is advancing:** New DLA-88 alleles are being discovered through NGS-based typing, expanding the reference database.
 - **Comparative oncology value:** Dogs develop cancers similar to humans (melanoma, osteosarcoma, lymphoma, bladder cancer), making canine neoantigen vaccines valuable for both veterinary treatment and translational human medicine.
