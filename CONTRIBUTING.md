@@ -50,4 +50,4 @@ Clinical accuracy is paramount. Submissions will be reviewed for veterinary accu
 
 ## Questions?
 
-Open an issue or reach out to the OpenVet team at vetevidence.com.
+Open an issue or reach out to the OpenVet team at openvet.ai.

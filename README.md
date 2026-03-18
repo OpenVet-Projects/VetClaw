@@ -134,7 +134,7 @@ Result: A fully personalized mRNA cancer vaccine manufactured in under 2 months.
 
 **This is exactly the future VetClaw was built for.**
 
-VetClaw skills provide the veterinary-specific reasoning patterns that generic LLMs lack: species-aware safety checks, evidence hierarchy enforcement, toxicology and lethal-variance guardrails, breed predisposition and differential diagnosis structuring. Combined with OpenClaw agents and tools like ChatGPT, AlphaFold, or Grok, users can now run safe, structured workflows for personalized oncology, neoantigen identification, mRNA vaccine blueprinting, and genomics-driven therapies.
+VetClaw skills provide the veterinary-specific reasoning patterns that generic LLMs lack: species-aware safety checks, evidence hierarchy enforcement, toxicology and lethal-variance guardrails, breed predisposition and differential diagnosis structuring. Combined with OpenClaw agents and tools like ChatGPT, AlphaFold, or Grok, users can now run safe, structured workflows for personalized oncology, neoantigen identification, mRNA vaccine blueprinting, and genomics-driven therapies. The Rosie case reported the pipeline works in a real clinical setting—a breakthrough for veterinary personalized medicine.
 
 OpenVet.ai's full platform takes this further, orchestrating these skills into multi-agent clinical rooms with transparent citations and specialist oversight.
 

@@ -32,7 +32,7 @@ Veterinary cardiac examination and diagnostic workup including murmur grading (I
 | --- | --- |
 | A | At risk (breed predisposition) but no structural disease |
 | B1 | Murmur present; no cardiomegaly on imaging |
-| B2 | Cardiomegaly confirmed: LA:Ao > 1.6 **and** VHS > 10.5 (dog). Treatment threshold. |
+| B2 | Cardiomegaly confirmed: LA:Ao > 1.6 **or** LVIDDN ≥ 1.7 (radiographic and/or echocardiographic evidence of cardiomegaly). Treatment threshold. |
 | C | Current or prior clinical signs of heart failure |
 | D | Refractory heart failure despite standard therapy |
 

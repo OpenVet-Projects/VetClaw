@@ -333,27 +333,27 @@ class OpenFDAVet:
 
     # --- Convenience methods ---
 
-    def dog_events(self, drug: Optional[str] = None, limit: int = 10) -> dict:
+    def dog_events(self, drug: Optional[str] = None, limit: int = 10) -> dict[str, Any]:
         """Shortcut: search adverse events for dogs."""
         return self.search(species="Dog", drug=drug, limit=limit)
 
-    def cat_events(self, drug: Optional[str] = None, limit: int = 10) -> dict:
+    def cat_events(self, drug: Optional[str] = None, limit: int = 10) -> dict[str, Any]:
         """Shortcut: search adverse events for cats."""
         return self.search(species="Cat", drug=drug, limit=limit)
 
-    def horse_events(self, drug: Optional[str] = None, limit: int = 10) -> dict:
+    def horse_events(self, drug: Optional[str] = None, limit: int = 10) -> dict[str, Any]:
         """Shortcut: search adverse events for horses."""
         return self.search(species="Horse", drug=drug, limit=limit)
 
-    def top_reactions(self, species: str, drug: Optional[str] = None) -> list[dict]:
+    def top_reactions(self, species: str, drug: Optional[str] = None) -> list[dict[str, Any]]:
         """Get top adverse reactions for a species (optionally filtered by drug)."""
         return self.count("reaction.veddra_term_name", species=species, drug=drug)
 
-    def top_drugs(self, species: str) -> list[dict]:
+    def top_drugs(self, species: str) -> list[dict[str, Any]]:
         """Get most-reported drugs for a species."""
         return self.count("drug.name", species=species)
 
-    def top_breeds(self, species: str) -> list[dict]:
+    def top_breeds(self, species: str) -> list[dict[str, Any]]:
         """Get breeds with most adverse event reports for a species."""
         return self.count("animal.breed.breed_component", species=species)
 

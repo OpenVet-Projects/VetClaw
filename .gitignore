@@ -6,3 +6,12 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.env
+dist/
+build/
+.venv/
+*.egg-info/
