@@ -30,6 +30,8 @@ Veterinary AI is not a subset of human AI. Drug safety varies by species. A dose
 
 VetClaw encodes this domain knowledge into structured, reusable skills that any OpenClaw-compatible agent can load immediately.
 
+**See it in action:** [Species Safety Checker](/demo/safety-checker.html) | [Cross-Species Drug Safety Matrix](/assets/species-drug-safety-matrix.md) | [Rosie Case Protocol](/cases/rosie-2026)
+
 Built by [OpenVet.ai](https://openvet.ai) -- the AI hospital for every animal on earth.
 
 ---

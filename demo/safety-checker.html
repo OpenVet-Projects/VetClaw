@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VetClaw Species Safety Checker</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; min-height: 100vh; }
+  .container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 { font-size: 28px; color: #f0f6fc; margin-bottom: 4px; }
+  .header p { color: #8b949e; font-size: 14px; }
+  .header a { color: #58a6ff; text-decoration: none; }
+  .form { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; color: #8b949e; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .field select, .field input { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #f0f6fc; font-size: 16px; }
+  .field select:focus, .field input:focus { outline: none; border-color: #58a6ff; }
+  .field input::placeholder { color: #484f58; }
+  .btn { width: 100%; padding: 14px; background: #238636; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+  .btn:hover { background: #2ea043; }
+  .result { border-radius: 12px; padding: 20px; margin-top: 16px; display: none; }
+  .result.lethal { background: #3d1114; border: 2px solid #da3633; }
+  .result.caution { background: #3d2e00; border: 2px solid #d29922; }
+  .result.safe { background: #0f2d1a; border: 2px solid #238636; }
+  .result.unknown { background: #1c1c2e; border: 2px solid #6e7681; }
+  .result-icon { font-size: 32px; margin-bottom: 8px; }
+  .result-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .result.lethal .result-title { color: #f85149; }
+  .result.caution .result-title { color: #d29922; }
+  .result.safe .result-title { color: #3fb950; }
+  .result.unknown .result-title { color: #8b949e; }
+  .result-body { font-size: 14px; line-height: 1.6; color: #c9d1d9; }
+  .result-body strong { color: #f0f6fc; }
+  .emergency { background: #3d1114; border: 1px solid #da3633; border-radius: 8px; padding: 12px; margin-top: 12px; font-size: 13px; }
+  .emergency a { color: #f85149; font-weight: 600; }
+  .disclaimer { text-align: center; color: #484f58; font-size: 11px; margin-top: 32px; line-height: 1.5; }
+  .matrix { margin-top: 32px; }
+  .matrix h2 { font-size: 18px; color: #f0f6fc; margin-bottom: 12px; text-align: center; }
+  table { width: 100%; border-collapse: collapse; background: #161b22; border-radius: 8px; overflow: hidden; font-size: 13px; }
+  th { background: #21262d; color: #8b949e; padding: 8px 6px; text-align: center; font-weight: 600; }
+  td { padding: 8px 6px; text-align: center; border-top: 1px solid #21262d; }
+  .cell-lethal { color: #f85149; font-weight: 700; }
+  .cell-caution { color: #d29922; }
+  .cell-safe { color: #3fb950; }
+  .cell-unknown { color: #484f58; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>VetClaw Species Safety Checker</h1>
+    <p>Powered by <a href="https://github.com/OpenVet-Projects/VetClaw">VetClaw</a> lethal-variance-detection skill | <a href="https://openvet.ai">OpenVet.ai</a></p>
+  </div>
+
+  <div class="form">
+    <div class="field">
+      <label>Species</label>
+      <select id="species">
+        <option value="">Select species...</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="horse">Horse</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="bird">Bird</option>
+        <option value="cattle">Cattle</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Drug or Substance</label>
+      <input type="text" id="substance" placeholder="e.g., acetaminophen, chocolate, xylitol, permethrin..." list="substances">
+      <datalist id="substances">
+        <option value="Acetaminophen (Tylenol)">
+        <option value="Ibuprofen (Advil)">
+        <option value="Permethrin">
+        <option value="Chocolate">
+        <option value="Xylitol">
+        <option value="Grapes / Raisins">
+        <option value="Lilies">
+        <option value="Ivermectin">
+        <option value="Ethylene Glycol (Antifreeze)">
+        <option value="Onions / Garlic">
+        <option value="Meloxicam">
+        <option value="Carprofen">
+        <option value="5-Fluorouracil (5-FU / Efudex)">
+        <option value="Marijuana / THC">
+        <option value="Macadamia Nuts">
+        <option value="PTFE / Teflon Fumes">
+      </datalist>
+    </div>
+    <button class="btn" onclick="checkSafety()">Check Safety</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <div class="matrix">
+    <h2>Cross-Species Drug Safety Matrix</h2>
+    <table>
+      <tr>
+        <th>Substance</th><th>Dog</th><th>Cat</th><th>Horse</th><th>Rabbit</th><th>Bird</th>
+      </tr>
+      <tr>
+        <td>Acetaminophen</td>
+        <td class="cell-caution">&#9888; Caution</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-unknown">? Limited</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+      </tr>
+      <tr>
+        <td>Permethrin</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Caution</td>
+        <td class="cell-unknown">? Limited</td>
+      </tr>
+      <tr>
+        <td>Xylitol</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-caution">&#9888; Limited data</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-unknown">? Unknown</td>
+        <td class="cell-unknown">? Unknown</td>
+      </tr>
+      <tr>
+        <td>Chocolate</td>
+        <td class="cell-lethal">&#128308; Toxic</td>
+        <td class="cell-caution">&#9888; Less sensitive</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Toxic</td>
+        <td class="cell-unknown">? Limited</td>
+      </tr>
+      <tr>
+        <td>Lilies</td>
+        <td class="cell-safe">&#9989; No renal</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-unknown">? Limited</td>
+        <td class="cell-unknown">? Limited</td>
+      </tr>
+      <tr>
+        <td>Ivermectin</td>
+        <td class="cell-caution">&#9888; MDR1 breeds</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Species-dep</td>
+      </tr>
+      <tr>
+        <td>Meloxicam</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Monitor renal</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Limited data</td>
+        <td class="cell-caution">&#9888; Limited</td>
+      </tr>
+      <tr>
+        <td>Ethylene Glycol</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-lethal">&#128308; LETHAL (4x)</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+      </tr>
+      <tr>
+        <td>5-FU (Efudex)</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+        <td class="cell-unknown">? Limited</td>
+        <td class="cell-unknown">? Unknown</td>
+        <td class="cell-unknown">? Unknown</td>
+      </tr>
+      <tr>
+        <td>PTFE / Teflon</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution">&#9888; Sensitive</td>
+        <td class="cell-lethal">&#128308; LETHAL</td>
+      </tr>
+      <tr>
+        <td>Onions / Garlic</td>
+        <td class="cell-caution">&#9888; Toxic</td>
+        <td class="cell-lethal">&#128308; More sensitive</td>
+        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-unknown">? Limited</td>
+        <td class="cell-caution">&#9888; Toxic</td>
+      </tr>
+    </table>
+    <p style="text-align:center;color:#484f58;font-size:11px;margin-top:8px;">Source: VetClaw lethal-variance-detection + toxicology-calculator skills. Not exhaustive. Always consult a veterinarian.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>This tool is for educational reference only.</strong> It is not a substitute for veterinary care.<br>
+    In an emergency, contact your veterinarian or:<br>
+    ASPCA Poison Control: <strong>888-426-4435</strong> | Pet Poison Helpline: <strong>855-764-7661</strong><br><br>
+    Data sourced from VetClaw skills (MIT licensed) | <a href="https://github.com/OpenVet-Projects/VetClaw" style="color:#58a6ff;">GitHub</a> | <a href="https://openvet.ai" style="color:#58a6ff;">OpenVet.ai</a>
+  </div>
+</div>
+
+<script>
+const DB = {
+  acetaminophen: {
+    dog: { level: "caution", title: "Use With Caution", body: "<strong>Acetaminophen</strong> can be used in dogs at <strong>10-15 mg/kg PO q8-12h</strong> with caution. Monitor for GI signs. Do NOT combine with NSAIDs. Not FDA-approved for veterinary use." },
+    cat: { level: "lethal", title: "LETHAL IN CATS", body: "<strong>Acetaminophen is lethal to cats.</strong> Cats lack the liver enzyme (UDP-glucuronosyltransferase) to metabolize it. Clinical signs (methemoglobinemia, facial edema, cyanosis) can occur at doses as low as <strong>10 mg/kg</strong>. There is <strong>no safe dose</strong>. Do not use under any circumstances." },
+    horse: { level: "safe", title: "Generally Safe", body: "Acetaminophen is used in horses. Consult your veterinarian for species-appropriate dosing." },
+    rabbit: { level: "unknown", title: "Limited Data", body: "Insufficient data for acetaminophen use in rabbits. Consult an exotic animal veterinarian." },
+    bird: { level: "lethal", title: "LETHAL IN BIRDS", body: "Acetaminophen is toxic to birds. Do not use." },
+    cattle: { level: "unknown", title: "Limited Data", body: "Not commonly used in cattle. Consult a food-animal veterinarian." }
+  },
+  ibuprofen: {
+    dog: { level: "caution", title: "Not Recommended", body: "<strong>Ibuprofen</strong> is not approved for veterinary use. It carries higher GI ulceration risk than veterinary NSAIDs. Use <strong>carprofen, meloxicam, or firocoxib</strong> instead. If ingested accidentally, contact your vet." },
+    cat: { level: "lethal", title: "TOXIC IN CATS", body: "Ibuprofen is <strong>extremely toxic to cats</strong> due to glucuronidation deficiency. Even a single human dose can cause acute kidney injury and GI ulceration. Do not use." },
+    horse: { level: "caution", title: "Not Recommended", body: "Use firocoxib or phenylbutazone instead. Ibuprofen is not standard in equine medicine." },
+    rabbit: { level: "lethal", title: "TOXIC", body: "NSAIDs in rabbits carry high GI risk. Use meloxicam only under veterinary supervision." },
+    bird: { level: "lethal", title: "TOXIC IN BIRDS", body: "Ibuprofen causes renal failure in birds. Use meloxicam under avian vet guidance instead." },
+    cattle: { level: "unknown", title: "Not Standard", body: "Not commonly used. Consult a food-animal veterinarian." }
+  },
+  permethrin: {
+    dog: { level: "safe", title: "Safe for Dogs", body: "Permethrin is safe and commonly used in canine flea/tick products. <strong>However:</strong> if you have cats in the household, keep treated dogs separated until the product dries completely. Cats in contact with permethrin-treated dogs can develop fatal toxicity." },
+    cat: { level: "lethal", title: "LETHAL IN CATS", body: "<strong>Permethrin is lethal to cats.</strong> Causes tremors, seizures, and death. Even environmental exposure from a treated dog can kill a cat. <strong>Never apply dog flea products to cats.</strong> If exposure has occurred, bathe the cat immediately and seek emergency veterinary care." },
+    horse: { level: "safe", title: "Safe for Horses", body: "Permethrin is commonly used in equine fly sprays and is safe for horses." },
+    rabbit: { level: "caution", title: "Use With Caution", body: "Limited data. Some rabbit-safe formulations exist. Consult an exotic vet." },
+    bird: { level: "unknown", title: "Limited Data", body: "Permethrin has some avian applications (poultry mite control) but data is limited for companion birds." },
+    cattle: { level: "safe", title: "Safe", body: "Permethrin is commonly used for fly control in cattle." }
+  },
+  chocolate: {
+    dog: { level: "lethal", title: "TOXIC — Dose-Dependent", body: "<strong>Chocolate contains theobromine</strong>, which dogs metabolize very slowly (17.5-hour half-life).<br><br><strong>Thresholds:</strong><br>Mild GI: 20 mg/kg theobromine<br>Cardiac signs: 40 mg/kg<br>Seizures/death: 60+ mg/kg<br>LD50: ~100-200 mg/kg<br><br><strong>Theobromine by type:</strong> Baking chocolate ~16 mg/g, dark ~5.5 mg/g, milk ~2.4 mg/g, white ~0.1 mg/g<br><br>Calculate: (weight of chocolate eaten x theobromine concentration) / dog's weight in kg" },
+    cat: { level: "caution", title: "Less Common but Toxic", body: "Cats are less attracted to chocolate but are also sensitive to theobromine. Treat any ingestion as potentially toxic." },
+    horse: { level: "safe", title: "Generally Safe", body: "Horses are less sensitive to theobromine. Large ingestions could still cause GI upset." },
+    rabbit: { level: "caution", title: "Toxic", body: "Theobromine is toxic to rabbits. Avoid chocolate in any amount." },
+    bird: { level: "caution", title: "Potentially Toxic", body: "Limited data. Chocolate should be avoided for all birds." },
+    cattle: { level: "caution", title: "Caution in Large Amounts", body: "Cattle have been poisoned by cocoa bean hulls used as feed. Avoid in feed." }
+  },
+  xylitol: {
+    dog: { level: "lethal", title: "LETHAL IN DOGS", body: "<strong>Xylitol causes profound, rapid hypoglycemia in dogs.</strong><br><br><strong>Hypoglycemia:</strong> 0.05-0.1 g/kg (some dogs sensitive at lower doses)<br><strong>Hepatotoxicity:</strong> 0.5 g/kg<br><strong>Onset:</strong> 30-60 minutes<br><br>Found in sugar-free gum, candy, peanut butters, dental products, and baked goods. <strong>Treat any ingestion as an emergency.</strong>" },
+    cat: { level: "caution", title: "Limited Data", body: "Cats appear less susceptible than dogs, but data is limited. Avoid xylitol exposure." },
+    horse: { level: "safe", title: "No Known Risk", body: "No documented xylitol toxicity in horses." },
+    rabbit: { level: "unknown", title: "Unknown", body: "No data available. Avoid as a precaution." },
+    bird: { level: "unknown", title: "Unknown", body: "No data available for avian species." },
+    cattle: { level: "unknown", title: "Unknown", body: "No data available." }
+  },
+  grapes: {
+    dog: { level: "lethal", title: "TOXIC — No Safe Dose", body: "<strong>Grapes and raisins cause idiosyncratic acute kidney injury in dogs.</strong> There is no established safe dose. Toxicity is unpredictable — some dogs eat grapes without issues, others develop fatal kidney failure from a single grape. <strong>Treat every ingestion as potentially lethal.</strong> Raisins are more concentrated than grapes by weight." },
+    cat: { level: "caution", title: "Potentially Toxic", body: "Some case reports of grape/raisin toxicity in cats. Avoid as a precaution." },
+    horse: { level: "safe", title: "No Known Risk", body: "No documented grape toxicity in horses." },
+    rabbit: { level: "caution", title: "Avoid", body: "Not recommended. High sugar content and potential toxicity risk." },
+    bird: { level: "safe", title: "Generally Safe", body: "Grapes are commonly fed to pet birds in moderation." },
+    cattle: { level: "safe", title: "No Known Risk", body: "No documented grape toxicity in cattle." }
+  },
+  lily: {
+    dog: { level: "safe", title: "No Renal Toxicity in Dogs", body: "True lilies (Lilium and Hemerocallis) do not cause kidney injury in dogs. Dogs may experience mild GI upset if eaten, but it is not the same lethal nephrotoxicity seen in cats." },
+    cat: { level: "lethal", title: "LETHAL IN CATS", body: "<strong>ALL parts of true lilies (Lilium and Hemerocallis species) are nephrotoxic to cats.</strong> Even pollen exposure or drinking water from a lily vase can cause fatal acute kidney injury within 24-72 hours. <strong>There is no safe dose. Remove all lilies from homes with cats.</strong>" },
+    horse: { level: "safe", title: "No Known Risk", body: "No documented lily nephrotoxicity in horses." },
+    rabbit: { level: "unknown", title: "Limited Data", body: "Insufficient data. Avoid as a precaution." },
+    bird: { level: "unknown", title: "Limited Data", body: "Insufficient data for avian species." },
+    cattle: { level: "safe", title: "No Known Risk", body: "No documented lily toxicity in cattle." }
+  },
+  ivermectin: {
+    dog: { level: "caution", title: "Breed-Dependent Risk", body: "<strong>Ivermectin is safe at heartworm-prevention doses (6-12 mcg/kg)</strong> for all dogs. However, at higher doses (>120 mcg/kg), it is <strong>neurotoxic in MDR1-mutant breeds</strong>:<br><br>High-risk breeds: Collie, Australian Shepherd, Shetland Sheepdog, Old English Sheepdog, and crosses.<br><br>Signs: Ataxia, tremors, blindness, coma, death.<br><strong>Test MDR1 status before high-dose ivermectin use in herding breeds.</strong>" },
+    cat: { level: "safe", title: "Generally Safe", body: "Ivermectin is used in cats for parasite control. Standard doses are well-tolerated." },
+    horse: { level: "safe", title: "Safe", body: "Ivermectin is a standard equine dewormer. Safe at labeled doses." },
+    rabbit: { level: "safe", title: "Safe", body: "Commonly used for rabbit mite treatment at appropriate doses." },
+    bird: { level: "caution", title: "Species-Dependent", body: "Used in some avian species. Dose varies significantly. Consult an avian veterinarian." },
+    cattle: { level: "safe", title: "Safe", body: "Standard cattle dewormer. Observe withdrawal times for food-producing animals." }
+  },
+  "ethylene glycol": {
+    dog: { level: "lethal", title: "LETHAL — Time-Critical", body: "<strong>Ethylene glycol (antifreeze) is lethal to dogs.</strong><br><br>Lethal dose: ~6.6 mL/kg<br>Treatment window: 8-12 hours for antidote (fomepizole) efficacy<br><br>Sweet taste attracts animals. <strong>This is an absolute emergency. Go to a vet immediately.</strong>" },
+    cat: { level: "lethal", title: "LETHAL — Cats 4x More Sensitive", body: "<strong>Ethylene glycol is lethal to cats at very low doses.</strong><br><br>Lethal dose: ~1.5 mL/kg (cats are 4x more sensitive than dogs)<br>Treatment window: <strong>3 hours</strong> for antidote efficacy (much shorter than dogs)<br><br><strong>This is an absolute emergency. Go to a vet immediately.</strong>" },
+    horse: { level: "lethal", title: "LETHAL", body: "Ethylene glycol is toxic to horses. Lethal dose approximately 1-2 mL/kg. Seek immediate veterinary care." },
+    rabbit: { level: "lethal", title: "LETHAL", body: "Ethylene glycol is lethal to rabbits. Seek immediate veterinary care." },
+    bird: { level: "lethal", title: "LETHAL", body: "Ethylene glycol is toxic to birds. Seek immediate veterinary care." },
+    cattle: { level: "lethal", title: "LETHAL", body: "Ethylene glycol is toxic to cattle. Seek immediate veterinary care." }
+  },
+  "5-fu": {
+    dog: { level: "lethal", title: "LETHAL IN DOGS", body: "<strong>5-Fluorouracil (Efudex) is extremely lethal to dogs and cats.</strong> Even small topical exposures from licking human skin treated with Efudex cream have killed dogs. There is no safe dose. Keep all 5-FU products completely away from animals." },
+    cat: { level: "lethal", title: "LETHAL IN CATS", body: "<strong>5-Fluorouracil is lethal to cats.</strong> No safe exposure level. Keep away from all animals." },
+    horse: { level: "unknown", title: "Limited Data", body: "Not used in equine medicine. Avoid exposure." },
+    rabbit: { level: "unknown", title: "Unknown", body: "No data. Avoid any exposure." },
+    bird: { level: "unknown", title: "Unknown", body: "No data. Avoid any exposure." },
+    cattle: { level: "unknown", title: "Unknown", body: "No data. Avoid any exposure." }
+  },
+  thc: {
+    dog: { level: "lethal", title: "TOXIC — Can Be Severe", body: "<strong>Dogs are significantly more sensitive to THC than humans.</strong><br><br>Signs: Ataxia, urinary incontinence, dilated pupils, bradycardia, hypothermia, stupor. Onset 30-90 minutes.<br>Severe cases: Seizures, coma, death (rare but reported with concentrated products).<br><br>Edibles are the most common exposure and may contain additional toxins (chocolate, xylitol).<br><strong>Seek veterinary care immediately.</strong>" },
+    cat: { level: "caution", title: "Toxic", body: "Cats are also sensitive to THC. Signs similar to dogs. Seek veterinary care if exposure suspected." },
+    horse: { level: "unknown", title: "Limited Data", body: "Minimal data on THC toxicity in horses." },
+    rabbit: { level: "unknown", title: "Unknown", body: "No data available." },
+    bird: { level: "unknown", title: "Unknown", body: "No data available." },
+    cattle: { level: "unknown", title: "Unknown", body: "No data available." }
+  },
+  macadamia: {
+    dog: { level: "caution", title: "TOXIC — Usually Self-Limiting", body: "<strong>Macadamia nuts cause weakness, vomiting, tremors, and hyperthermia in dogs.</strong><br><br>Toxic dose: 2.4-62.4 g/kg (wide range)<br>Onset: 6-12 hours<br>Duration: Self-limiting, resolves in 24-48 hours<br><br>Combined macadamia + chocolate ingestion is more severe. Contact your vet." },
+    cat: { level: "unknown", title: "Limited Data", body: "No documented macadamia toxicity in cats." },
+    horse: { level: "unknown", title: "No Data", body: "No documented macadamia toxicity in horses." },
+    rabbit: { level: "unknown", title: "No Data", body: "No data available." },
+    bird: { level: "unknown", title: "No Data", body: "No data available." },
+    cattle: { level: "unknown", title: "No Data", body: "No data available." }
+  },
+  ptfe: {
+    dog: { level: "safe", title: "Not Toxic to Dogs", body: "PTFE/Teflon fumes are not toxic to dogs at household cooking temperatures." },
+    cat: { level: "safe", title: "Not Toxic to Cats", body: "PTFE/Teflon fumes are not toxic to cats at household cooking temperatures." },
+    horse: { level: "safe", title: "Not Applicable", body: "Not a typical equine exposure." },
+    rabbit: { level: "caution", title: "Sensitive", body: "Rabbits may be sensitive to inhaled toxins. Ensure good ventilation." },
+    bird: { level: "lethal", title: "LETHAL IN BIRDS", body: "<strong>PTFE/Teflon fumes are acutely fatal to birds.</strong> Overheated non-stick cookware (above 280°C/536°F) releases toxic fumes. Birds die within minutes to hours, often with no warning signs. <strong>Do not use non-stick cookware in homes with birds. This is the #1 household safety recommendation for bird owners.</strong>" },
+    cattle: { level: "safe", title: "Not Applicable", body: "Not a typical exposure for cattle." }
+  },
+  onion: {
+    dog: { level: "caution", title: "Toxic — Dose-Dependent", body: "<strong>Onions and garlic contain organosulfoxides</strong> that cause oxidative damage to red blood cells (Heinz body anemia) in dogs. Toxic dose: >0.5% of body weight. All forms (raw, cooked, powder, dehydrated) are toxic. Signs: Lethargy, dark urine, weakness. Onset may be delayed 1-5 days." },
+    cat: { level: "lethal", title: "MORE SENSITIVE — Toxic", body: "<strong>Cats are more sensitive to onion/garlic toxicity than dogs.</strong> Even small amounts can cause Heinz body hemolytic anemia. Baby food containing onion powder has caused toxicity in cats. Avoid all allium species." },
+    horse: { level: "safe", title: "Generally Safe", body: "Horses are relatively resistant to onion/garlic toxicity at typical exposure levels." },
+    rabbit: { level: "unknown", title: "Limited Data", body: "Avoid as a precaution." },
+    bird: { level: "caution", title: "Potentially Toxic", body: "Some reports of allium toxicity in birds. Avoid." },
+    cattle: { level: "caution", title: "Toxic in Quantity", body: "Cattle grazing on wild onions can develop hemolytic anemia." }
+  },
+  meloxicam: {
+    dog: { level: "safe", title: "Safe — FDA Approved", body: "Meloxicam is FDA-approved for dogs at <strong>0.1-0.2 mg/kg PO daily</strong>. COX-2 preferential. Check renal function before starting and at 7-10 days. Do not combine with corticosteroids." },
+    cat: { level: "caution", title: "Use With Monitoring", body: "Meloxicam is used in cats at <strong>0.1 mg/kg daily</strong> but requires <strong>mandatory renal monitoring</strong> (baseline + 2-4 weeks). Feline meloxicam dosing remains controversial. Cats are more sensitive to renal effects." },
+    horse: { level: "safe", title: "Safe", body: "Meloxicam is used in equine practice. Firocoxib is often preferred." },
+    rabbit: { level: "caution", title: "Limited Data", body: "Meloxicam 0.6-1 mg/kg PO/SC BID used anecdotally in rabbits. Monitor GI function." },
+    bird: { level: "caution", title: "Limited Data", body: "Some avian use reported. Consult an avian veterinarian for dosing." },
+    cattle: { level: "safe", title: "Used in Practice", body: "Used in cattle. Observe withdrawal times for food-producing animals." }
+  }
+};
+
+const ALIASES = {
+  tylenol: "acetaminophen", "acetaminophen": "acetaminophen", paracetamol: "acetaminophen",
+  advil: "ibuprofen", ibuprofen: "ibuprofen", motrin: "ibuprofen",
+  permethrin: "permethrin",
+  chocolate: "chocolate", cocoa: "chocolate", theobromine: "chocolate",
+  xylitol: "xylitol", "sugar-free": "xylitol", "sugar free": "xylitol",
+  grape: "grapes", grapes: "grapes", raisin: "grapes", raisins: "grapes",
+  lily: "lily", lilies: "lily", "easter lily": "lily", "day lily": "lily", daylily: "lily",
+  ivermectin: "ivermectin", heartgard: "ivermectin",
+  "ethylene glycol": "ethylene glycol", antifreeze: "ethylene glycol", coolant: "ethylene glycol",
+  "5-fu": "5-fu", "5-fluorouracil": "5-fu", efudex: "5-fu", fluorouracil: "5-fu",
+  thc: "thc", marijuana: "thc", cannabis: "thc", weed: "thc", edible: "thc", edibles: "thc",
+  macadamia: "macadamia", "macadamia nut": "macadamia", "macadamia nuts": "macadamia",
+  ptfe: "ptfe", teflon: "ptfe", "non-stick": "ptfe", "nonstick": "ptfe",
+  onion: "onion", onions: "onion", garlic: "onion", "onions / garlic": "onion",
+  meloxicam: "meloxicam", metacam: "meloxicam",
+  carprofen: "meloxicam", rimadyl: "meloxicam"
+};
+
+function checkSafety() {
+  const species = document.getElementById("species").value;
+  const rawSubstance = document.getElementById("substance").value.trim().toLowerCase();
+  const resultDiv = document.getElementById("result");
+
+  if (!species || !rawSubstance) {
+    resultDiv.style.display = "block";
+    resultDiv.className = "result unknown";
+    resultDiv.innerHTML = '<div class="result-title">Please select a species and enter a substance.</div>';
+    return;
+  }
+
+  // Normalize substance
+  let substance = null;
+  for (const [alias, canonical] of Object.entries(ALIASES)) {
+    if (rawSubstance.includes(alias)) { substance = canonical; break; }
+  }
+
+  if (!substance || !DB[substance] || !DB[substance][species]) {
+    resultDiv.style.display = "block";
+    resultDiv.className = "result unknown";
+    resultDiv.innerHTML = `<div class="result-icon">&#10067;</div><div class="result-title">Substance Not Found</div><div class="result-body">"${document.getElementById("substance").value}" is not in our database yet. <strong>Contact your veterinarian or poison control for guidance.</strong></div><div class="emergency">ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> ($95 fee) | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a> ($85 fee)</div>`;
+    return;
+  }
+
+  const data = DB[substance][species];
+  const icons = { lethal: "&#9888;&#65039;", caution: "&#9888;", safe: "&#9989;", unknown: "&#10067;" };
+
+  resultDiv.style.display = "block";
+  resultDiv.className = "result " + data.level;
+  let html = `<div class="result-icon">${icons[data.level]}</div><div class="result-title">${data.title}</div><div class="result-body">${data.body}</div>`;
+
+  if (data.level === "lethal") {
+    html += `<div class="emergency"><strong>If your pet has been exposed, seek emergency veterinary care immediately.</strong><br>ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a></div>`;
+  }
+
+  resultDiv.innerHTML = html;
+}
+</script>
+</body>
+</html>
