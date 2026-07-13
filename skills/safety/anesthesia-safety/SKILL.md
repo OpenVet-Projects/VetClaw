@@ -117,7 +117,7 @@ Anesthetic safety depends on species physiology, breed-specific sensitivities, p
   - Reduce barbiturate dose by 30-40% if using thiopental (increasingly rare)
   - Prefer opioid + benzodiazepine premedication over barbiturate
   - Use propofol as induction agent (more titratable, shorter action)
-  - Avoid methoxyflurane and isoflurane; use sevoflurane
+  - Modern inhalants (isoflurane, sevoflurane) are appropriate — the key sighthound sensitivity is to **thiopental/barbiturates**, not to isoflurane (which is minimally metabolized)
   - Monitor recovery carefully; prolonged wake-up expected
   - No rapid IV boluses; titrate slowly
 
@@ -174,7 +174,7 @@ Anesthetic safety depends on species physiology, breed-specific sensitivities, p
 - **Causes:** Vagal stimulation (ocular surgery, abdominal palpation), anesthetic effect, hypothermia
 - **Immediate Actions:**
   1. Reduce anesthetic depth; consider 100% oxygen
-  2. Anticholinergic: atropine (0.01-0.02 mg/kg IV) or glycopyrrolate (0.005-0.01 mg/kg IV)
+  2. Anticholinergic: atropine (0.02-0.04 mg/kg IV) or glycopyrrolate (0.005-0.01 mg/kg IV)
   3. If associated with hypotension: initiate as above + vasopressor
   4. Avoid continued vagal stimulation (pause surgery if possible)
 

@@ -40,9 +40,9 @@ Withdrawal times (WDI: withdrawal interval) are the mandatory waiting periods be
 |------|---------|-----------|-----------------|-----------------|-------|
 | Penicillin G | Cattle | Infection | 7-10 days | 24-48 hrs | Zero tolerance in milk; short meat withdrawal |
 | Oxytetracycline | Cattle | Infection | 28 days | 96 hrs (4 days) | Long withdrawal; pigmentation issues in tissue |
-| Flunixin meglumine | Cattle | Pain/inflammation | 2-3 days | Not approved intramammary | Use cautiously in dairy; check label carefully |
+| Flunixin meglumine | Cattle | Pain/inflammation | **4 days** | 36 hrs (label) | Give **IV only** — IM/SC injection markedly prolongs residues; a leading cause of violative NSAID tissue residues, so follow the label route and time exactly |
 | Gentamicin | Swine | Infection | 5-7 days | N/A (pork) | Aminoglycoside; label-dependent |
-| Enrofloxacin | Poultry | Infection | 3-5 days | N/A (eggs) | Withdraw eggs ~5-7 days; verify label |
+| Enrofloxacin | Poultry | — | **PROHIBITED** | **PROHIBITED** | ⚠️ Extralabel fluoroquinolone use in food-producing poultry is **illegal in the US** (FDA withdrew poultry enrofloxacin approval in 2005). No lawful withdrawal time exists |
 | Ivermectin | Cattle | Parasites | 35-56 days (pour-on) | 40+ days | Ultra-long withdrawal; plan well in advance |
 | Amoxicillin | Swine | Infection | 10 days | N/A | Typical beta-lactam withdrawal |
 

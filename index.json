@@ -1,0 +1,323 @@
+{
+  "name": "VetClaw",
+  "version": "0.1.0",
+  "description": "Veterinary AI skill library for OpenClaw and compatible agent frameworks.",
+  "license": "MIT",
+  "skill_count": 51,
+  "categories": {
+    "clinical": 17,
+    "databases": 4,
+    "literature": 7,
+    "pharma": 8,
+    "safety": 5,
+    "species": 10
+  },
+  "skills": [
+    {
+      "name": "anesthesia-protocols",
+      "category": "clinical",
+      "description": "Species-specific anesthesia protocols including premedication, induction, maintenance, and monitoring. Accounts for brachycephalic risk, sighthound sensitivity, ASA classification, and common anesthetic emergencies.",
+      "path": "skills/clinical/anesthesia-protocols/SKILL.md"
+    },
+    {
+      "name": "cardiology-workup",
+      "category": "clinical",
+      "description": "Veterinary cardiac examination and diagnostic workup including murmur grading (I-VI), arrhythmia classification, echocardiography indications, and ACVIM staging for MMVD and DCM.",
+      "path": "skills/clinical/cardiology-workup/SKILL.md"
+    },
+    {
+      "name": "dental-grading",
+      "category": "clinical",
+      "description": "Veterinary dental disease staging, periodontal grading, and oral pathology classification using AVDC nomenclature. Includes dental charting systems and treatment planning by stage.",
+      "path": "skills/clinical/dental-grading/SKILL.md"
+    },
+    {
+      "name": "dermatology-workup",
+      "category": "clinical",
+      "description": "Diagnostic ladder (cytology→scraping→DTM→biopsy), pruritus scoring, common differentials by species (atopy, flea allergy, food allergy, Demodex, Sarcoptes, Malassezia), treatment tiers.",
+      "path": "skills/clinical/dermatology-workup/SKILL.md"
+    },
+    {
+      "name": "differential-diagnosis",
+      "category": "clinical",
+      "description": "Generate ranked differential diagnosis lists for veterinary cases incorporating species, breed, age, and clinical signs. Use when a veterinarian presents a case with clinical findings.",
+      "path": "skills/clinical/differential-diagnosis/SKILL.md"
+    },
+    {
+      "name": "emergency-triage",
+      "category": "clinical",
+      "description": "Veterinary emergency triage and initial stabilization guidance based on RECOVER and ACVECC protocols. Use when an animal presents with an acute emergency.",
+      "path": "skills/clinical/emergency-triage/SKILL.md"
+    },
+    {
+      "name": "fluid-therapy",
+      "category": "clinical",
+      "description": "Dehydration assessment, crystalloid vs. colloid selection, resuscitation bolus protocols by species, maintenance calculation, electrolyte correction and potassium supplementation.",
+      "path": "skills/clinical/fluid-therapy/SKILL.md"
+    },
+    {
+      "name": "laboratory-interpretation",
+      "category": "clinical",
+      "description": "Species-specific interpretation of veterinary laboratory results including CBC, chemistry, urinalysis, and endocrine panels. Reference ranges differ dramatically by species. Use when interpreting bloodwork for animals.",
+      "path": "skills/clinical/laboratory-interpretation/SKILL.md"
+    },
+    {
+      "name": "nutrition-assessment",
+      "category": "clinical",
+      "description": "Body condition score (1-9 scale), muscle condition score (MCS), RER/MER calculations (RER = 70 × BW^0.75), species-specific requirements (obligate carnivore cats, taurine, arginine), diet-related diseases, renal diet, hepatic diet formulations.",
+      "path": "skills/clinical/nutrition-assessment/SKILL.md"
+    },
+    {
+      "name": "ophthalmology-exam",
+      "category": "clinical",
+      "description": "Schirmer tear test values and interpretation, fluorescein staining, tonometry with normal IOP ranges, common conditions by species (KCS, glaucoma, cataracts, ulcers, entropion, cherry eye), breed predispositions.",
+      "path": "skills/clinical/ophthalmology-exam/SKILL.md"
+    },
+    {
+      "name": "orthopedic-exam",
+      "category": "clinical",
+      "description": "Lameness grading (AAHA scale), joint assessment (drawer sign/tibial thrust for CCL, Ortolani for hip dysplasia), patellar luxation grading I-IV, OFA scoring, breed predispositions, common conditions by species.",
+      "path": "skills/clinical/orthopedic-exam/SKILL.md"
+    },
+    {
+      "name": "pain-assessment",
+      "category": "clinical",
+      "description": "Glasgow Composite Pain Scale (dogs), FMPI/UNESP-Botucatu (cats), Colorado State pain scales, multimodal analgesia ladder, species-specific pain indicators, opioid/NSAID protocols with dosing.",
+      "path": "skills/clinical/pain-assessment/SKILL.md"
+    },
+    {
+      "name": "personalized-oncology-workflow",
+      "category": "clinical",
+      "description": "Structured reasoning template for AI-assisted personalized mRNA oncology workflows. Inspired by the 2026 Rosie mast cell tumor case. Species-aware, safety-first, requires veterinary oncologist oversight.",
+      "path": "skills/clinical/personalized-oncology-workflow/SKILL.md"
+    },
+    {
+      "name": "vaccination-protocols",
+      "category": "clinical",
+      "description": "Species-specific vaccination protocols based on AAHA, AAFP, WSAVA, and AAEP guidelines. Core vs. non-core vaccines, schedules, and risk-based recommendations. Use for vaccine questions in animals.",
+      "path": "skills/clinical/vaccination-protocols/SKILL.md"
+    },
+    {
+      "name": "veterinary-clinical-guidelines",
+      "category": "clinical",
+      "description": "Access veterinary clinical practice guidelines from AAHA, ACVIM, ACVECC, RECOVER, AAFP, WSAVA, AAEP, and other professional bodies. Use when asked about standard-of-care protocols or consensus statements.",
+      "path": "skills/clinical/veterinary-clinical-guidelines/SKILL.md"
+    },
+    {
+      "name": "veterinary-physical-exam",
+      "category": "clinical",
+      "description": "Structured species-specific physical examination workflows and normal vital parameter reference ranges. Use when documenting or interpreting physical exam findings in animals.",
+      "path": "skills/clinical/veterinary-physical-exam/SKILL.md"
+    },
+    {
+      "name": "wound-management",
+      "category": "clinical",
+      "description": "Wound classification (clean/clean-contaminated/contaminated/dirty), golden period, debridement principles, bandage types (wet-to-dry, tie-over, negative pressure), species-specific healing differences.",
+      "path": "skills/clinical/wound-management/SKILL.md"
+    },
+    {
+      "name": "farad-withdrawal",
+      "category": "databases",
+      "description": "Access FARAD (Food Animal Residue Avoidance Databank) for drug withdrawal recommendations in food-producing animals. Covers meat, milk, and egg withdrawal intervals including extralabel use guidance.",
+      "path": "skills/databases/farad-withdrawal/SKILL.md"
+    },
+    {
+      "name": "ncbi-taxonomy-veterinary",
+      "category": "databases",
+      "description": "Query NCBI Taxonomy for veterinary species identification, taxonomic classification, and cross-referencing species names. Covers domestic, exotic, and wildlife species relevant to veterinary medicine.",
+      "path": "skills/databases/ncbi-taxonomy-veterinary/SKILL.md"
+    },
+    {
+      "name": "obo-foundry-ontologies",
+      "category": "databases",
+      "description": "Access OBO Foundry biomedical ontologies relevant to veterinary medicine including VBO (breeds), UBERON (anatomy), HP/MP (phenotypes), ChEBI (chemicals), and NCBITaxon (species taxonomy).",
+      "path": "skills/databases/obo-foundry-ontologies/SKILL.md"
+    },
+    {
+      "name": "openfda-animal",
+      "category": "databases",
+      "description": "Query the openFDA Animal and Veterinary endpoints for adverse event reports, approved animal drug products, and veterinary device data. REST API access to FDA CVM public datasets.",
+      "path": "skills/databases/openfda-animal/SKILL.md"
+    },
+    {
+      "name": "comparative-medicine-search",
+      "category": "literature",
+      "description": "Search for relevant human medical research that may inform veterinary clinical decisions when veterinary-specific evidence is lacking. Use when no species-specific evidence exists and cross-species extrapolation is considered.",
+      "path": "skills/literature/comparative-medicine-search/SKILL.md"
+    },
+    {
+      "name": "comparative-oncology",
+      "category": "literature",
+      "description": "Cross-species cancer research linking spontaneous canine/feline tumors to human cancer mechanisms and therapeutic targets. Bridges veterinary and human oncology for co-discovery and translational medicine.",
+      "path": "skills/literature/comparative-oncology/SKILL.md"
+    },
+    {
+      "name": "evidence-grading",
+      "category": "literature",
+      "description": "Grade the quality and strength of veterinary evidence using a veterinary-specific evidence hierarchy. Textbooks carry more weight in veterinary medicine than in human medicine. Use when evaluating the reliability of clinical information.",
+      "path": "skills/literature/evidence-grading/SKILL.md"
+    },
+    {
+      "name": "omia-database",
+      "category": "literature",
+      "description": "Query OMIA (Online Mendelian Inheritance in Animals) for inherited disorders and traits cataloged across species. The veterinary equivalent of OMIM. Use for genetic disease research and breed predisposition data.",
+      "path": "skills/literature/omia-database/SKILL.md"
+    },
+    {
+      "name": "textbook-evidence-hierarchy",
+      "category": "literature",
+      "description": "Navigate the veterinary textbook landscape with authority rankings. Know which textbooks are definitive for which topics. Use when citing veterinary references or resolving conflicting information.",
+      "path": "skills/literature/textbook-evidence-hierarchy/SKILL.md"
+    },
+    {
+      "name": "vbo-ontology",
+      "category": "literature",
+      "description": "Access the Vertebrate Breed Ontology (VBO) for standardized breed nomenclature across 49 species with 19,500+ breed concepts. Use for breed identification, cross-referencing, and taxonomic standardization.",
+      "path": "skills/literature/vbo-ontology/SKILL.md"
+    },
+    {
+      "name": "veterinary-pubmed-search",
+      "category": "literature",
+      "description": "Search PubMed with veterinary-specific filters and MeSH terms to find relevant animal health research. Handles the sparse, multi-species nature of veterinary literature. Use for veterinary literature searches.",
+      "path": "skills/literature/veterinary-pubmed-search/SKILL.md"
+    },
+    {
+      "name": "adverse-event-reporting",
+      "category": "pharma",
+      "description": "Guide veterinary adverse drug event reporting through FDA CVM and query the openFDA animal adverse event database. Use when a suspected adverse drug reaction occurs in an animal.",
+      "path": "skills/pharma/adverse-event-reporting/SKILL.md"
+    },
+    {
+      "name": "compounding-guidance",
+      "category": "pharma",
+      "description": "Veterinary drug compounding regulations, AMDUCA compliance, and practical guidance for when commercial formulations are unavailable. Covers 503A and 503B pharmacy distinctions for animal drugs.",
+      "path": "skills/pharma/compounding-guidance/SKILL.md"
+    },
+    {
+      "name": "drug-interaction-checker",
+      "category": "pharma",
+      "description": "Check for drug-drug interactions in veterinary patients with species-specific pharmacokinetic considerations. Use when a patient is on multiple medications or a new drug is being added.",
+      "path": "skills/pharma/drug-interaction-checker/SKILL.md"
+    },
+    {
+      "name": "fda-green-book",
+      "category": "pharma",
+      "description": "Query the FDA Green Book database of approved animal drug products. Use when checking whether a veterinary drug is FDA-approved, finding approved indications, or looking up NADA/ANADA numbers.",
+      "path": "skills/pharma/fda-green-book/SKILL.md"
+    },
+    {
+      "name": "neoantigen-vaccine-design",
+      "category": "pharma",
+      "description": "Guide the computational pipeline for designing personalized neoantigen cancer vaccines for veterinary patients. Covers tumor/normal sequencing, somatic variant calling, DLA/MHC typing, neoantigen prediction, and candidate selection. Use when exploring personalized immunotherapy for animal cancer patients.",
+      "path": "skills/pharma/neoantigen-vaccine-design/SKILL.md"
+    },
+    {
+      "name": "precision-medicine-mrna-design",
+      "category": "pharma",
+      "description": "Comprehensive precision medicine framework for veterinary cancer therapy including mRNA neoantigen vaccine design, pharmacogenomics, targeted therapy, and companion diagnostics. Bridges genomics and personalized treatment.",
+      "path": "skills/pharma/precision-medicine-mrna-design/SKILL.md"
+    },
+    {
+      "name": "veterinary-drug-lookup",
+      "category": "pharma",
+      "description": "Species-specific veterinary drug information including dosing, contraindications, and safety warnings. Use when asked about animal medications, drug doses, or veterinary pharmacology.",
+      "path": "skills/pharma/veterinary-drug-lookup/SKILL.md"
+    },
+    {
+      "name": "withdrawal-times",
+      "category": "pharma",
+      "description": "Food animal drug withdrawal time lookup for meat, milk, and egg residue avoidance. References FARAD (Food Animal Residue Avoidance Databank) and FDA-approved label withdrawal periods.",
+      "path": "skills/pharma/withdrawal-times/SKILL.md"
+    },
+    {
+      "name": "anesthesia-safety",
+      "category": "safety",
+      "description": "Species and breed-specific anesthesia safety checks including brachycephalic risk assessment, sighthound drug sensitivity, pediatric and geriatric considerations, and ASA physical status classification.",
+      "path": "skills/safety/anesthesia-safety/SKILL.md"
+    },
+    {
+      "name": "contraindication-checker",
+      "category": "safety",
+      "description": "Check for drug contraindications based on species, breed, age, organ function, pregnancy status, and concurrent conditions. Use before recommending any medication in a veterinary patient.",
+      "path": "skills/safety/contraindication-checker/SKILL.md"
+    },
+    {
+      "name": "lethal-variance-detection",
+      "category": "safety",
+      "description": "Detect drugs and substances with extreme safety variance across species where a safe dose in one species is lethal in another. CRITICAL SAFETY SKILL. Use before returning any drug information.",
+      "path": "skills/safety/lethal-variance-detection/SKILL.md"
+    },
+    {
+      "name": "nsaid-safety",
+      "category": "safety",
+      "description": "NSAID comparison (meloxicam, carprofen, deracoxib, firocoxib, robenacoxib), species-specific dosing, GI ulceration risk factors, renal monitoring protocols, corticosteroid washout requirements, COX-1 vs. COX-2 selectivity.",
+      "path": "skills/safety/nsaid-safety/SKILL.md"
+    },
+    {
+      "name": "toxicology-calculator",
+      "category": "safety",
+      "description": "Calculate toxicity risk for common animal poisonings including chocolate, xylitol, grapes, lilies, rodenticides. Use when a pet has ingested a potentially toxic substance.",
+      "path": "skills/safety/toxicology-calculator/SKILL.md"
+    },
+    {
+      "name": "avian-medicine",
+      "category": "species",
+      "description": "Avian-specific medicine covering companion birds (psittacines, passerines) and poultry. Unique respiratory anatomy (air sacs), renal portal system, nucleated RBCs, uric acid renal markers, crop anatomy, psittacosis/chlamydia, PBFD, heavy metal toxicosis, and prey species behavior masking illness.",
+      "path": "skills/species/avian-medicine/SKILL.md"
+    },
+    {
+      "name": "breed-predisposition",
+      "category": "species",
+      "description": "Breed-specific disease predispositions and genetic risk factors for veterinary differential diagnosis. Use when breed information is available and may affect diagnostic priorities.",
+      "path": "skills/species/breed-predisposition/SKILL.md"
+    },
+    {
+      "name": "camelid-medicine",
+      "category": "species",
+      "description": "Specialized medicine for Dromedary, Bactrian, Llama, and Alpaca. Focuses on pseudoruminant physiology, ellipsoid hematology, and One Health nanobody research.",
+      "path": "skills/species/camelid-medicine/SKILL.md"
+    },
+    {
+      "name": "canine-medicine",
+      "category": "species",
+      "description": "Canine-specific clinical medicine covering breed predispositions, common disease presentations, normal physiologic parameters, and species-specific diagnostic and treatment approaches for dogs.",
+      "path": "skills/species/canine-medicine/SKILL.md"
+    },
+    {
+      "name": "equine-medicine",
+      "category": "species",
+      "description": "Equine-specific clinical medicine covering colic assessment and classification, laminitis grading, lameness evaluation, NSAID use (phenylbutazone, flunixin), pre-purchase examination, Cushing's/PPID, and equine metabolic syndrome. Hindgut fermenter physiology fundamentally differs from small animals.",
+      "path": "skills/species/equine-medicine/SKILL.md"
+    },
+    {
+      "name": "exotic-wildlife-medicine",
+      "category": "species",
+      "description": "Clinical guidance for exotic, avian, reptile, small mammal, and wildlife species where standard companion animal protocols do not apply. Use when the patient is not a dog, cat, or horse.",
+      "path": "skills/species/exotic-wildlife-medicine/SKILL.md"
+    },
+    {
+      "name": "feline-medicine",
+      "category": "species",
+      "description": "Feline-specific clinical medicine covering unique metabolic limitations (glucuronidation deficiency), stress-sensitive physiology, common feline diseases (CKD, hyperthyroidism, diabetes, FLUTD), and cat-specific handling.",
+      "path": "skills/species/feline-medicine/SKILL.md"
+    },
+    {
+      "name": "ruminant-medicine",
+      "category": "species",
+      "description": "Ruminant-specific medicine covering cattle, sheep, and goat clinical approaches. Four-compartment forestomach physiology, rumen pH/acidosis, displaced abomasum, metabolic diseases (ketosis, milk fever/hypocalcemia, grass tetany/hypomagnesemia), withdrawal times, Johne's disease, and herd health management.",
+      "path": "skills/species/ruminant-medicine/SKILL.md"
+    },
+    {
+      "name": "species-aware-reasoning",
+      "category": "species",
+      "description": "Enforce species-specific clinical reasoning across all veterinary queries. Prevents dangerous cross-species assumptions. Use as a meta-skill that modifies how other veterinary skills operate.",
+      "path": "skills/species/species-aware-reasoning/SKILL.md"
+    },
+    {
+      "name": "swine-medicine",
+      "category": "species",
+      "description": "Production-level swine medicine focusing on herd health, biosecurity protocols (ASF/PRRS/PED), production metrics, and individual pig clinical care.",
+      "path": "skills/species/swine-medicine/SKILL.md"
+    }
+  ]
+}

@@ -10,11 +10,11 @@ This is why veterinary AI is not a subset of human AI. A dose that saves a dog c
 | **Chocolate** | **Toxic** (dose-dependent) | Less sensitive | Safe | Toxic | Limited data |
 | **Lilies** | No renal toxicity | **LETHAL** (acute kidney failure) | Safe | Limited data | Limited data |
 | **Ivermectin** | MDR1 breeds: **neurotoxic** | Safe | Safe | Safe | Species-dependent |
-| **Meloxicam** | Safe (FDA-approved) | Monitor renal closely | Safe | Limited data | Limited data |
+| **Meloxicam** | Safe (FDA-approved) | **Caution — FDA black-box** (repeat dosing → fatal renal failure; single-dose US label) | Safe | Limited data | Limited data |
 | **Ethylene Glycol** | **LETHAL** (6.6 mL/kg) | **LETHAL** (1.5 mL/kg, 4x sensitive) | **LETHAL** | **LETHAL** | **LETHAL** |
 | **5-FU (Efudex)** | **LETHAL** (even topical licking) | **LETHAL** | Limited data | Unknown | Unknown |
 | **PTFE / Teflon fumes** | Safe | Safe | Safe | Sensitive | **LETHAL** (acute, minutes) |
-| **Onions / Garlic** | Toxic (Heinz body anemia) | **More sensitive** | Safe | Limited data | Potentially toxic |
+| **Onions / Garlic** | Toxic (Heinz body anemia) | **More sensitive** | **Toxic** (Heinz body anemia; horses are susceptible) | Limited data | Potentially toxic |
 | **Grapes / Raisins** | **LETHAL** (idiosyncratic AKI) | Potentially toxic | Safe | Avoid | Safe |
 | **THC / Marijuana** | **Toxic** (ataxia, coma possible) | Toxic | Limited data | Unknown | Unknown |
 | **Macadamia Nuts** | Toxic (self-limiting, 24-48h) | Limited data | No data | No data | No data |

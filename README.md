@@ -4,7 +4,7 @@
 
 # VetClaw
 
-**The first veterinary AI skill library for OpenClaw and compatible agent frameworks.**
+**An open veterinary AI skill library for OpenClaw and compatible agent frameworks.**
 
 [![Skills](https://img.shields.io/badge/skills-51-blue?style=flat-square)](/skills)
 [![Clinical](https://img.shields.io/badge/%F0%9F%A9%BA_clinical-17-brightgreen?style=flat-square)](/skills/clinical)
@@ -24,7 +24,7 @@
 
 ## Why VetClaw Exists
 
-There are 869+ medical AI skills for human medicine. There are zero for veterinary medicine.
+There are 869+ medical AI skills for human medicine (see OpenClaw-Medical-Skills). We're not aware of an equivalent open library for veterinary medicine — VetClaw exists to fill that gap.
 
 Veterinary AI is not a subset of human AI. Drug safety varies by species. A dose that saves a dog can kill a cat. Breed predispositions change differential diagnosis rankings. Evidence hierarchies differ (textbooks remain the gold standard; PubMed coverage is sparse for many species). Regulatory frameworks are distinct (FDA CVM, not FDA CDER).
 
@@ -38,7 +38,7 @@ Built by [OpenVet.ai](https://openvet.ai) -- the AI hospital for every animal on
 
 ## Important Medical & Legal Disclaimer
 
-VetClaw skills are AI reasoning templates only. They are **not** a substitute for professional veterinary diagnosis, treatment, or clinical decision-making. All outputs must be reviewed and approved by a licensed veterinarian. The authors and OpenVet.ai assume no liability for any clinical use. In oncology or experimental cases, always work under veterinary supervision and comply with local regulations. Always contact your veterinarian or a poison control center (ASPCA 888-426-4435 / Pet Poison Helpline 855-764-7661) in emergencies.
+VetClaw skills are AI reasoning templates only. They are **not** a substitute for professional veterinary diagnosis, treatment, or clinical decision-making. All outputs must be reviewed and approved by a licensed veterinarian. The authors and OpenVet.ai assume no liability for any clinical use. In oncology or experimental cases, always work under veterinary supervision and comply with local regulations. Always contact your veterinarian or a poison control center (ASPCA 888-426-4435 / Pet Poison Helpline 855-764-7661) in emergencies. Clinical values in these skills are periodically verified against primary literature and drug labels — see [`docs/clinical-review-2026.md`](/docs/clinical-review-2026.md) — and corrections are welcome via the clinical-correction issue template.
 
 ---
 
@@ -94,13 +94,25 @@ cp -R VetClaw/skills/* ~/.openclaw/workspace/skills/
 
 Start a new OpenClaw session so skill folders are picked up. If you already keep your workspace in git, merge only the folders you want.
 
+### Using VetClaw with Hermes or other agents
+
+OpenClaw auto-loads `skills/`, but a [Hermes](https://huggingface.co/NousResearch) agent (or any function-calling model) discovers capabilities through **tools**. VetClaw ships a Hermes function-calling integration — a skill-discovery pair (`list_vetclaw_skills` / `get_vetclaw_skill`) backed by [`index.json`](/index.json), plus the openFDA tools — so a Hermes agent can pull the relevant skill on demand, including when it runs in front of OpenClaw. See [`integrations/hermes/`](/integrations/hermes).
+
 ## Repository Layout
 
 ```
 VetClaw/
 ├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
+├── CONTRIBUTING.md · CODE_OF_CONDUCT.md · SECURITY.md · CHANGELOG.md · CITATION.cff · LICENSE
+├── index.json           # generated machine-readable manifest of all skills
+├── schema/              # JSON Schema for skill frontmatter
+├── scripts/             # validate_skills.py, generate_index.py (stdlib-only)
+├── sdk/                 # openFDA Animal & Veterinary API clients (Python + TypeScript)
+├── integrations/        # Hermes function-calling adapter + generated tool schemas
+├── demo/                # browser Species Safety Checker
+├── cases/               # documented reference cases (e.g. rosie-2026)
+├── assets/              # cross-species drug safety matrix, mascot
+├── .github/             # issue/PR templates + CI (skill validation, SDK tests)
 └── skills/
     ├── clinical/       # 17 skills: diagnosis, triage, guidelines, exams, specialty workups, personalized oncology
     ├── pharma/         # 8 skills: drug lookup, FDA Green Book, interactions, adverse events, withdrawal, compounding, mRNA design, neoantigen vaccine
@@ -120,11 +132,11 @@ VetClaw/
 
 **Public data, structured reasoning.** VetClaw skills reference publicly available databases and knowledge (FDA Green Book, OMIA, VBO, PubMed, openFDA). The value is in the structured veterinary reasoning patterns, not proprietary data.
 
-## Real-World Breakthrough: The Rosie mRNA Cancer Vaccine Story
+## Reported Case: The Rosie mRNA Cancer Vaccine Story
 
-In March 2026, Australian tech entrepreneur **Paul Conyngham** (17 years in machine learning) saved his rescue dog **Rosie** from aggressive mast cell cancer using AI.
+According to March 2026 press reports (Fortune, The Australian, and others), Australian tech entrepreneur **Paul Conyngham** used AI tools to help design a personalized mRNA cancer vaccine for his rescue dog **Rosie**, who had been diagnosed with aggressive mast cell cancer.
 
-Rosie was given months to live. Paul:
+As reported in press coverage, Paul:
 
 - Paid for professional tumor + normal DNA sequencing at UNSW
 - Used **ChatGPT** to brainstorm strategy and build analysis pipelines
@@ -132,15 +144,13 @@ Rosie was given months to live. Paul:
 - Used **Grok** (and Gemini) to refine the final vaccine construct
 - Collaborated with nanomedicine pioneer Prof. Thordarson at UNSW's RNA Institute
 
-Result: A fully personalized mRNA cancer vaccine manufactured in under 2 months. Dramatic tumor shrinkage (50-75%) and Rosie back to normal life. First-ever bespoke mRNA cancer vaccine for a dog.
+Press coverage described a personalized mRNA cancer vaccine manufactured in roughly two months, with reported tumor shrinkage and a return to normal activity. **These outcomes have not been peer-reviewed or independently verified**, and many clinical specifics remain unconfirmed — see [`cases/rosie-2026`](/cases/rosie-2026) for a careful account of what is and isn't publicly known.
 
-**This is exactly the future VetClaw was built for.**
+**VetClaw was not involved in the Rosie case.** We highlight it because it illustrates the kind of structured, species-aware workflow VetClaw is built to support: species-aware safety checks, evidence-hierarchy enforcement, toxicology and lethal-variance guardrails, and breed-predisposition/differential-diagnosis structuring. Combined with an agent runtime and general-purpose tools, VetClaw skills aim to make workflows for personalized oncology, neoantigen identification, and genomics-driven therapies more structured and safer to reason about.
 
-VetClaw skills provide the veterinary-specific reasoning patterns that generic LLMs lack: species-aware safety checks, evidence hierarchy enforcement, toxicology and lethal-variance guardrails, breed predisposition and differential diagnosis structuring. Combined with OpenClaw agents and tools like ChatGPT, AlphaFold, or Grok, users can now run safe, structured workflows for personalized oncology, neoantigen identification, mRNA vaccine blueprinting, and genomics-driven therapies. The Rosie case reported the pipeline works in a real clinical setting—a breakthrough for veterinary personalized medicine.
+OpenVet.ai aims to take this further, orchestrating these skills into multi-agent clinical rooms with transparent citations and specialist oversight.
 
-OpenVet.ai's full platform takes this further, orchestrating these skills into multi-agent clinical rooms with transparent citations and specialist oversight.
-
-We are actively expanding the **Deep Science** category with oncology and personalized-medicine skills so every veterinarian can access this level of breakthrough safely.
+We are actively expanding the **Deep Science** category with oncology and personalized-medicine skills.
 
 ## Skill Format
 
@@ -163,6 +173,20 @@ description: One-line description used for agent skill matching.
 ## Limitations     -- what this skill cannot do
 ```
 
+## Validation & Machine-Readable Index
+
+Every skill's frontmatter and structure is checked in CI:
+
+```
+python3 scripts/validate_skills.py        # lint all SKILL.md files
+python3 scripts/generate_index.py         # (re)build index.json
+python3 scripts/generate_index.py --check # verify index.json is current (CI)
+```
+
+- **[`index.json`](/index.json)** is a generated manifest of all skills (name, category, description, path) that an agent runtime or installer can consume directly — no tree-walking or README parsing required.
+- **[`schema/skill.schema.json`](/schema/skill.schema.json)** defines the frontmatter contract: required `name`/`description`, plus optional provenance fields (`version`, `last_reviewed`, `reviewer`, `evidence_tier`, `species`, `sources`).
+- The validator accepts workflow-equivalent section headings, so existing skills pass while new contributions are held to the format.
+
 ## SDK: Reference Clients for Veterinary Data
 
 VetClaw includes lightweight reference clients for the data sources referenced by skills. These are starter implementations for integrating real veterinary data into your workflows — not full production SDKs. Contributions to expand coverage and add tests are welcome.
@@ -182,7 +206,7 @@ See [`sdk/`](/sdk) for full documentation, TypeScript client, and API reference.
 
 VetClaw skills are reasoning templates today. Here is where we are headed:
 
-**Now (v0.1 — Skill Library):** 51 structured skills covering clinical workflows, drug safety, species medicine, and personalized oncology. The neoantigen vaccine design skill includes a complete practical guide: decision trees, lab directories, bioinformatics commands, and synthesis partner options. This is the most comprehensive open-source resource for veterinary personalized oncology that exists.
+**Now (v0.1 — Skill Library):** 51 structured skills covering clinical workflows, drug safety, species medicine, and personalized oncology. The neoantigen vaccine design skill includes a complete practical guide: decision trees, lab directories, bioinformatics commands, and synthesis partner options. It is one of the more detailed open resources for veterinary personalized oncology that we're aware of.
 
 **Next (v0.2 — Computational Analysis Tool):** A web interface where veterinary oncologists upload sequencing data (VCF files) and receive ranked neoantigen candidate lists. Built on open-source tools (pVACtools, NetMHCpan, OpenVax pipeline) adapted for canine DLA and feline FLA typing.
 
@@ -213,4 +237,4 @@ We welcome contributions from veterinary professionals, researchers, and develop
 
 ## Credits
 
-Skills developed by the OpenVet.ai team. Veterinary domain expertise provided by board-certified veterinary specialists.
+Skills developed by the OpenVet.ai team, drawing on standard veterinary references (Plumb's, Ettinger's, Nelson & Couto, and current consensus guidelines). Corrections and review from practicing veterinarians and board-certified specialists are welcomed — see [CONTRIBUTING.md](/CONTRIBUTING.md).

@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CLINICAL EMERGENCY OR SUSPECTED POISONING — DO NOT OPEN AN ISSUE
+    url: https://www.aspca.org/pet-care/animal-poison-control
+    about: >-
+      If an animal is sick, injured, collapsing, or may have ingested something
+      toxic, contact a licensed veterinarian immediately. In the US, call the
+      ASPCA Animal Poison Control Center at (888) 426-4435 or the Pet Poison
+      Helpline at (855) 764-7661. GitHub issues are NOT monitored and must NEVER
+      be used for emergencies or for any patient-specific medical advice.
+  - name: OpenVet.ai — general questions and contact
+    url: https://openvet.ai
+    about: >-
+      For general questions about VetClaw or OpenVet.ai that are not covered by
+      the issue templates, visit our website.

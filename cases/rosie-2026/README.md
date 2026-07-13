@@ -70,7 +70,7 @@ This case was reported in multiple outlets including Fortune, The Australian, ND
 
 Until a peer-reviewed publication is available, cite as:
 
-> Conyngham P, Thordarson P, et al. Personalized mRNA neoantigen vaccine for canine mast cell cancer (Rosie case). UNSW RNA Institute / University of Queensland, 2025-2026. Reported in press, March 2026. Not yet peer-reviewed.
+> Conyngham P, Thordarson P, et al. Personalized mRNA neoantigen vaccine for canine mast cell cancer (Rosie case). UNSW RNA Institute, 2025-2026. Reported in press, March 2026. Not yet peer-reviewed.
 
 ## Disclaimer
 

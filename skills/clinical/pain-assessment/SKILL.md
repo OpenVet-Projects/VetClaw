@@ -63,17 +63,18 @@ Validated, species-specific pain assessment tools with interpretation guidance. 
 
 ### Tier 2: Oral/Injectable Analgesics (Acute)
 **NSAIDs** (first-line for inflammatory pain):
-- **Dogs**: Meloxicam 0.1-0.2 mg/kg daily; carprofen 2-4 mg/kg BID; deracoxib 1-2 mg/kg daily; firocoxib 5 mg/kg daily
-- **Cats**: Meloxicam 0.1 mg/kg daily (controversial—use lowest effective dose; monitor renal function); consider carprofen alternative
+- **Dogs**: Meloxicam 0.1-0.2 mg/kg daily; carprofen 4.4 mg/kg/day (2.2 mg/kg BID or 4.4 mg/kg SID — do not exceed); deracoxib 1-2 mg/kg daily; firocoxib 5 mg/kg daily (canine dose)
+- **Cats**: Meloxicam — ⚠️ **FDA black-box warning**; US label is a single one-time 0.3 mg/kg SC dose. If chronic use is justified, ~0.05 mg/kg once daily (lowest effective) with mandatory renal monitoring (see `safety/nsaid-safety`). Do not give repeated 0.1 mg/kg daily as routine.
 - **Dosing caveat**: NSAIDs contraindicated in dehydration, renal disease, hepatic disease, GI ulceration; monitor PCV/TP, creatinine, BUN
 
 **Opioids** (acute severe pain):
-- **Dogs/Cats (acute)**: Morphine 0.5-1 mg/kg IM/SC q4-6h; hydromorphone 0.05-0.1 mg/kg IM/SC q4-6h; buprenorphine 0.01-0.02 mg/kg IM/IV q6-12h
+- **Dogs (acute)**: Morphine 0.5-1 mg/kg IM/SC q4-6h; hydromorphone 0.05-0.1 mg/kg IM/SC q4-6h; buprenorphine 0.01-0.02 mg/kg IM/IV q6-12h
+- **Cats (acute)**: use **lower** opioid doses — morphine 0.1-0.3 mg/kg IM/SC (higher doses risk excitation/hyperthermia); hydromorphone 0.05-0.1 mg/kg; buprenorphine 0.01-0.02 mg/kg (transmucosal effective)
 - **Dogs (chronic)**: Tramadol 5-10 mg/kg TID-QID; lower efficacy than traditional opioids; less abuse potential
 - **Cats (chronic)**: Buprenorphine preferred (longer duration, less hyperthermia risk); 0.01-0.02 mg/kg q6-12h (transmucosal absorption)
 
 ### Tier 3: Adjuvant Agents
-- **Gabapentin** (neuropathic/chronic pain): Dogs 10-20 mg/kg TID; Cats 100-200 mg TID; slower onset (days-weeks) but excellent for chronic neuropathic pain
+- **Gabapentin** (neuropathic/chronic pain): Dogs 10-20 mg/kg TID; Cats ~10 mg/kg (start 5-10, up to ~20; ≈50-100 mg/cat) BID-TID — 100-200 mg is high for a typical 4-5 kg cat, so start low; slower onset (days-weeks) but excellent for chronic neuropathic pain
 - **Amantadine** (NMDA antagonist): 3-5 mg/kg daily-BID; useful for chronic pain and opioid tolerance
 - **Alpha-2 agonists** (acute): Dexmedetomidine 5-10 mcg/kg IM/IV (profound sedation; reversal with atipamezole); not recommended for prolonged pain management
 - **Corticosteroids** (inflammatory pain, limited duration): Prednisolone 0.5-1 mg/kg initial; taper after acute phase to avoid complications

@@ -25,7 +25,7 @@ Feline-specific clinical medicine addressing the unique metabolic vulnerabilitie
 | Temperature | 100.5-102.5°F (38.0-39.2°C) |
 | Heart rate | 110-140 bpm (resting, stress-dependent) |
 | Respiratory rate | 20-30 bpm |
-| Systolic BP | 90-110 mmHg (direct measurement preferred; oscillometric inflates values) |
+| Systolic BP | ~120-140 mmHg awake; IRIS hypertension >160 mmHg (Doppler preferred; allow for situational "white-coat" elevation) |
 | Blood glucose (calm) | 70-100 mg/dL |
 | Blood glucose (stress) | 100-300+ mg/dL (common) |
 | PCV | 30-45% |
@@ -56,7 +56,7 @@ Cats are **deficient in hepatic UDP-glucuronosyltransferase (UDP-GT)** activity.
 
 **Hyperthyroidism:** Often presents as weight loss + tachycardia + elevated T4.
 - **Diagnosis:** Total T4 (beware euthyroid sick syndrome in concurrent disease; may require free T4 or suppression test).
-- **Treatment:** Antithyroid drugs (propylthiouracil, methimazole), radioactive iodine (gold standard), dietary iodine restriction, or thyroidectomy.
+- **Treatment:** Antithyroid drugs — **methimazole** (or carbimazole); propylthiouracil is **not** used in cats (causes immune-mediated hemolytic anemia/thrombocytopenia). Also radioactive iodine (I-131; curative gold standard), dietary iodine restriction, or thyroidectomy.
 
 **Diabetes Mellitus:** Often reversible with low-carbohydrate diet alone.
 - **Remission rates:** >60% with low-carb diet initiation; 30% with insulin therapy alone.

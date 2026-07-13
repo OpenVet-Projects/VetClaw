@@ -76,7 +76,7 @@ Avian-specific medicine addressing companion birds (psittacines, passerines) and
 
 **Diagnosis:** Chlamydia antigen ELISA (rapid, most practical), PCR (sensitive, confirmatory), culture (requires specialized labs).
 
-**Management:** Doxycycline (45-50 mg/kg daily, oral or injectable) for 45+ days. Requires client counseling on zoonotic risk, hygiene, and need for post-treatment testing. Quarantine of infected birds recommended.
+**Management:** Doxycycline for 45 days total, with dose depending on formulation: **oral** ~25-50 mg/kg once daily (species-dependent), or **long-acting injectable** doxycycline (e.g. Vibravenos) ~75-100 mg/kg IM every 5-7 days — do **not** give the injectable "daily." Requires client counseling on zoonotic risk, hygiene, and post-treatment testing. Quarantine infected birds.
 
 ## PBFD (Psittacine Beak and Feather Disease)
 

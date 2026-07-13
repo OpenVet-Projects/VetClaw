@@ -20,13 +20,13 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 | Drug | Species | Dose | Route | Frequency | COX Selectivity | Comments |
 |---|---|---|---|---|---|---|
 | **Meloxicam** | Dog | 0.1-0.2 mg/kg | PO/IV/SC | Daily | COX-2 preferential | Longer half-life (12-18h); IV/SC option; first-line many practices |
-| | Cat | 0.1 mg/kg | PO/SC/IV | Daily | COX-2 preferential | **CONTROVERSIAL dosing**: 0.3-0.5 mg/kg q48h alternative; GI risk lower than dogs at low dose; renal monitoring mandatory |
+| | Cat | 0.05 mg/kg/day (chronic, lowest effective) | PO/SC | See warning | COX-2 preferential | ⚠️ **FDA BLACK-BOX WARNING**: repeated dosing causes fatal acute renal failure in cats. US label = **single one-time** 0.3 mg/kg SC only. Chronic use (EU label / off-label US) = **0.05 mg/kg once daily** max with mandatory renal monitoring. Avoid the 0.3–0.5 mg/kg q48h regimen — not an established safe protocol |
 | | Rabbit | 0.6-1 mg/kg | PO/SC | BID | COX-2 preferential | Limited data; anecdotal use; monitor renal/GI closely |
-| **Carprofen** | Dog | 2-4 mg/kg | PO/IV | BID-TID | COX-2 preferential (mild) | Rapid GI absorption; shorter half-life (8 hours); hepatotoxicity rare but reported |
+| **Carprofen** | Dog | 4.4 mg/kg/day (2.2 mg/kg BID **or** 4.4 mg/kg SID) | PO/IV | BID or SID | COX-2 preferential (mild) | **Do not exceed 4.4 mg/kg/day; not dosed TID.** Shorter half-life (~8h); idiosyncratic hepatotoxicity reported (classically Labradors) |
 | | Cat | 1-2 mg/kg | PO/IV | BID | COX-2 preferential (mild) | Limited feline data; less commonly used in cats; GI ulceration risk higher than meloxicam |
 | **Deracoxib** | Dog | 1-2 mg/kg | PO | Daily | COX-2 selective | Food-dependent absorption (give with food); 5-7 day max acute, 30 days chronic (FDA restriction) |
-| **Firocoxib** | Dog | 5 mg/kg | PO | Daily | COX-2 highly selective | Equine label (5 mg/kg); less GI ulceration than carprofen; excellent for orthopedic pain; expensive |
-| | Horse | 0.1 mg/kg IV/5 mg/kg PO | PO/IV | Daily | COX-2 highly selective | Superior to phenylbutazone in some studies; longer plasma half-life |
+| **Firocoxib** | Dog | 5 mg/kg | PO | Daily | COX-2 highly selective | Canine (Previcox) dose. ⚠️ The **equine** dose is far lower (0.1 mg/kg) — never cross-apply; less GI ulceration than carprofen; expensive |
+| | Horse | **0.1 mg/kg PO** (Equioxx); ~0.09 mg/kg IV | PO/IV | Daily | COX-2 highly selective | Equine label is **0.1 mg/kg** — 5 mg/kg would be a ~50× overdose (oral/GI ulceration, renal papillary necrosis); longer plasma half-life |
 | **Robenacoxib** | Dog/Cat | 1-2 mg/kg | SC/IV | Daily × 4-10 days | COX-2 selective | Short-term use primarily; less renal effects at short durations; expensive; limited US availability |
 
 ## COX-1 vs. COX-2 Selectivity
@@ -86,15 +86,15 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 ## Species-Specific Dosing and Considerations
 
 ### Dogs
-- **Standard dose**: Meloxicam 0.1-0.2 mg/kg daily; carprofen 2-4 mg/kg BID
+- **Standard dose**: Meloxicam 0.1-0.2 mg/kg daily; carprofen 4.4 mg/kg/day (2.2 mg/kg BID or 4.4 mg/kg SID — do not exceed)
 - **Geriatric/renal disease**: Reduce to minimum effective dose; meloxicam 0.1 mg/kg daily preferred (less renal impact)
 - **Post-operative**: Start pre-operatively (pre-emptive analgesia); continue 5-7 days minimum
 - **Chronic orthopedic disease**: Long-term meloxicam acceptable with monitoring; consider adjuvant agents (gabapentin, joint supplements) to minimize NSAID requirements
 
 ### Cats
-- **Meloxicam controversy**: AAHA (2017) recommends 0.1 mg/kg daily (same as dogs); some practitioners prefer 0.3-0.5 mg/kg q48h
-  - **Rationale**: Feline renal physiology; lower baseline GI risk; extrarenal NSAID metabolism; palatability of sustained dosing
-  - **Conservative approach**: 0.1 mg/kg daily with renal monitoring remains safest evidence-based recommendation
+- **Meloxicam — FDA black-box warning**: Repeated dosing in cats is associated with acute renal failure and death. In the US, meloxicam is approved only as a **single, one-time** SC dose (0.3 mg/kg) for surgical pain; any repeated dosing is off-label and carries the black-box warning.
+  - **Chronic use (where justified, e.g. EU label for musculoskeletal pain)**: dose at the **lowest effective dose, ~0.05 mg/kg once daily**, with **mandatory** renal monitoring (USG, BUN, creatinine, SDMA).
+  - **Avoid**: the 0.3–0.5 mg/kg q48h regimen — it is not an established safe protocol and is a documented mechanism of feline NSAID toxicity.
 - **GI risk**: Cats more sensitive to severe GI ulceration than dogs despite lower overall baseline
 - **Renal monitoring**: Mandatory (USG, BUN, creatinine baseline and q2-4 weeks)
 - **Chronic use**: Short-term (acute pain, <2 weeks) preferred; long-term requires strong indication and close monitoring
@@ -106,7 +106,7 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 - **Monitoring**: Renal monitoring less standardized; assess appetite, fecal output, hydration
 
 ### Horses
-- **Firocoxib**: 5 mg/kg daily PO (approved label); superior to phenylbutazone (PBZ, older standard) in some pain models
+- **Firocoxib**: **0.1 mg/kg** daily PO (Equioxx, approved equine label); superior to phenylbutazone (PBZ, older standard) in some pain models. (Note: the canine Previcox dose is 5 mg/kg — do not confuse the two; 5 mg/kg in a horse is a ~50× overdose.)
 - **Phenylbutazone**: Traditional (4.4 mg/kg daily max); longer-term GI ulceration risk; now second-line
 - **Monitoring**: Renal dysfunction less common in horses; GI ulceration still risk
 - **Maximum duration**: 30 days typically recommended (extended use controversial)

@@ -31,7 +31,7 @@ Identify drugs and substances where the safety profile varies so dramatically ac
 
 ### Ivermectin (at elevated doses)
 - **Most dogs:** Safe at standard heartworm prevention doses (6-12 mcg/kg)
-- **MDR1-mutant breeds (Collies, Australian Shepherds, Shelties, and crosses):** NEUROTOXIC at doses above ~120 mcg/kg. Microfilaricide (50 mcg/kg) and mange treatment doses (200-400 mcg/kg) can be lethal.
+- **MDR1-mutant breeds (Collies, Australian Shepherds, Shelties, and crosses):** Homozygous-affected (mutant/mutant) dogs are neurotoxically sensitive across a *range* of doses — do not rely on a single "safe threshold." Heartworm *prevention* doses (6-12 mcg/kg) are generally tolerated even by mutants, but higher doses — microfilaricidal (~50 mcg/kg) and especially mange/demodicosis doses (300-600 mcg/kg) — can cause severe neurotoxicity or death in affected dogs.
 - **Action:** If a herding breed or cross, flag MDR1 risk and recommend genetic testing before elevated ivermectin doses.
 
 ### 5-Fluorouracil (5-FU)
@@ -41,7 +41,7 @@ Identify drugs and substances where the safety profile varies so dramatically ac
 
 ### Xylazine
 - **Horses:** Standard sedation at 0.5-1.0 mg/kg IV
-- **Dogs:** 1-2 mg/kg IV (much more sensitive; same mg/kg causes profound sedation)
+- **Dogs:** 1-2 mg/kg IV/IM (profound sedation; pronounced emetic effect; often reduced or combined with an opioid)
 - **Cats:** 1-2 mg/kg IM (emetic use at lower doses; sedation at higher)
 - **Cattle:** Most sensitive, ~0.05-0.1 mg/kg IV
 - **Action:** Verify species before any xylazine dosing. Dose ranges differ by 10-20x across species.
