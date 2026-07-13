@@ -25,7 +25,7 @@ drugs = client.top_drugs("Cat")
 # Paginate through all results
 for page in client.paginate(species="Dog", reaction="Seizure", page_size=100):
     for event in page:
-        print(event["safetyreportid"], event.get("drug", []))
+        print(event["unique_aer_id_number"], event.get("drug", []))
 ```
 
 **Requirements:** `pip install requests`
@@ -49,7 +49,7 @@ const drugs = await client.topDrugs("Cat");
 // Paginate through all results
 for await (const page of client.paginate({ species: "Dog", reaction: "Seizure" })) {
   for (const event of page) {
-    console.log(event.safetyreportid, event.drug);
+    console.log(event.unique_aer_id_number, event.drug);
   }
 }
 ```

@@ -371,7 +371,9 @@ function checkSafety() {
   if (!substance || !DB[substance] || !DB[substance][species]) {
     resultDiv.style.display = "block";
     resultDiv.className = "result unknown";
-    resultDiv.innerHTML = `<div class="result-icon">&#10067;</div><div class="result-title">Substance Not Found</div><div class="result-body">"${document.getElementById("substance").value}" is not in our database yet. <strong>Contact your veterinarian or poison control for guidance.</strong></div><div class="emergency">ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> ($95 fee) | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a> ($85 fee)</div>`;
+    resultDiv.innerHTML = '<div class="result-icon">&#10067;</div><div class="result-title">Substance Not Found</div><div class="result-body"><span class="query-echo"></span> is not in our database yet. <strong>Contact your veterinarian or poison control for guidance.</strong></div><div class="emergency">ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> ($95 fee) | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a> ($85 fee)</div>';
+    // Insert the user's raw input as text, never HTML, to prevent reflected XSS.
+    resultDiv.querySelector(".query-echo").textContent = `"${document.getElementById("substance").value}"`;
     return;
   }
 

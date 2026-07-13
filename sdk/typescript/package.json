@@ -1,0 +1,30 @@
+{
+  "name": "openfda-vet",
+  "version": "0.1.0",
+  "description": "TypeScript client for the openFDA Animal & Veterinary Adverse Events API.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/openfda-vet.js",
+  "types": "dist/openfda-vet.d.ts",
+  "files": [
+    "dist",
+    "openfda-vet.ts"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "openfda",
+    "veterinary",
+    "fda",
+    "adverse-events",
+    "animal-health"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

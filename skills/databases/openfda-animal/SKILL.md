@@ -59,9 +59,9 @@ https://api.fda.gov/animalandveterinary/event.json?search=FIELD:VALUE&limit=10&s
 
 **Field Query Examples:**
 ```
-drug.name:"amoxicillin" AND animal.species:"canine"
+drug.name:"amoxicillin" AND animal.species:"DOG"
 reaction.veddra_term_name:"hepatotoxicity"
-date_received:[20200101 TO 20241231]
+original_receive_date:[20200101 TO 20241231]
 outcome:"Fatal"
 ```
 
@@ -75,8 +75,8 @@ outcome:"Fatal"
 - `drug.frequency` - Dosing frequency
 
 **Animal Fields:**
-- `animal.species` - Species affected (canine, feline, equine, bovine, avian, etc.)
-- `animal.breed` - Breed (searchable for canine predisposition studies)
+- `animal.species` - Species affected (DOG, CAT, HORSE, CATTLE, BIRD, etc. — English names, matching the openFDA data and the SDK)
+- `animal.breed` - Breed (searchable for breed predisposition studies)
 - `animal.age_value` - Numerical age
 - `animal.age_unit` - Unit (year, month, week, day)
 - `animal.sex` - Male, female, unknown
@@ -88,8 +88,9 @@ outcome:"Fatal"
 - `reaction.severity` - Severity classification
 
 **Report Fields:**
-- `date_received` - Date FDA received report (ISO 8601 format: YYYYMMDD)
-- `report_id` - Unique FDA adverse event ID
+- `original_receive_date` - Date FDA received report (query format: YYYYMMDD)
+- `unique_aer_id_number` - Unique FDA adverse event report ID (primary identifier)
+- `report_id` - FDA report identifier
 - `serious` - Boolean (whether report indicates serious adverse outcome)
 
 ## Common Veterinary VEDDRA Terms
@@ -150,7 +151,7 @@ const reactions = await client.topReactions("Cat", "Methimazole");
 
 // Paginate through results
 for await (const page of client.paginate({ species: "Dog", drug: "Ivermectin" })) {
-  for (const event of page) console.log(event.safetyreportid);
+  for (const event of page) console.log(event.unique_aer_id_number);
 }
 ```
 
@@ -167,13 +168,13 @@ Limit: 100
 
 **Query 2: Acetaminophen in Cats (Lethal Combination)**
 ```
-drug.name:"acetaminophen" AND animal.species:"feline"
+drug.name:"acetaminophen" AND animal.species:"CAT"
 Expected outcome: High rate of hepatotoxicity, death (acetaminophen is lethal to cats)
 ```
 
 **Query 3: Drug Withdrawal Time Safety**
 ```
-Drug: penicillin, Animal: bovine, Outcome: Recovery with residue concerns
+Drug: penicillin, Animal: CATTLE, Outcome: Recovery with residue concerns
 Verify no unusual severe outcomes reported; extract timeline to recovery
 ```
 
@@ -181,15 +182,15 @@ Verify no unusual severe outcomes reported; extract timeline to recovery
 ```
 reaction.veddra_term_name:"seizure"
   AND (drug.name:"phenobarbital" OR drug.name:"levetiracetam")
-  AND animal.species:"canine"
+  AND animal.species:"DOG"
 Group by breed to identify predispositions
 ```
 
 **Query 5: Time-Based Safety Trend**
 ```
 drug.name:"enalapril"
-  AND animal.species:"feline"
-  AND date_received:[20150101 TO 20241231]
+  AND animal.species:"CAT"
+  AND original_receive_date:[20150101 TO 20241231]
 Count by year to track safety signal emergence over time
 ```
 
@@ -198,10 +199,11 @@ Count by year to track safety signal emergence over time
 **Adverse Event Record Example:**
 ```json
 {
+  "unique_aer_id_number": "USA-USFDACVM-2024-US-123456",
   "report_id": "123456789",
-  "date_received": "2024-03-15",
+  "original_receive_date": "2024-03-15",
   "animal": {
-    "species": "canine",
+    "species": "DOG",
     "breed": "Labrador Retriever",
     "age_value": 5,
     "age_unit": "year",

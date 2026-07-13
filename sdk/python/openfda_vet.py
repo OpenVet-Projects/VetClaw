@@ -39,20 +39,21 @@ Usage:
     # Paginate through results
     for page in client.paginate(species="Dog", drug="NSAID", page_size=100):
         for event in page:
-            print(event["safetyreportid"])
+            print(event["unique_aer_id_number"])
 
 API Reference: https://open.fda.gov/apis/animalandveterinary/event/
 Get API Key:   https://open.fda.gov/apis/authentication/
 """
 
+from __future__ import annotations
+
 import time
 from typing import Any, Generator, Optional
-from urllib.parse import quote
 
 try:
     import requests
-except ImportError:
-    raise ImportError("Install requests: pip install requests")
+except ImportError:  # imported lazily so tests can inject a fake session without it
+    requests = None  # type: ignore[assignment]
 
 
 class OpenFDAVetError(Exception):
@@ -77,7 +78,7 @@ class OpenFDAVet:
     MAX_SKIP = 25_000
     MAX_LIMIT = 1_000
 
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, session: Optional[Any] = None):
         """
         Initialize the client.
 
@@ -85,10 +86,18 @@ class OpenFDAVet:
             api_key: openFDA API key (free from https://open.fda.gov/apis/authentication/).
                      Without a key, rate limit is 1,000 requests/day.
                      With a key, rate limit is 120,000 requests/day.
+            session: Optional pre-built HTTP session (anything with a ``.get()``
+                     matching requests.Session). Mainly for testing/dependency
+                     injection; if omitted, a ``requests.Session`` is created.
         """
         self.api_key = api_key
-        self.session = requests.Session()
-        self.session.headers.update({"Accept": "application/json"})
+        if session is not None:
+            self.session = session
+        else:
+            if requests is None:
+                raise ImportError("Install requests: pip install requests")
+            self.session = requests.Session()
+            self.session.headers.update({"Accept": "application/json"})
 
     def _build_search_query(
         self,
@@ -126,10 +135,16 @@ class OpenFDAVet:
                 f"original_receive_date:[20040101 TO {date_to.replace('-', '')}]"
             )
 
-        return "+AND+".join(parts) if parts else None
+        # Join with a spaced " AND ". The HTTP layer (requests) percent-encodes
+        # the space to "+", producing the correct "...+AND+..." on the wire.
+        # A literal "+AND+" here would be double-encoded to "%2BAND%2B" and break
+        # any multi-filter query.
+        return " AND ".join(parts) if parts else None
 
     def _request(self, params: dict[str, Any]) -> dict[str, Any]:
         """Make a request to the openFDA API with error handling."""
+        # Copy so we never mutate the caller's dict (e.g. injecting api_key).
+        params = dict(params)
         if self.api_key:
             params["api_key"] = self.api_key
 
@@ -223,6 +238,7 @@ class OpenFDAVet:
         date_from: Optional[str] = None,
         date_to: Optional[str] = None,
         raw_query: Optional[str] = None,
+        exact: bool = True,
     ) -> list[dict[str, Any]]:
         """
         Count adverse events grouped by a field.
@@ -235,6 +251,10 @@ class OpenFDAVet:
             species: Filter by species
             drug: Filter by drug name
             reaction: Filter by reaction
+            exact: Count whole field phrases (append ".exact"). openFDA tokenizes
+                   text fields for counting unless the ".exact" variant is used, so
+                   without this you get counts of word fragments, not full terms.
+                   Set False to count the tokenized/base field instead.
             (other search params also accepted)
 
         Returns:
@@ -243,7 +263,13 @@ class OpenFDAVet:
         Example:
             >>> client.count("reaction.veddra_term_name", species="Cat", drug="Ivermectin")
         """
-        params: dict[str, Any] = {"count": field}
+        # NOTE: ".exact" field paths should be validated against the live openFDA
+        # animal/vet schema:
+        # https://open.fda.gov/apis/animalandveterinary/event/searchable-fields/
+        count_field = field
+        if exact and not field.endswith(".exact"):
+            count_field = f"{field}.exact"
+        params: dict[str, Any] = {"count": count_field}
 
         query = self._build_search_query(
             species=species, breed=breed, drug=drug,
@@ -286,7 +312,7 @@ class OpenFDAVet:
         Example:
             >>> for page in client.paginate(species="Dog", drug="NSAID", page_size=100):
             ...     for event in page:
-            ...         print(event["safetyreportid"])
+            ...         print(event["unique_aer_id_number"])
         """
         skip = 0
         fetched = 0

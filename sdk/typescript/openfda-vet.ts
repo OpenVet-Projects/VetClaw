@@ -20,8 +20,8 @@
 // --- Types ---
 
 export interface AdverseEvent {
-  safetyreportid: string;
-  transmissiondate?: string;
+  unique_aer_id_number: string;
+  report_id?: string;
   original_receive_date?: string;
   animal?: {
     species?: string;
@@ -136,7 +136,10 @@ export class OpenFDAVet {
       parts.push(`original_receive_date:[20040101 TO ${to}]`);
     }
 
-    return parts.length > 0 ? parts.join("+AND+") : undefined;
+    // Join with a spaced " AND ". URLSearchParams percent-encodes the space to
+    // "+", producing the correct "...+AND+..." on the wire. A literal "+AND+"
+    // here would be double-encoded to "%2BAND%2B" and break multi-filter queries.
+    return parts.length > 0 ? parts.join(" AND ") : undefined;
   }
 
   private async request(
@@ -212,17 +215,27 @@ export class OpenFDAVet {
    *
    * @param field - Field to count by (e.g., "animal.species", "drug.name",
    *                "reaction.veddra_term_name", "animal.breed.breed_component")
+   * @param params - Optional search filters plus `exact` (default true). openFDA
+   *                tokenizes text fields for counting unless the ".exact" variant
+   *                is used, so without it you get counts of word fragments rather
+   *                than whole terms. Pass `{ exact: false }` to count the base field.
    *
    * @example
    * const counts = await client.count("reaction.veddra_term_name", { species: "Cat" });
    */
   async count(
     field: string,
-    params: Omit<SearchParams, "limit" | "skip" | "sort"> = {}
+    params: Omit<SearchParams, "limit" | "skip" | "sort"> & { exact?: boolean } = {}
   ): Promise<CountResult[]> {
-    const queryParams: Record<string, string> = { count: field };
+    const { exact = true, ...searchParams } = params;
+    // NOTE: ".exact" field paths should be validated against the live openFDA
+    // animal/vet schema:
+    // https://open.fda.gov/apis/animalandveterinary/event/searchable-fields/
+    const countField =
+      exact && !field.endsWith(".exact") ? `${field}.exact` : field;
+    const queryParams: Record<string, string> = { count: countField };
 
-    const query = this.buildSearchQuery(params);
+    const query = this.buildSearchQuery(searchParams);
     if (query) queryParams.search = query;
 
     const data = await this.request(queryParams);
@@ -232,16 +245,25 @@ export class OpenFDAVet {
   /**
    * Paginate through results. Yields pages up to maxResults or API limit (25,000).
    *
+   * @param params - Search filters plus `pageSize`, `maxResults`, and `delayMs`
+   *                (milliseconds to wait between page requests to respect rate
+   *                limits; default 300, set 0 to disable).
+   *
    * @example
    * for await (const page of client.paginate({ species: "Dog", drug: "NSAID" })) {
-   *   for (const event of page) console.log(event.safetyreportid);
+   *   for (const event of page) console.log(event.unique_aer_id_number);
    * }
    */
   async *paginate(
-    params: SearchParams & { pageSize?: number; maxResults?: number } = {}
+    params: SearchParams & {
+      pageSize?: number;
+      maxResults?: number;
+      delayMs?: number;
+    } = {}
   ): AsyncGenerator<AdverseEvent[]> {
     const pageSize = Math.min(params.pageSize ?? 100, OpenFDAVet.MAX_LIMIT);
     const maxResults = params.maxResults ?? OpenFDAVet.MAX_SKIP;
+    const delayMs = params.delayMs ?? 300;
     let skip = 0;
     let fetched = 0;
 
@@ -260,6 +282,11 @@ export class OpenFDAVet {
 
       const total = data.meta.results.total;
       if (fetched >= total) break;
+
+      // Throttle between pages to respect the API rate limit.
+      if (delayMs > 0) {
+        await new Promise<void>((resolve) => setTimeout(resolve, delayMs));
+      }
     }
   }
 
