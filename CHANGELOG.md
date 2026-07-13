@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hermes function-calling integration (`integrations/hermes/`): skill-discovery
   tools plus openFDA tools so a Hermes (or any function-calling) agent can use
   VetClaw, including when it runs in front of OpenClaw.
+- `docs/clinical-review-2026.md`: an independent, literature-sourced verification
+  of the clinical-accuracy corrections (PubMed citations and FDA/EMA labels).
 
 ### Fixed
 

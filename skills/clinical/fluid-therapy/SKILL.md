@@ -67,9 +67,11 @@ Systematic fluid assessment, calculation methodology, and species-specific resus
 
 ## Maintenance Calculation (Non-Dehydrated Patient)
 
-**Formula (dogs/cats)**: ~50 mL/kg/day (typical range 40-60 mL/kg/day), or the linear estimate **(30 × BW_kg) + 70 = mL/day**. Larger patients trend toward the lower mL/kg end (metabolic scaling); small patients toward the higher end.
-- 10 kg dog: ~500 mL/day (~20 mL/hr)
-- 30 kg dog: ~970-1000 mL/day (~40 mL/hr)
+**Formula (dogs/cats)** — two common methods that diverge for small patients, so pick one and titrate:
+- **Per-kg**: ~50 mL/kg/day (range 40-60). 10 kg → ~500 mL/day (~20 mL/hr); 30 kg → ~1,500 mL/day.
+- **Allometric (Merck standard, ~2-70 kg)**: **(30 × BW_kg) + 70 = mL/day**, which scales down as weight rises. 10 kg → 370 mL/day (~15 mL/hr); 30 kg → ~970 mL/day (~40 mL/hr).
+
+The per-kg method overestimates for large dogs; the allometric method is generally preferred as body weight increases. Titrate to hydration, urine output, and ins/outs rather than the formula alone.
 
 **Alternative formula** (simpler): 1-2 mL/kg/hour maintenance
 - 10 kg dog: 10-20 mL/hr
@@ -110,21 +112,24 @@ Systematic fluid assessment, calculation methodology, and species-specific resus
 
 **Indications**: K+ <3.5 mEq/L (hypokalemia), especially with cardiac arrhythmias, weakness, polyuria
 
-**Supplementation Scale** (KCl *added* to crystalloid — the classic sliding scale; this is a concentration, not an infusion rate):
-| Serum K+ | KCl to add per liter of fluids |
-|---|---|
-| 3.0-3.5 mEq/L | 20 mEq/L |
-| 2.5-3.0 mEq/L | 30 mEq/L |
-| 2.0-2.5 mEq/L | 40 mEq/L |
-| <2.0 mEq/L | 60-80 mEq/L (central line preferred) |
+**Supplementation Scale** (KCl *added* to crystalloid — the Scott/DiBartola sliding scale; these are concentrations, not infusion rates):
+| Serum K+ (mEq/L) | KCl to add per liter | Max fluid rate |
+|---|---|---|
+| 3.6-5.0 | 20 mEq/L | 25 mL/kg/hr |
+| 3.1-3.5 | 28-30 mEq/L | 18 mL/kg/hr |
+| 2.6-3.0 | 40 mEq/L | 12 mL/kg/hr |
+| 2.1-2.5 | 60 mEq/L | 8 mL/kg/hr |
+| <2.0 | 80 mEq/L | 6 mL/kg/hr |
 
-**⚠️ Maximum infusion rate — hard limit**: Do **NOT** exceed **0.5 mEq/kg/hr** of potassium, regardless of serum K+ or the concentration above. Faster rates risk fatal hyperkalemic cardiac arrest; use ECG monitoring at or near this ceiling.
+Each row pairs a concentration with a maximum fluid rate so that potassium delivery stays at or below the ceiling (concentration × max rate ÷ 1000 ≈ 0.5 mEq/kg/hr).
+
+**⚠️ Maximum infusion rate — hard limit**: Do **NOT** exceed **0.5 mEq/kg/hr** of potassium, regardless of serum K+ or concentration. Faster rates risk fatal hyperkalemic cardiac arrest; use ECG monitoring at or near this ceiling.
 **Max Concentration**: 40 mEq/L (peripheral IV — vein irritation above this); 60-80 mEq/L via central line only.
-**Monitoring**: Recheck K+ after 4-6 hours of supplementation; goal 3.5-4.5 mEq/L.
+**Monitoring**: Recheck K+ after 4-6 hours; goal 3.5-4.5 mEq/L. Values verified in `docs/clinical-review-2026.md`.
 
-**Example (20 kg dog, K+ 2.5 mEq/L)**:
-- Add ~40 mEq KCl per liter of maintenance fluids (per scale above).
-- Rate cap: 20 kg × 0.5 mEq/kg/hr = **10 mEq/hr maximum** → at 40 mEq/L that is ≤250 mL/hr. Never exceed the 0.5 mEq/kg/hr potassium ceiling even if a calculated fluid rate would be higher.
+**Example (20 kg dog, K+ 2.4 mEq/L)**:
+- Band 2.1-2.5 → add 60 mEq KCl per liter of fluids; cap the fluid rate at 8 mL/kg/hr.
+- Check: 8 mL/kg/hr × 60 mEq/L ÷ 1000 = 0.48 mEq/kg/hr — within the 0.5 mEq/kg/hr ceiling. ✓
 
 ### Sodium (Na+) Correction
 

@@ -74,7 +74,7 @@ Validated, species-specific pain assessment tools with interpretation guidance. 
 - **Cats (chronic)**: Buprenorphine preferred (longer duration, less hyperthermia risk); 0.01-0.02 mg/kg q6-12h (transmucosal absorption)
 
 ### Tier 3: Adjuvant Agents
-- **Gabapentin** (neuropathic/chronic pain): Dogs 10-20 mg/kg TID; Cats 5-10 mg/kg (≈50-100 mg/cat) BID-TID — note 100-200 mg is high for a typical 4-5 kg cat, so start low; slower onset (days-weeks) but excellent for chronic neuropathic pain
+- **Gabapentin** (neuropathic/chronic pain): Dogs 10-20 mg/kg TID; Cats ~10 mg/kg (start 5-10, up to ~20; ≈50-100 mg/cat) BID-TID — 100-200 mg is high for a typical 4-5 kg cat, so start low; slower onset (days-weeks) but excellent for chronic neuropathic pain
 - **Amantadine** (NMDA antagonist): 3-5 mg/kg daily-BID; useful for chronic pain and opioid tolerance
 - **Alpha-2 agonists** (acute): Dexmedetomidine 5-10 mcg/kg IM/IV (profound sedation; reversal with atipamezole); not recommended for prolonged pain management
 - **Corticosteroids** (inflammatory pain, limited duration): Prednisolone 0.5-1 mg/kg initial; taper after acute phase to avoid complications

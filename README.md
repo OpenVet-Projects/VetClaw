@@ -38,7 +38,7 @@ Built by [OpenVet.ai](https://openvet.ai) -- the AI hospital for every animal on
 
 ## Important Medical & Legal Disclaimer
 
-VetClaw skills are AI reasoning templates only. They are **not** a substitute for professional veterinary diagnosis, treatment, or clinical decision-making. All outputs must be reviewed and approved by a licensed veterinarian. The authors and OpenVet.ai assume no liability for any clinical use. In oncology or experimental cases, always work under veterinary supervision and comply with local regulations. Always contact your veterinarian or a poison control center (ASPCA 888-426-4435 / Pet Poison Helpline 855-764-7661) in emergencies.
+VetClaw skills are AI reasoning templates only. They are **not** a substitute for professional veterinary diagnosis, treatment, or clinical decision-making. All outputs must be reviewed and approved by a licensed veterinarian. The authors and OpenVet.ai assume no liability for any clinical use. In oncology or experimental cases, always work under veterinary supervision and comply with local regulations. Always contact your veterinarian or a poison control center (ASPCA 888-426-4435 / Pet Poison Helpline 855-764-7661) in emergencies. Clinical values in these skills are periodically verified against primary literature and drug labels — see [`docs/clinical-review-2026.md`](/docs/clinical-review-2026.md) — and corrections are welcome via the clinical-correction issue template.
 
 ---
 
