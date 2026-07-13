@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://openvet.ai/schemas/vetclaw-skill.schema.json",
+  "title": "VetClaw Skill Frontmatter",
+  "description": "Schema for the YAML frontmatter of a VetClaw SKILL.md file. `name` and `description` are required; the remaining fields are optional provenance metadata that contributors are encouraged to add over time.",
+  "type": "object",
+  "required": ["name", "description"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "kebab-case identifier; must match the containing folder name."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 400,
+      "description": "One-line description used for agent skill matching."
+    },
+    "version": {
+      "type": "string",
+      "description": "Optional semantic version of the skill."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Optional ISO 8601 date (YYYY-MM-DD) of the most recent clinical review."
+    },
+    "reviewer": {
+      "type": "string",
+      "description": "Optional name, credential, or handle of the reviewer."
+    },
+    "evidence_tier": {
+      "type": "string",
+      "enum": ["consensus-guideline", "textbook", "peer-reviewed", "expert-opinion", "emerging"],
+      "description": "Optional evidence tier for the skill's primary clinical claims."
+    },
+    "species": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional list of species the skill applies to (e.g. dog, cat, horse)."
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional list of citable references (textbooks, guidelines, databases) supporting the skill."
+    }
+  }
+}

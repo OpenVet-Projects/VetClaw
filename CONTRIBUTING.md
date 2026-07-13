@@ -46,6 +46,10 @@ The SKILL.md file must include:
 
 ## Code of Conduct
 
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md) based on the Contributor Covenant. By participating, you are expected to uphold it.
+
+## Review Standards
+
 Clinical accuracy is paramount. Submissions will be reviewed for veterinary accuracy before merging. We may request revisions or ask for additional references.
 
 ## Questions?

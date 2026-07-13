@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-skills:
+    name: Validate skill format & index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate every SKILL.md
+        run: python3 scripts/validate_skills.py
+      - name: Check index.json is up to date
+        run: python3 scripts/generate_index.py --check
+
+  sdk-python:
+    name: SDK (Python) tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install SDK dependencies
+        run: pip install requests
+      - name: Run SDK unit tests
+        run: python3 -m unittest discover -s sdk/python -p "test_*.py" -v

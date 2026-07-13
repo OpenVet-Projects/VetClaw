@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use VetClaw, please cite it."
+title: VetClaw
+type: software
+authors:
+  # Single organization/entity author. Individual maintainers can be added as
+  # additional entries below using given-names / family-names fields, e.g.:
+  #   - given-names: Jane
+  #     family-names: Doe
+  #     affiliation: OpenVet.ai
+  - name: "OpenVet.ai"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/openvet-projects/vetclaw"
+url: "https://openvet.ai"
+keywords:
+  - veterinary
+  - AI
+  - agent-skills
+  - animal-health
