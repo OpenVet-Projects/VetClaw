@@ -24,7 +24,7 @@ Structured reasoning template for guiding AI-assisted analysis and planning in c
 
 - Species-specific mast cell tumor biology (c-KIT mutations dominant in many canine MCTs)
 - Neoantigen identification principles (mutated peptides, MHC binding, immunogenicity)
-- AI tools historically used in breakthrough cases:
+- AI tools reported in personalized-oncology cases (e.g. the Rosie case, per press reports):
   - ChatGPT / Claude / Gemini: initial strategy brainstorming, literature synthesis, pipeline planning
   - AlphaFold (DeepMind): 3D protein structure prediction for mutated targets (e.g., c-KIT variants)
   - Grok / custom ML: final construct refinement, epitope selection

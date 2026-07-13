@@ -7,7 +7,9 @@ description: Comprehensive precision medicine framework for veterinary cancer th
 
 ## Overview
 
-Precision veterinary medicine tailors cancer therapy to individual tumor genetics and patient pharmacogenomics. This skill covers three pillars: **(1) mRNA neoantigen vaccine design** for personalized immunotherapy, **(2) pharmacogenomics** for optimal drug dosing and efficacy prediction, and **(3) companion diagnostics** linking genetic markers to therapeutic response. Real-world example: rescue dog "Rosie" with aggressive mast cell cancer treated with personalized mRNA vaccine.
+Precision veterinary medicine tailors cancer therapy to individual tumor genetics and patient pharmacogenomics. This skill covers three pillars: **(1) mRNA neoantigen vaccine design** for personalized immunotherapy, **(2) pharmacogenomics** for optimal drug dosing and efficacy prediction, and **(3) companion diagnostics** linking genetic markers to therapeutic response.
+
+> **⚠️ Note on the worked examples in this skill.** All example values below — sequencing metrics, specific mutations, epitope predictions, mRNA/LNP formulations, immune-monitoring numbers, and clinical outcomes — are **synthetic and illustrative**. They are teaching values chosen to show the *shape* of each step. They are **not real patient data** and are **not** derived from any specific animal, including the real "Rosie" case. For what is actually publicly known (and, importantly, what is *not* confirmed) about the real Rosie case, see [`cases/rosie-2026`](../../../cases/rosie-2026/README.md). VetClaw was not involved in that case.
 
 ## When to Use
 
@@ -83,9 +85,9 @@ mRNA vaccine presents this epitope → CD8+ T cells attack tumor cells expressin
 
 5. **Depth requirements:** ≥100x coverage (tumor), ≥30x coverage (normal) for confident variant calling
 
-**Example: Canine Mast Cell Tumor Sequencing (Rosie Case)**
+**Illustrative Example: Canine Mast Cell Tumor Sequencing (synthetic data — not a real patient)**
 ```
-Patient: rescue dog with aggressive mast cell cancer
+Patient: illustrative canine patient with aggressive mast cell tumor
 Sample: Fresh tumor tissue (surgical excision)
 Normal comparison: Peripheral blood leukocytes
 Sequencing: WES (Illumina NovaSeq; 150x coverage)
@@ -124,7 +126,7 @@ Germline variants: None pathogenic (clear breeding risk)
    - Higher predicted stability = more likely immunogenic
    - Example: AlphaFold2 structure prediction of mutant peptide in MHC binding groove
 
-**Example: Neoantigen Prediction for Rosie's TP53 R248Q**
+**Illustrative Example: Neoantigen Prediction for a TP53 R248Q Mutation (synthetic data)**
 ```
 Mutation: TP53 R248Q (Arginine → Glutamine at position 248)
 Wild-type epitope: ...LSPPQK|RQSLP...
@@ -162,7 +164,7 @@ mRNA vaccine structure (5' → 3'):
 
 3. **ORF (Open Reading Frame):** Encodes neoantigen protein
    - Typically 600-1,500 bp (200-500 amino acids)
-   - Multiple neoantigens concatenated (Rosie vaccine: 5 neoantigens fused with linkers)
+   - Multiple neoantigens concatenated (illustrative construct: 5 neoantigens fused with linkers)
    - **Codon optimization:** Synonymous substitutions for faster translation
      - Example: Replace rare codons (CGA for Arg) with common codons (CGC)
      - Improves ribosome speed, protein production
@@ -217,7 +219,7 @@ AAG[NEOANTIGEN2]CGCUUACGAGCUAA[NEOANTIGEN3]...
    - **Sterility:** Bacterial/fungal culture (48-72 hr growth assay)
    - **Functionality:** Transfect mammalian cells, measure protein expression by Western blot/ELISA
 
-**Example Quality Metrics (Rosie's mRNA):**
+**Illustrative Quality Metrics (synthetic data):**
 ```
 Construct: 2,847 bp (5 concatenated neoantigens)
 Yield: 850 µg from 10 mL IVT reaction (4.25 mg/mL)
@@ -282,7 +284,7 @@ Step 5: Concentration:
 - **Endotoxin:** <0.5 EU/µg (limulus amebocyte lysate test)
 - **Sterility:** Negative 48-hr culture
 
-**Example (Rosie's LNP Formulation):**
+**Illustrative Example (synthetic LNP formulation):**
 ```
 mRNA: 850 µg (pure, full-length neoantigen vaccine)
 Ionizable lipid (SM-102): 42.5 mg
@@ -323,7 +325,7 @@ Stability: >6 months frozen; <4 hrs at room temperature
    - TCR sequencing: Identify expanded T-cell clones recognizing vaccine epitopes
    - Functional testing: Isolate expanded clones, measure cytotoxicity against tumor cells
 
-**Example (Rosie's Immune Response):**
+**Illustrative Example (synthetic immune-response data):**
 ```
 Timeline: Pre-vaccine → 1 week post-dose 1 → 1 week post-dose 3
 
@@ -348,7 +350,7 @@ Assessment: Strong, polyfunctional CD8+ T-cell response; suitable for therapy
 
 ### Step 8: Clinical Outcomes & Translational Data
 
-**Rosie's Clinical Course (Case Study):**
+**Illustrative Clinical Course (synthetic example — not a real patient):**
 ```
 Pre-treatment:
   - Diagnosis: Mast cell cancer, confirmed by histopathology
@@ -368,12 +370,13 @@ Monitoring:
   - Bloodwork: CBC normal; chemistry panel normal; no organ toxicity
   - Quality of life: Normal appetite, exercise tolerance, no pain
 
-Outcome:
-  - Overall survival: 18+ months (published case, ongoing follow-up)
-  - Disease-free interval: 16 months (no recurrence on imaging)
-  - Comparison to historical controls: Median OS without treatment ~5 months;
-    with chemotherapy alone ~10 months
-  - Translational impact: Data inform human mRNA vaccine trials (Phase 1 planned)
+Outcome (illustrative — hypothetical values, not a real result):
+  - Overall survival: illustrative endpoint only (no real outcome is claimed here)
+  - Disease-free interval: illustrative only
+  - Historical-control context (general): untreated high-grade MCT often carries a
+    guarded prognosis; adjuvant chemotherapy may extend it — consult current oncology references
+  - Translational relevance: comparative-oncology data of this kind can, in principle,
+    inform human mRNA-vaccine trial design
 ```
 
 ## Pillar 2: Pharmacogenomics
@@ -513,12 +516,11 @@ Companion diagnostics are laboratory tests that identify tumor genetic markers p
 
 ### Common Veterinary Companion Diagnostics
 
-**BRAF V600E Mutation (Canine Melanoma):**
-- **Test:** PCR or sequencing for V600E hotspot
-- **Tumor type:** Oral/mucosal melanoma (30-40% prevalence in dogs)
-- **Matched therapy:** BRAF inhibitors (e.g., vemurafenib analogs)
-- **Predictive value:** BRAF V600E+ tumors respond 60-80%; V600E- tumors respond <5%
-- **Additional context:** Combined TP53 mutation predicts lower response
+**BRAF V595E Mutation (Canine Urothelial & Prostatic Carcinoma):**
+- **Test:** PCR or sequencing for the canine V595E hotspot (orthologous to the human V600E hotspot)
+- **Tumor type:** Canine urothelial (transitional cell) carcinoma and prostatic carcinoma — V595E is reported in a large majority (~80%) of canine urothelial carcinomas. Note: unlike human cutaneous melanoma, canine oral/mucosal melanoma is generally **not** BRAF-driven.
+- **Matched therapy:** BRAF-pathway inhibitors are investigational in dogs; clinical evidence is currently limited
+- **Predictive value:** Not established in veterinary oncology — do not assume human melanoma response rates transfer to dogs
 
 **KIT Mutation (Canine Mast Cell Tumor / GI Stromal Tumor):**
 - **Test:** Exon 11 or 17 sequencing
@@ -609,13 +611,13 @@ STEP 1: CLINICAL DIAGNOSIS
   - Histopathology: Malignant melanoma, spindle cell type
 
 STEP 2: GENOMIC PROFILING (Companion Diagnostics)
-  - Tumor sequencing: BRAF V600E mutation detected
+  - Tumor sequencing: BRAF V595E mutation detected (illustrative; the canine BRAF ortholog is V595E and is more typical of urothelial carcinoma than melanoma — this workflow is a simplified teaching example)
   - TMB: 6.2 mut/Mb (moderate)
   - TP53: Wild-type
   - Immune infiltrate (IHC): 120 CD8+ T cells/mm2
 
 STEP 3: TREATMENT SELECTION
-  - BRAF V600E+ predicted response to BRAF inhibitors: 60-70%
+  - BRAF V595E+ predicted response to BRAF-pathway inhibitors: investigational in dogs
   - Moderate TMB + decent immune infiltrate: Immunotherapy additive benefit likely
   - Recommendation: BRAF inhibitor monotherapy initially; consider + anti-PD-1 if plateau
 
@@ -640,7 +642,7 @@ STEP 5: TREATMENT ADMINISTRATION
 STEP 6: RESPONSE ASSESSMENT (Week 8)
   - Oral tumor: 3.2×3.8 cm (minimal shrinkage)
   - Genomic re-testing (optional, capture clonal evolution):
-     - Original BRAF V600E still present (tumor not resistant)
+     - Original BRAF V595E still present (tumor not resistant)
      - New TP53 R248Q mutation identified (clonal expansion)
   - Decision: Continue BRAF inhibitor + add anti-PD-1 + neoantigen vaccine
 
@@ -717,7 +719,7 @@ Complete/partial tumor regression
 **Current Limitations:**
 - **Tumor heterogeneity:** Single biopsy captures only dominant clone; minor populations with different mutations may drive resistance
 - **Pharmacogenomics applicability:** Limited veterinary data; most human-derived; species differences in metabolism (dog vs. cat vs. horse differ)
-- **Penetrance variability:** Genetic variants predict probability, not certainty (e.g., BRAF V600E predicts response but not all mutant tumors respond)
+- **Penetrance variability:** Genetic variants predict probability, not certainty (e.g., a BRAF driver mutation predicts response but not all mutant tumors respond)
 - **Cost:** Full WES + mRNA synthesis + personalized vaccine expensive (~$5,000-10,000 total); not universally accessible
 - **Regulatory pathway:** mRNA vaccines considered experimental; not yet routine standard-of-care in veterinary oncology
 
@@ -738,7 +740,7 @@ Complete/partial tumor regression
   - Mealey, K.L. "ABCB1 (MDR1) in veterinary species." Drug Metab Reviews 2008
 
 - **Comparative Oncology Literature:**
-  - NCI Comparative Oncology Program publications (mast cell cancer mRNA vaccine case studies)
+  - NCI Comparative Oncology Program (comparative oncology resources)
   - Veterinary Comparative Oncology Society (VCOS) journals
 
 - **Computational Tools:**

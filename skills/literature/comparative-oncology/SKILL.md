@@ -142,13 +142,13 @@ Intervention: Personalized mRNA neoantigen vaccine
   - mRNA construct designed and formulated in LNPs
   - Collaboration: Paul Conyngham + Prof. Thordarson, UNSW RNA Institute
 
-Reported Outcomes (not yet peer-reviewed):
-  - Tumor shrinkage reported at 50-75%
-  - Dog returned to normal activity
-  - Minimal reported adverse events
+Reported Outcomes (press reports, not peer-reviewed — specifics unverified):
+  - Tumor shrinkage reported (exact figures not independently confirmed)
+  - Dog reportedly returned to normal activity
+  - Adverse events not publicly detailed
 
 Translational Significance:
-  - First reported bespoke mRNA cancer vaccine for a veterinary patient
+  - Reported in press as an early example of a bespoke mRNA cancer vaccine for a veterinary patient (see cases/rosie-2026)
   - Pipeline directly parallels human neoantigen vaccine approaches (Moderna/Merck)
   - Demonstrates feasibility of AI-assisted vaccine design in non-human species
 
