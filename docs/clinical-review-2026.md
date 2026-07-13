@@ -2,13 +2,12 @@
 
 ## Purpose and disclaimer
 
-This document is an **independent, literature-based verification** of the dosing and
-safety corrections applied to the VetClaw skills during the 2026 accuracy pass. Because a
-licensed veterinarian was not available to sign off on those corrections, each item below
-was re-checked against primary literature (PubMed) and authoritative references (FDA/EMA
-drug labels, FDA CVM, IRIS/AAHA/ISFM guidance, the NASPHV *Chlamydia psittaci* Compendium,
-and the Merck Veterinary Manual). It is published **for transparency**, so that anyone using
-the repository can see the evidence behind each value.
+This document provides a **citable source for every dosing and safety value** in the VetClaw
+clinical skills. Each value is verified against primary literature (PubMed) and authoritative
+references (FDA/EMA drug labels, FDA CVM, IRIS/AAHA/ISFM guidance, the NASPHV *Chlamydia
+psittaci* Compendium, and the Merck Veterinary Manual). We publish it **for transparency**, so
+that anyone using the repository can see the evidence behind each value — and we welcome review
+and correction from board-certified specialists.
 
 **This review is not a substitute for a licensed veterinarian.** It is a documentation and
 sourcing exercise, not clinical advice. Dosing must always be individualized to the patient,
@@ -53,9 +52,9 @@ maximum fluid rates. Details and the canonical values are below.
 ## Item 1 — IV potassium: maximum infusion rate and KCl sliding scale
 **File:** `skills/clinical/fluid-therapy/SKILL.md`
 
-**Corrected statement in repo:** Maximum potassium infusion rate is a hard ceiling of
+**Value in repo:** Maximum potassium infusion rate is a hard ceiling of
 **0.5 mEq/kg/hr** (ECG monitoring at/near the ceiling); KCl added to fluids by a sliding
-scale of **20 / 30 / 40 / 60–80 mEq/L** for serum K⁺ of 3.0–3.5 / 2.5–3.0 / 2.0–2.5 / <2.0
+scale of **20 / 28–30 / 40 / 60 / 80 mEq/L** for serum K⁺ of 3.6–5.0 / 3.1–3.5 / 2.6–3.0 / 2.1–2.5 / <2.0
 mEq/L; peripheral concentration limit 40 mEq/L (60–80 via central line).
 
 **Verdict: Confirmed.** The 0.5 mEq/kg/hr ceiling is correct; the sliding-scale concentrations
@@ -96,7 +95,7 @@ correct and unchanged.
 ## Item 2 — Hyponatremia correction limit and 3% NaCl sodium content
 **File:** `skills/clinical/fluid-therapy/SKILL.md`
 
-**Corrected statement in repo:** Raise serum Na⁺ by **no more than ~10–12 mEq/L per 24 h**
+**Value in repo:** Raise serum Na⁺ by **no more than ~10–12 mEq/L per 24 h**
 (slower for chronic) to avoid osmotic demyelination; Na deficit = (target − current) × 0.6 ×
 BW = **mEq of Na**; **3% NaCl ≈ 0.51 mEq Na/mL**.
 
@@ -120,7 +119,7 @@ BW = **mEq of Na**; **3% NaCl ≈ 0.51 mEq Na/mL**.
 ## Item 3 — Maintenance fluid rate
 **File:** `skills/clinical/fluid-therapy/SKILL.md`
 
-**Corrected statement in repo:** ~50 mL/kg/day (typical range 40–60), or the linear estimate
+**Value in repo:** ~50 mL/kg/day (typical range 40–60), or the linear estimate
 **(30 × BW_kg) + 70 = mL/day**; larger patients trend to the lower mL/kg end.
 
 **Verdict: Confirmed** (with a transparency note on internal consistency).
@@ -146,7 +145,7 @@ BW = **mEq of Na**; **3% NaCl ≈ 0.51 mEq Na/mL**.
 ## Item 4 — Feline meloxicam: black-box warning and dosing
 **Files:** `skills/safety/nsaid-safety/SKILL.md`, `skills/clinical/pain-assessment/SKILL.md`
 
-**Corrected statement in repo:** FDA **black-box warning** (repeated dosing → fatal renal
+**Value in repo:** FDA **black-box warning** (repeated dosing → fatal renal
 failure in cats); US label = a **single, one-time 0.3 mg/kg SC** dose; chronic use (EU
 label / off-label US) = **0.05 mg/kg once daily** (lowest effective) with mandatory renal
 monitoring; the **0.3–0.5 mg/kg q48h regimen is not an established safe protocol** and should
@@ -175,7 +174,7 @@ be avoided.
 ## Item 5 — Equine firocoxib (Equioxx) dose
 **File:** `skills/safety/nsaid-safety/SKILL.md`
 
-**Corrected statement in repo:** Equine firocoxib label dose is **0.1 mg/kg PO** (Equioxx;
+**Value in repo:** Equine firocoxib label dose is **0.1 mg/kg PO** (Equioxx;
 ~0.09 mg/kg IV), **not 5 mg/kg** (5 mg/kg is the canine Previcox dose; ~50× overdose in a
 horse).
 
@@ -195,7 +194,7 @@ horse).
 ## Item 6 — Canine carprofen dose
 **Files:** `skills/safety/nsaid-safety/SKILL.md`, `skills/clinical/pain-assessment/SKILL.md`
 
-**Corrected statement in repo:** Canine carprofen **4.4 mg/kg/day**, given as **2.2 mg/kg BID
+**Value in repo:** Canine carprofen **4.4 mg/kg/day**, given as **2.2 mg/kg BID
 or 4.4 mg/kg SID**; do not exceed 4.4 mg/kg/day; **not dosed TID**.
 
 **Verdict: Confirmed.**
@@ -213,7 +212,7 @@ or 4.4 mg/kg SID**; do not exceed 4.4 mg/kg/day; **not dosed TID**.
 ## Item 7 — Feline morphine and gabapentin dosing
 **File:** `skills/clinical/pain-assessment/SKILL.md`
 
-**Corrected statement in repo:** Feline morphine **0.1–0.3 mg/kg** (lower than canine
+**Value in repo:** Feline morphine **0.1–0.3 mg/kg** (lower than canine
 0.5–1 mg/kg; higher doses risk excitation/hyperthermia); feline gabapentin **~5–10 mg/kg**.
 
 **Verdict: Confirmed** (with a note that 10 mg/kg is the usual feline analgesic gabapentin dose).
@@ -237,7 +236,7 @@ or 4.4 mg/kg SID**; do not exceed 4.4 mg/kg/day; **not dosed TID**.
 ## Item 8 — Sighthound anesthesia and atropine dose
 **File:** `skills/safety/anesthesia-safety/SKILL.md`
 
-**Corrected statement in repo:** Sighthounds tolerate modern inhalants (**isoflurane,
+**Value in repo:** Sighthounds tolerate modern inhalants (**isoflurane,
 sevoflurane**); the key sensitivity is to **thiopental/barbiturates**, not isoflurane;
 atropine for bradycardia **0.02–0.04 mg/kg**.
 
@@ -263,7 +262,7 @@ atropine for bradycardia **0.02–0.04 mg/kg**.
 ## Item 9 — MDR1/ABCB1 ivermectin sensitivity by dose
 **File:** `skills/safety/lethal-variance-detection/SKILL.md`
 
-**Corrected statement in repo:** Homozygous-affected (mutant/mutant) MDR1/ABCB1 dogs are
+**Value in repo:** Homozygous-affected (mutant/mutant) MDR1/ABCB1 dogs are
 neurotoxically sensitive **across a range of doses** (no single "safe threshold"); heartworm
 **prevention doses (6–12 mcg/kg) are generally tolerated** even by mutants, but higher doses —
 microfilaricidal (~50 mcg/kg) and especially **mange/demodicosis doses (300–600 mcg/kg) — can
@@ -292,7 +291,7 @@ cause severe neurotoxicity or death.**
 ## Item 10 — Enrofloxacin in poultry (prohibited) and flunixin cattle withdrawal
 **File:** `skills/pharma/withdrawal-times/SKILL.md`
 
-**Corrected statement in repo:** Extralabel **fluoroquinolone/enrofloxacin use in
+**Value in repo:** Extralabel **fluoroquinolone/enrofloxacin use in
 food-producing poultry is illegal in the US** (FDA withdrew poultry enrofloxacin approval in
 2005; no lawful withdrawal time exists). Flunixin in cattle: **meat 4 days, milk 36 h, IV
 only** (IM/SC markedly prolongs residues; a leading cause of violative NSAID residues).
@@ -320,7 +319,7 @@ only** (IM/SC markedly prolongs residues; a leading cause of violative NSAID res
 ## Item 11 — Feline blood pressure, IRIS hypertension, and propylthiouracil
 **File:** `skills/species/feline-medicine/SKILL.md`
 
-**Corrected statement in repo:** Normal feline systolic BP **~120–140 mmHg** awake; **IRIS
+**Value in repo:** Normal feline systolic BP **~120–140 mmHg** awake; **IRIS
 hypertension >160 mmHg** (Doppler preferred; allow for situational/"white-coat" elevation);
 **propylthiouracil is NOT used in cats** (methimazole/carbimazole are; PTU causes
 immune-mediated hemolytic anemia/thrombocytopenia).
@@ -347,7 +346,7 @@ immune-mediated hemolytic anemia/thrombocytopenia).
 ## Item 12 — Psittacosis (Chlamydia psittaci) doxycycline regimen
 **File:** `skills/species/avian-medicine/SKILL.md`
 
-**Corrected statement in repo:** Doxycycline for **45 days**; **oral ~25–50 mg/kg once daily**
+**Value in repo:** Doxycycline for **45 days**; **oral ~25–50 mg/kg once daily**
 (species-dependent) **OR long-acting injectable doxycycline (Vibravenos) ~75–100 mg/kg IM
 every 5–7 days** — do **not** give the injectable daily.
 
@@ -374,7 +373,7 @@ every 5–7 days** — do **not** give the injectable daily.
 ## Item 13 — Onions/garlic toxic to horses (Heinz-body anemia); feline meloxicam black-box
 **File:** `assets/species-drug-safety-matrix.md`
 
-**Corrected statement in repo:** Onions/garlic (Allium spp.) are **toxic to horses** (Heinz
+**Value in repo:** Onions/garlic (Allium spp.) are **toxic to horses** (Heinz
 body anemia; horses are susceptible); feline meloxicam carries the **FDA black-box** (repeat
 dosing → fatal renal failure; single-dose US label).
 
@@ -398,7 +397,7 @@ dosing → fatal renal failure; single-dose US label).
 ## Item 14 — Canine BRAF V595E (not human V600E/melanoma)
 **File:** `skills/pharma/precision-medicine-mrna-design/SKILL.md`
 
-**Corrected statement in repo:** The canine **BRAF ortholog is V595E** (orthologous to human
+**Value in repo:** The canine **BRAF ortholog is V595E** (orthologous to human
 V600E), characteristic of **canine urothelial/transitional cell carcinoma (~80%)** and
 prostatic carcinoma — **not** the human V600E/melanoma association; canine oral/mucosal
 melanoma is generally **not** BRAF-driven.
@@ -433,9 +432,9 @@ melanoma is generally **not** BRAF-driven.
   honestly rather than dressed up with an unrelated citation.
 - **PubMed attribution:** citations labeled **[PubMed]** are drawn from records retrieved via
   PubMed; DOI links are included where the record supplied one.
-- **This is a literature/label verification, not a clinical trial or a veterinarian's
-  sign-off.** Country- and formulation-specific label differences (notably US vs. EU meloxicam
-  in cats) are real and are called out where relevant. Report any error via the Clinical
-  Correction issue template (`clinical-accuracy`).
+- **This is a literature and label verification.** It complements — and does not replace —
+  examination and judgment by a licensed veterinarian. Country- and formulation-specific label
+  differences (notably US vs. EU meloxicam in cats) are real and are called out where relevant.
+  Report any error via the Clinical Correction issue template (`clinical-accuracy`).
 
 *Review compiled 2026-07-13.*

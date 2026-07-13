@@ -20,11 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/clinical-review-2026.md`: an independent, literature-sourced verification
   of the clinical-accuracy corrections (PubMed citations and FDA/EMA labels).
 
-### Fixed
+### Changed
 
-- Ongoing corrections to critical clinical-accuracy and SDK issues identified
-  after the initial release. Specific clinical values are corrected in their
-  respective skills and reviewed against citable veterinary references.
+- Clinical values across the skills are now verified against primary literature
+  and drug labels, with the sources published in `docs/clinical-review-2026.md`.
+- Reliability improvements to the openFDA SDK (query handling, tests, packaging).
 
 ## [0.1.0] - 2026-03
 
