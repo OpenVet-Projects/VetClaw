@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Schema validation for skills to enforce the SKILL-TEMPLATE format.
 - Continuous integration to validate skills and the SDK on each change.
 - A machine-readable skill index for programmatic discovery of the library.
+- Hermes function-calling integration (`integrations/hermes/`): skill-discovery
+  tools plus openFDA tools so a Hermes (or any function-calling) agent can use
+  VetClaw, including when it runs in front of OpenClaw.
 
 ### Fixed
 

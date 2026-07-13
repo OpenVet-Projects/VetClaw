@@ -1,0 +1,102 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "list_vetclaw_skills",
+      "description": "List available VetClaw veterinary skills (name, category, description). Call first to discover which skill to load.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "clinical",
+              "databases",
+              "literature",
+              "pharma",
+              "safety",
+              "species"
+            ],
+            "description": "Optional category filter."
+          },
+          "query": {
+            "type": "string",
+            "description": "Optional case-insensitive substring matched against name/description."
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_vetclaw_skill",
+      "description": "Return the full markdown of a VetClaw skill by name (e.g. 'toxicology-calculator'). Load the relevant skill before reasoning about a veterinary case.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Skill name (kebab-case) from list_vetclaw_skills."
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "search_veterinary_adverse_events",
+      "description": "Search the FDA openFDA animal & veterinary adverse-event database. Filter by species, drug, breed, and/or reaction.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "species": {
+            "type": "string",
+            "description": "e.g. DOG, CAT, HORSE, CATTLE, BIRD"
+          },
+          "drug": {
+            "type": "string"
+          },
+          "reaction": {
+            "type": "string"
+          },
+          "breed": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Max results (default 10)."
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "top_adverse_reactions",
+      "description": "Count the most-reported adverse reactions for a species (optionally a drug).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "species": {
+            "type": "string",
+            "description": "e.g. DOG, CAT, HORSE"
+          },
+          "drug": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "species"
+        ]
+      }
+    }
+  }
+]

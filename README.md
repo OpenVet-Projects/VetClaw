@@ -94,6 +94,10 @@ cp -R VetClaw/skills/* ~/.openclaw/workspace/skills/
 
 Start a new OpenClaw session so skill folders are picked up. If you already keep your workspace in git, merge only the folders you want.
 
+### Using VetClaw with Hermes or other agents
+
+OpenClaw auto-loads `skills/`, but a [Hermes](https://huggingface.co/NousResearch) agent (or any function-calling model) discovers capabilities through **tools**. VetClaw ships a Hermes function-calling integration — a skill-discovery pair (`list_vetclaw_skills` / `get_vetclaw_skill`) backed by [`index.json`](/index.json), plus the openFDA tools — so a Hermes agent can pull the relevant skill on demand, including when it runs in front of OpenClaw. See [`integrations/hermes/`](/integrations/hermes).
+
 ## Repository Layout
 
 ```
@@ -104,6 +108,7 @@ VetClaw/
 ├── schema/              # JSON Schema for skill frontmatter
 ├── scripts/             # validate_skills.py, generate_index.py (stdlib-only)
 ├── sdk/                 # openFDA Animal & Veterinary API clients (Python + TypeScript)
+├── integrations/        # Hermes function-calling adapter + generated tool schemas
 ├── demo/                # browser Species Safety Checker
 ├── cases/               # documented reference cases (e.g. rosie-2026)
 ├── assets/              # cross-species drug safety matrix, mascot

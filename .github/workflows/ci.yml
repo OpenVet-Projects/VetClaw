@@ -18,6 +18,8 @@ jobs:
         run: python3 scripts/validate_skills.py
       - name: Check index.json is up to date
         run: python3 scripts/generate_index.py --check
+      - name: Check Hermes tools.json is up to date
+        run: python3 scripts/generate_hermes_tools.py --check
 
   sdk-python:
     name: SDK (Python) tests
