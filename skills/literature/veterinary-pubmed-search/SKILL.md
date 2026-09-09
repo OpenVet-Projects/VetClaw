@@ -54,8 +54,8 @@ Tier 2 (specialty and species-specific):
    - Study type filter (if looking for specific evidence level)
 2. Search PubMed using E-utilities API or standard search interface.
 3. Evaluate results for relevance, recency, and species applicability.
-4. Apply evidence grading (see `evidence-grading` skill).
-5. Summarize findings with citations.
+4. Grade each hit that has a PMID or DOI with `vetevidence-grade` (live VetEvidence API). Use `evidence-grading` only for sources with no identifier.
+5. List the papers and their VECS tiers. Do not write an article summary or a treatment plan from this skill.
 
 ## Limitations
 

@@ -30,7 +30,7 @@ into the Hermes agent's system prompt. Zero code; best when your agent is narrow
 ### 2. Manifest + on-demand retrieval
 Put the skill list (name + description from `index.json`) in the system prompt so
 the model knows what exists, then let it call `get_vetclaw_skill(name)` to pull the
-one it needs. Keeps the context small while covering all 51 skills.
+one it needs. Keeps the context small while covering all 52 skills.
 
 ### 3. Full function-calling (recommended)
 Register all four tools and run the standard Hermes tool loop. The model discovers,

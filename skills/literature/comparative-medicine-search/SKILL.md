@@ -25,7 +25,7 @@ When veterinary-specific evidence is insufficient, human medical research may pr
    - Is the pathophysiology similar between species?
    - Are the drug targets conserved?
    - Are pharmacokinetic parameters known in the target species?
-4. Grade the comparative evidence as Level IV (see `evidence-grading` skill).
+4. If the human paper has a PMID or DOI, grade it with `vetevidence-grade` and keep species applicability explicit (human evidence applied to the named veterinary species). If there is no identifier, treat unaudited cross-species extrapolation as Level IV via `evidence-grading`.
 5. Clearly label all cross-species extrapolations in the output.
 
 ## Successful Comparative Medicine Examples

@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `vetevidence-grade` literature skill: POST a PubMed ID, DOI, PMCID, or article
+  link to [VetEvidence](https://vetevidence.com) and report the live VECS tier.
+  Study strength, source verification, and species applicability stay separate.
+  Scoring weights are not published. `evidence-grading` is now the fallback when
+  there is no identifier.
 - Community and governance files: Code of Conduct, security policy, citation
   metadata, issue templates, and a pull request template.
 - Schema validation for skills to enforce the SKILL-TEMPLATE format.

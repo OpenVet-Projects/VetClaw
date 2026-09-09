@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "Veterinary AI skill library for OpenClaw and compatible agent frameworks.",
   "license": "MIT",
-  "skill_count": 51,
+  "skill_count": 52,
   "categories": {
     "clinical": 17,
     "databases": 4,
-    "literature": 7,
+    "literature": 8,
     "pharma": 8,
     "safety": 5,
     "species": 10
@@ -154,7 +154,7 @@
     {
       "name": "evidence-grading",
       "category": "literature",
-      "description": "Grade the quality and strength of veterinary evidence using a veterinary-specific evidence hierarchy. Textbooks carry more weight in veterinary medicine than in human medicine. Use when evaluating the reliability of clinical information.",
+      "description": "Grade the quality and strength of veterinary evidence using a veterinary-specific evidence hierarchy when no PubMed ID or DOI is available. If the user has a paper identifier, use vetevidence-grade instead of guessing a tier.",
       "path": "skills/literature/evidence-grading/SKILL.md"
     },
     {
@@ -180,6 +180,12 @@
       "category": "literature",
       "description": "Search PubMed with veterinary-specific filters and MeSH terms to find relevant animal health research. Handles the sparse, multi-species nature of veterinary literature. Use for veterinary literature searches.",
       "path": "skills/literature/veterinary-pubmed-search/SKILL.md"
+    },
+    {
+      "name": "vetevidence-grade",
+      "category": "literature",
+      "description": "Grade one veterinary paper through VetEvidence (VECS). POST a PubMed ID, DOI, PMCID, or article link and report study strength, source verification, and species applicability as three separate facts. Do not invent a tier.",
+      "path": "skills/literature/vetevidence-grade/SKILL.md"
     },
     {
       "name": "adverse-event-reporting",
