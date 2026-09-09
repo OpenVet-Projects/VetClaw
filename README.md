@@ -6,11 +6,11 @@
 
 **An open veterinary AI skill library for OpenClaw and compatible agent frameworks.**
 
-[![Skills](https://img.shields.io/badge/skills-51-blue?style=flat-square)](/skills)
+[![Skills](https://img.shields.io/badge/skills-52-blue?style=flat-square)](/skills)
 [![Clinical](https://img.shields.io/badge/%F0%9F%A9%BA_clinical-17-brightgreen?style=flat-square)](/skills/clinical)
 [![Pharma](https://img.shields.io/badge/%F0%9F%92%8A_pharma-8-blueviolet?style=flat-square)](/skills/pharma)
 [![Species](https://img.shields.io/badge/%F0%9F%90%BE_species-10-orange?style=flat-square)](/skills/species)
-[![Literature](https://img.shields.io/badge/%F0%9F%93%9A_literature-7-purple?style=flat-square)](/skills/literature)
+[![Literature](https://img.shields.io/badge/%F0%9F%93%9A_literature-8-purple?style=flat-square)](/skills/literature)
 [![Safety](https://img.shields.io/badge/%F0%9F%9B%A1_safety-5-red?style=flat-square)](/skills/safety)
 [![Databases](https://img.shields.io/badge/%F0%9F%97%84_databases-4-cyan?style=flat-square)](/skills/databases)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)](/LICENSE)
@@ -49,7 +49,7 @@ VetClaw skills are AI reasoning templates only. They are **not** a substitute fo
 | [Clinical](/skills/clinical) | **17** | Differential diagnosis, emergency triage, clinical guidelines, exam workflows, cardiology, dermatology, ophthalmology, orthopedics, pain, nutrition, dental, anesthesia, wound management, fluid therapy, personalized oncology |
 | [Pharma](/skills/pharma) | **8** | Drug lookup, FDA Green Book, drug interactions, adverse event reporting, withdrawal times, compounding, precision medicine/mRNA design, neoantigen vaccine design |
 | [Species](/skills/species) | **10** | Breed predisposition, species-aware reasoning, exotic/wildlife, canine, feline, equine, ruminant, avian, camelid, swine |
-| [Literature](/skills/literature) | **7** | Veterinary PubMed search, evidence grading, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology |
+| [Literature](/skills/literature) | **8** | Veterinary PubMed search, VetEvidence paper grading, evidence hierarchy, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology |
 | [Safety](/skills/safety) | **5** | Toxicology calculator, lethal variance detection, contraindication checking, anesthesia safety, NSAID safety |
 | [Databases](/skills/databases) | **4** | openFDA Animal, FARAD, OBO Foundry ontologies, NCBI Taxonomy |
 
@@ -60,7 +60,8 @@ VetClaw skills are AI reasoning templates only. They are **not** a substitute fo
 | Emergency toxicosis | [`toxicology-calculator`](/skills/safety/toxicology-calculator/SKILL.md), [`emergency-triage`](/skills/clinical/emergency-triage/SKILL.md) |
 | Drug safety check | [`veterinary-drug-lookup`](/skills/pharma/veterinary-drug-lookup/SKILL.md), [`lethal-variance-detection`](/skills/safety/lethal-variance-detection/SKILL.md) |
 | Breed-aware diagnosis | [`breed-predisposition`](/skills/species/breed-predisposition/SKILL.md), [`differential-diagnosis`](/skills/clinical/differential-diagnosis/SKILL.md) |
-| Literature review | [`veterinary-pubmed-search`](/skills/literature/veterinary-pubmed-search/SKILL.md), [`evidence-grading`](/skills/literature/evidence-grading/SKILL.md) |
+| Literature review | [`veterinary-pubmed-search`](/skills/literature/veterinary-pubmed-search/SKILL.md), [`vetevidence-grade`](/skills/literature/vetevidence-grade/SKILL.md) |
+| Grade a paper | [`vetevidence-grade`](/skills/literature/vetevidence-grade/SKILL.md) (PMID/DOI → live VECS tier); [`evidence-grading`](/skills/literature/evidence-grading/SKILL.md) when there is no identifier |
 | Exotic species case | [`exotic-wildlife-medicine`](/skills/species/exotic-wildlife-medicine/SKILL.md), [`species-aware-reasoning`](/skills/species/species-aware-reasoning/SKILL.md) |
 
 ## Tested Workflows
@@ -81,6 +82,11 @@ Try these prompts in an OpenClaw session after installing VetClaw skills:
 > "Can I give acetaminophen to my cat for pain?"
 >
 > Expected: Agent loads `lethal-variance-detection` + `contraindication-checker`, immediately flags acetaminophen as **lethal in cats** (toxic methemoglobinemia), recommends species-safe alternatives.
+
+**Grade a paper via VetEvidence:**
+> "How strong is PMID 27678080 as evidence for a dog?"
+>
+> Expected: Agent loads `vetevidence-grade`, POSTs `{"pmid":"27678080"}` to `https://vetevidence.com/vecs/score`, and reports the live VECS tier (study strength, verification, and species) without summarizing the paper or inventing a grade.
 
 ## Quick Start
 
@@ -117,7 +123,7 @@ VetClaw/
     ├── clinical/       # 17 skills: diagnosis, triage, guidelines, exams, specialty workups, personalized oncology
     ├── pharma/         # 8 skills: drug lookup, FDA Green Book, interactions, adverse events, withdrawal, compounding, mRNA design, neoantigen vaccine
     ├── species/        # 10 skills: breed predisposition, species reasoning, canine, feline, equine, ruminant, avian, exotic, camelid, swine
-    ├── literature/     # 7 skills: PubMed search, evidence grading, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology
+    ├── literature/     # 8 skills: PubMed search, VetEvidence grading, evidence hierarchy, textbook hierarchy, comparative medicine, OMIA, VBO, comparative oncology
     ├── safety/         # 5 skills: toxicology, lethal variance, contraindications, anesthesia safety, NSAID safety
     └── databases/      # 4 skills: openFDA, FARAD, OBO Foundry, NCBI Taxonomy
 ```
@@ -206,7 +212,7 @@ See [`sdk/`](/sdk) for full documentation, TypeScript client, and API reference.
 
 VetClaw skills are reasoning templates today. Here is where we are headed:
 
-**Now (v0.1 — Skill Library):** 51 structured skills covering clinical workflows, drug safety, species medicine, and personalized oncology. The neoantigen vaccine design skill includes a complete practical guide: decision trees, lab directories, bioinformatics commands, and synthesis partner options. It is one of the more detailed open resources for veterinary personalized oncology that we're aware of.
+**Now (v0.1 — Skill Library):** 52 structured skills covering clinical workflows, drug safety, species medicine, and personalized oncology. The neoantigen vaccine design skill includes a complete practical guide: decision trees, lab directories, bioinformatics commands, and synthesis partner options. It is one of the more detailed open resources for veterinary personalized oncology that we're aware of.
 
 **Next (v0.2 — Computational Analysis Tool):** A web interface where veterinary oncologists upload sequencing data (VCF files) and receive ranked neoantigen candidate lists. Built on open-source tools (pVACtools, NetMHCpan, OpenVax pipeline) adapted for canine DLA and feline FLA typing.
 

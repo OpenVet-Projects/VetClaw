@@ -1,13 +1,17 @@
 ---
 name: evidence-grading
-description: Grade the quality and strength of veterinary evidence using a veterinary-specific evidence hierarchy. Textbooks carry more weight in veterinary medicine than in human medicine. Use when evaluating the reliability of clinical information.
+description: Grade the quality and strength of veterinary evidence using a veterinary-specific evidence hierarchy when no PubMed ID or DOI is available. If the user has a paper identifier, use vetevidence-grade instead of guessing a tier.
 ---
 
 # Veterinary Evidence Grading
 
 ## Overview
 
-Evaluate and grade the quality of evidence supporting veterinary clinical recommendations. The evidence hierarchy in veterinary medicine differs from human medicine in important ways. Due to the relative scarcity of large-scale RCTs, board-certified specialist textbooks carry significantly more clinical weight in veterinary practice than their equivalents do in human medicine.
+Evaluate and grade the quality of evidence supporting veterinary clinical recommendations **when you do not have a resolvable paper identifier**.
+
+If the user (or a search result) has a PubMed ID, DOI, PMCID, or article URL, stop guessing a level and load [`vetevidence-grade`](../vetevidence-grade/SKILL.md). That skill calls the live VetEvidence API. This skill is the fallback hierarchy for textbooks, guidelines named by title, and claims with no identifier.
+
+The evidence hierarchy in veterinary medicine differs from human medicine in important ways. Due to the relative scarcity of large-scale RCTs, board-certified specialist textbooks carry significantly more clinical weight in veterinary practice than their equivalents do in human medicine.
 
 ## When to Use
 
@@ -16,6 +20,7 @@ Evaluate and grade the quality of evidence supporting veterinary clinical recomm
 - User wants to compare the evidence behind different treatment options
 - When synthesizing information from multiple sources of varying quality
 - Keywords: evidence, evidence-based, strength, quality, level of evidence, recommendation grade, how strong, how reliable
+- **Exception:** a PMID, DOI, PMCID, or article link is present → use `vetevidence-grade`, not this hierarchy
 
 ## Veterinary Evidence Hierarchy
 
@@ -60,12 +65,13 @@ This does NOT mean textbooks are infallible. When high-quality RCTs or systemati
 
 ## Workflow
 
-1. Identify the clinical claim or recommendation to be graded.
-2. Determine the highest-quality evidence source supporting it.
-3. Assign an evidence level (I-V).
-4. Note the species-specificity of the evidence (same species, related species, or cross-species extrapolation).
-5. Note recency (evidence older than 10 years may not reflect current best practice).
-6. Communicate the evidence grade alongside the recommendation.
+1. If any supporting source has a PubMed ID, DOI, PMCID, or article URL, switch to `vetevidence-grade` for that source. Do not invent a VECS tier here.
+2. Identify the clinical claim or recommendation to be graded.
+3. Determine the highest-quality evidence source supporting it.
+4. Assign an evidence level (I-V).
+5. Note the species-specificity of the evidence (same species, related species, or cross-species extrapolation).
+6. Note recency (evidence older than 10 years may not reflect current best practice).
+7. Communicate the evidence grade alongside the recommendation. Label a hierarchy grade as a VetClaw hierarchy estimate, not a VetEvidence VECS score.
 
 ## Output Format
 
@@ -83,3 +89,4 @@ This does NOT mean textbooks are infallible. When high-quality RCTs or systemati
 - Evidence grading is a framework for comparing relative evidence quality, not an absolute measure of truth.
 - Absence of evidence is not evidence of absence. Many effective veterinary treatments lack formal RCT validation.
 - Clinical experience and local practice patterns legitimately influence treatment decisions alongside formal evidence.
+- This hierarchy is not the VetEvidence VECS engine. Do not present a guessed Level I–V as a VECS tier.
