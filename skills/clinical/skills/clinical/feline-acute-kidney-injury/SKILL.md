@@ -1,580 +1,629 @@
+
 ---
 name: feline-acute-kidney-injury
-description: Evidence-based clinical decision support for recognition, diagnosis, etiologic investigation, IRIS grading, stabilization, fluid management, complication management, and monitoring of acute kidney injury in cats.
+description: Evidence-informed clinical decision support for recognition, diagnosis, grading, stabilization, treatment, monitoring, and follow-up of acute kidney injury in cats.
 ---
 
 # Feline Acute Kidney Injury (AKI)
 
-## Overview
+## Purpose
 
-Acute kidney injury (AKI) is an acute renal parenchymal injury that may result in reduced kidney function, altered urine production, or both. It may occur with or without azotemia.
+Provide structured, evidence-informed clinical decision support for veterinarians evaluating and managing cats with suspected or confirmed acute kidney injury (AKI).
 
-AKI may be community-acquired or hospital-acquired and can result from ischemic, inflammatory, infectious, toxic, obstructive, or other renal insults.
-
-AKI may also occur in cats with pre-existing chronic kidney disease (CKD), producing acute-on-chronic kidney injury.
-
-Early recognition, identification of the underlying cause, restoration of appropriate perfusion, careful fluid balance, and active monitoring of complications are central to management.
-
-This skill is intended for use by veterinary professionals. It supports clinical decision-making and must not replace patient examination, clinical judgment, or specialist consultation.
-
-## When to Use
-
-Activate this skill when a cat presents with:
-
-- Acute or progressive azotemia.
-- A documented increase in serum creatinine from a known baseline.
-- Acute changes in urine production, including oliguria, anuria, or polyuria.
-- Suspected nephrotoxin exposure.
-- Acute dehydration, hypovolemia, shock, or systemic illness with suspected renal involvement.
-- Suspected pyelonephritis or other renal infection.
-- Suspected ureteral or urethral obstruction.
-- New renal abnormalities during hospitalization, anesthesia, or treatment with potentially nephrotoxic medications.
-- Acute deterioration in a cat with established CKD.
+This skill is intended for veterinary professionals. It does not replace clinical judgment, current IRIS recommendations, specialist consultation, or patient-specific assessment.
 
 ## Core Clinical Principles
 
-1. AKI is not synonymous with azotemia.
-2. A creatinine concentration within the laboratory reference interval does not exclude early AKI.
-3. Serial measurements are more informative than a single isolated result.
-4. Urine production must be interpreted in relation to hydration and volume status.
-5. Post-renal obstruction must be actively investigated.
-6. Fluid administration must be individualized and reassessed frequently.
-7. Forced diuresis is not a substitute for renal recovery.
-8. Oliguria and anuria in a euvolemic patient are major clinical concerns.
-9. The underlying etiology should be investigated because treatment and prognosis depend on it.
-10. Severe or complicated AKI warrants early referral to a facility capable of intensive monitoring and renal replacement therapy.
+1. AKI is a clinical syndrome involving acute renal parenchymal injury, with or without a measurable decline in kidney function.
+2. A normal serum creatinine concentration does not exclude early AKI.
+3. Serial measurements and comparison with a known baseline are more informative than a single creatinine result.
+4. Always evaluate pre-renal, intrinsic renal, and post-renal causes.
+5. Assess perfusion and hydration separately from urine production.
+6. Do not administer repeated fluid boluses solely to increase urine output or reduce creatinine.
+7. Once euvolemia is achieved, fluid therapy must be individualized to measured losses and ongoing requirements.
+8. Oliguria or anuria in a euvolemic patient is a major warning sign for fluid overload and requires reassessment.
+9. AKI grading describes severity; it does not independently establish reversibility or prognosis.
+10. Acute-on-chronic kidney injury must be considered, particularly in older cats.
 
-## Workflow
+## 1. Definition and Clinical Classification
 
-### 1. Initial Triage and Stabilization
+AKI is an acute renal injury developing over a short period, conventionally within 7 days, characterized by renal parenchymal damage and/or an acute reduction in kidney function.
 
-Assess the following immediately:
+AKI may be:
 
-- Airway and respiratory status.
-- Heart rate and rhythm.
-- Perfusion and blood pressure.
-- Hydration and intravascular volume status.
-- Body temperature.
-- Mentation and weakness.
-- Vomiting, nausea, anorexia, and evidence of uremia.
-- Urine production and ability to urinate.
-- Evidence of urinary obstruction.
-- Signs of fluid overload.
+- Community-acquired: present at initial evaluation.
+- Hospital-acquired: develops during hospitalization or treatment.
+- Acute-on-chronic: acute deterioration superimposed on pre-existing CKD.
 
-Identify immediate life-threatening abnormalities:
+Possible functional presentations include:
 
-- Shock or severe hypoperfusion.
-- Severe hyperkalemia.
-- Clinically significant metabolic acidosis.
-- Pulmonary edema or pleural effusion.
-- Uremic complications.
-- Complete urinary obstruction.
-- Severe oliguria or anuria.
+- Non-azotemic AKI.
+- Azotemic AKI.
+- Non-oliguric AKI.
+- Oliguric AKI.
+- Anuric AKI.
+- Polyuric AKI.
 
-Stabilization must not be delayed while completing the entire diagnostic workup.
+AKI can occur without azotemia, particularly during early injury.
 
-### 2. History and Risk Assessment
+## 2. Etiology and Differential Diagnosis
 
-Obtain a focused history covering:
+### 2.1 Pre-renal causes
+
+Reduced renal perfusion without necessarily established intrinsic renal injury:
+
+- Dehydration.
+- Hypovolemia or hemorrhage.
+- Shock.
+- Severe hypotension.
+- Reduced cardiac output.
+- Systemic vasodilation, including sepsis.
+
+Pre-renal azotemia may progress to intrinsic renal injury if perfusion deficits persist.
+
+### 2.2 Intrinsic renal causes
+
+#### Ischemic injury
+- Prolonged hypotension.
+- Severe hypovolemia.
+- Anesthesia-associated hypotension.
+- Shock.
+
+#### Nephrotoxic injury
+Review exposure to:
+
+- Ethylene glycol.
+- Lily species (Lilium and Hemerocallis).
+- Aminoglycosides.
+- NSAIDs, particularly in dehydrated or hypotensive patients.
+- Other potentially nephrotoxic medications or chemicals.
+
+Do not assume that all exposures produce the same renal lesion or time course.
+
+#### Infectious and inflammatory causes
+- Pyelonephritis.
+- Leptospirosis, where epidemiologically relevant.
+- Systemic infection and sepsis.
+- Other infectious or inflammatory renal diseases.
+
+#### Other causes
+- Acute glomerular or interstitial disease.
+- Infiltrative disease, including lymphoma.
+- Acute renal injury associated with systemic disease.
+
+### 2.3 Post-renal causes
+
+- Urethral obstruction.
+- Ureteral obstruction.
+- Urinary tract rupture.
+- Uroabdomen.
+- Bilateral ureteral obstruction.
+- Obstruction affecting a solitary functioning kidney.
+
+Post-renal disease must be actively excluded in cats with reduced or absent urine production.
+
+## 3. Clinical Presentation and Initial Triage
+
+### History
+
+Obtain:
 
 - Onset and progression of clinical signs.
-- Previous creatinine, SDMA, and urinalysis results.
-- Previous CKD diagnosis.
-- Recent changes in appetite, water consumption, and urine production.
-- Vomiting, diarrhea, or other fluid losses.
-- Possible exposure to nephrotoxins.
-- Recent administration of NSAIDs, aminoglycosides, or other potentially nephrotoxic drugs.
-- Possible ethylene glycol or other toxicant exposure.
-- Recent anesthesia, surgery, hypotension, or shock.
-- Possible infectious exposure.
-- Previous urinary tract disease, urolithiasis, or obstruction.
-- Concurrent cardiac disease.
+- Previous renal disease or documented baseline creatinine.
+- Vomiting, diarrhea, anorexia, and water intake.
+- Urination frequency and estimated urine volume.
+- Possible toxin or medication exposure.
+- Recent anesthesia, surgery, hypotension, or hospitalization.
+- Urinary obstruction history.
+- Comorbid cardiac or systemic disease.
 
-Discontinue or reassess potentially nephrotoxic medications when clinically appropriate.
-
-Do not assume that a medication is the cause of AKI solely because it was administered before azotemia developed.
-
-### 3. Diagnosis and Early Detection
-
-Diagnosis should integrate history, physical examination, laboratory findings, urine production, and imaging.
-
-#### Serum creatinine
-
-An increase in serum creatinine of at least 0.3 mg/dL (26.5 µmol/L) within 48 hours from a known baseline supports AKI, even when the value remains within the laboratory reference interval.
-
-For serial monitoring:
-
-- Prefer the same analyzer and laboratory method.
-- Record the time of each sample.
-- Interpret changes in relation to hydration and perfusion.
-- Do not rely on a single creatinine result.
-- Consider muscle mass and other patient-specific factors.
-
-Creatinine may lag behind the initial decline in glomerular filtration rate.
-
-#### Urine production
-
-Measure urine output whenever feasible in hospitalized patients with suspected or confirmed AKI.
-
-Interpret urine production in relation to hydration and intravascular volume status.
-
-IRIS consensus guidance identifies:
-
-- Sustained urine production below 1 mL/kg/h over 6 hours in a euvolemic, euhydrated patient receiving IV fluids as a reason for concern.
-- Urine production below 0.3 mL/kg/h over 6 hours as an oligoanuric state.
-- Anuria as absence of urine production.
-- Polyuria above 2 mL/kg/h as a possible manifestation of altered renal function.
-
-These thresholds must be interpreted in clinical context. Confirm catheter patency, collection accuracy, and absence of urinary obstruction before attributing low output to intrinsic renal failure.
-
-Do not diagnose intrinsic oliguric AKI solely from low urine output in a dehydrated or hypovolemic patient.
-
-### 4. IRIS AKI Grading
-
-Use the current official IRIS AKI grading system for cats and dogs.
-
-The IRIS AKI system grades severity from Grade I to Grade V and considers serum creatinine and clinical parameters, including urine production.
-
-Important principles:
-
-- Grade I may include non-azotemic AKI.
-- A patient can progress between grades over hours or days.
-- Grading should be reassessed as clinical status changes.
-- Urine production and clinical complications must be documented alongside creatinine.
-- Do not confuse IRIS AKI grading with IRIS CKD staging.
-
-Always consult the current IRIS AKI grading table rather than relying on an outdated copied table.
-
-Official resource:
-https://www.iris-kidney.com/iris-guidelines-1
-
-### 5. Diagnostic Workup
-
-#### Minimum laboratory evaluation
-
-Consider:
-
-- CBC.
-- Serum biochemistry.
-- Creatinine and BUN.
-- SDMA when available.
-- Sodium, potassium, chloride, and phosphorus.
-- Total calcium; ionized calcium when indicated.
-- Blood glucose.
-- Albumin and total protein.
-- Blood gas analysis when indicated.
-- Acid-base assessment.
-- Blood pressure measurement.
-
-Interpret laboratory results in conjunction with hydration, perfusion, and urine output.
-
-#### Urinalysis
-
-Perform complete urinalysis, ideally before substantial fluid administration when this does not delay emergency stabilization.
-
-Include:
-
-- Urine specific gravity.
-- Dipstick analysis.
-- Sediment examination.
-- Assessment for casts.
-- Glucosuria.
-- Proteinuria.
-- Hematuria and pyuria.
-- Crystalluria.
-- Evidence of bacteriuria.
-
-Urine specific gravity must be interpreted in the context of hydration, prior fluid administration, and concurrent disease.
-
-Urine culture is indicated when infection is suspected and is recommended when the AKI etiology remains unclear.
-
-Obtain samples for culture before antimicrobial treatment when clinically feasible.
-
-#### Imaging
-
-Abdominal ultrasonography is important for evaluating:
-
-- Kidney size and architecture.
-- Renal pelvic dilation.
-- Ureteral dilation.
-- Ureteroliths.
-- Nephroliths.
-- Perirenal abnormalities.
-- Urinary bladder abnormalities.
-- Evidence of obstruction.
-- Findings suggestive of chronic renal disease.
-
-Abdominal radiographs may help identify radiopaque uroliths.
-
-Imaging findings must be interpreted with clinical and laboratory data. A normal ultrasound does not exclude AKI.
-
-### 6. Etiologic Classification and Differential Diagnosis
-
-Investigate the following categories.
-
-#### Pre-renal or volume-responsive causes
-
-- Dehydration.
-- Hypovolemia.
-- Hemorrhage.
-- Severe gastrointestinal fluid losses.
-- Shock.
-- Systemic hypotension.
-- Reduced effective circulating volume.
-
-#### Intrinsic renal causes
-
-- Ischemic tubular injury.
-- Nephrotoxicity.
-- Ethylene glycol exposure.
-- Aminoglycoside-associated injury.
-- Pyelonephritis.
-- Other infectious or inflammatory renal diseases.
-- Acute tubular injury.
-- Infiltrative renal disease.
-- Glomerular or interstitial disease.
-
-#### Post-renal causes
-
-- Ureteral obstruction.
-- Urethral obstruction.
-- Urinary tract rupture.
-- Urinary leakage or uroabdomen.
-
-#### Acute-on-chronic kidney injury
-
-Consider AKI superimposed on CKD when there is:
-
-- Previous documented CKD.
-- Historical persistent azotemia.
-- Previous renal imaging abnormalities.
-- Chronic weight loss or poor body condition.
-- A new acute deterioration in renal function.
-
-The presence of chronic disease does not exclude a reversible acute component.
-
-### 7. Fluid Therapy and Volume Management
-
-Fluid therapy is a central component of AKI management, but excessive administration can cause serious complications.
-
-The objective is to restore and maintain appropriate perfusion and hydration without producing fluid overload.
-
-#### A. Assess volume status first
-
-Distinguish:
-
-- Hypovolemia.
-- Dehydration.
-- Euvolemia.
-- Fluid overload.
-
-These conditions are not interchangeable.
+### Physical examination
 
 Evaluate:
 
-- Mucous membranes.
-- Capillary refill time.
-- Pulse quality.
-- Heart rate.
+- Mentation and general condition.
+- Hydration status.
+- Peripheral perfusion and pulse quality.
+- Heart rate and rhythm.
+- Blood pressure.
+- Respiratory rate and effort.
+- Body weight.
+- Bladder size and discomfort.
+- Renal size and pain, when assessable.
+- Evidence of edema, pleural effusion, or pulmonary edema.
+
+Normal-sized or enlarged painful kidneys may support an acute process, but kidney size alone is not diagnostic.
+
+### Immediate emergency priorities
+
+Stabilize life-threatening abnormalities before completing the entire diagnostic workup.
+
+Prioritize:
+
+1. Airway and breathing.
+2. Circulation and perfusion.
+3. Severe hyperkalemia and ECG abnormalities.
+4. Urethral or ureteral obstruction.
+5. Urinary leakage or uroabdomen.
+6. Severe acid-base or electrolyte disturbances.
+7. Suspected toxin exposure requiring time-sensitive intervention.
+
+Cats with severe azotemia, significant electrolyte abnormalities, oliguria/anuria, fluid overload, or systemic instability generally require hospitalization.
+
+## 4. Diagnostic Workup
+
+### 4.1 Minimum database
+
+Recommended initial evaluation:
+
+- CBC.
+- Serum biochemistry.
+- Electrolytes: potassium, sodium, chloride.
+- Calcium and phosphorus.
+- Blood glucose.
+- Total protein and albumin.
+- Venous blood gas when available.
+- Urinalysis, including urine specific gravity.
+- Urine sediment examination.
+- Urine culture when infection is suspected.
 - Blood pressure.
 - Body weight.
-- Respiratory rate and effort.
-- Lung sounds and point-of-care ultrasound when available.
-- Hematocrit and total solids.
-- Electrolytes.
-- Urine production.
 
-#### B. Correct hypovolemia
+### 4.2 Renal function assessment
 
-Hypovolemia should be corrected promptly.
+Evaluate:
 
-Balanced isotonic crystalloid solutions are commonly used.
+- Serum creatinine.
+- BUN.
+- SDMA, where available.
+- Serial trends rather than isolated measurements.
 
-For cats, IRIS consensus guidance describes initial resuscitation boluses of 5–10 mL/kg, followed by immediate reassessment.
+A serum creatinine increase of at least 0.3 mg/dL (26.5 µmol/L) within 48 hours from a known baseline is an important criterion supporting acute decline in kidney function, even when the absolute concentration remains within the laboratory reference interval.
 
-Do not administer repeated boluses automatically.
+Use the same analyzer when possible to reduce analytical variation.
 
-After each bolus, reassess:
+Creatinine is influenced by muscle mass, hydration, and other patient factors. It is not a direct measurement of GFR.
 
-- Perfusion.
-- Heart rate.
+SDMA may provide additional information but should not replace clinical assessment or serial monitoring.
+
+### 4.3 Urinalysis
+
+Assess:
+
+- Urine specific gravity.
+- Proteinuria.
+- Glucosuria in the absence of hyperglycemia.
+- Hematuria.
+- Pyuria.
+- Bacteriuria.
+- Cellular and granular casts.
+
+Findings such as renal glucosuria and casts may support tubular injury but are neither sufficiently sensitive nor specific to independently confirm or exclude AKI.
+
+Obtain urine culture when pyelonephritis or bacterial urinary infection is suspected. Ideally collect the sample before antimicrobial treatment when clinically feasible.
+
+Interpret urine specific gravity in the context of hydration, prior fluid administration, medications, and concurrent disease.
+
+### 4.4 Imaging
+
+Abdominal ultrasonography is useful to assess:
+
+- Renal size and architecture.
+- Renal pelvis and ureters.
+- Ureteroliths or suspected obstruction.
+- Hydronephrosis or hydroureter.
+- Bladder abnormalities.
+- Perirenal or abdominal fluid.
+- Findings supporting chronic renal disease.
+
+Survey radiographs may help identify radiopaque urinary calculi.
+
+Imaging does not independently establish the presence or severity of AKI.
+
+### 4.5 Additional tests when indicated
+
+Select tests based on clinical suspicion:
+
+- ECG for hyperkalemia or arrhythmia.
+- Abdominal fluid analysis when uroabdomen is suspected.
+- Coagulation testing when indicated.
+- Infectious disease testing based on geography and exposure.
+- Toxin-specific testing when available.
+- Renal biopsy or aspirate only in selected cases where results are expected to change management, such as suspected infiltrative disease.
+
+## 5. AKI Diagnosis and IRIS Grading
+
+Use the current IRIS AKI grading system for cats and dogs.
+
+The IRIS AKI system includes Grades I–V and incorporates serum creatinine and clinical parameters, including urine production and renal replacement therapy status.
+
+### Important diagnostic principles
+
+- Grade I may occur without azotemia.
+- An increase of at least 0.3 mg/dL in serum creatinine within 48 hours from baseline supports acute loss of kidney function.
+- A patient may move upward or downward between grades as injury progresses or renal function recovers.
+- Record oliguria/anuria status separately.
+- Record renal replacement therapy status separately where applicable.
+- Do not substitute CKD staging for AKI grading.
+
+Use the current official IRIS AKI grading table for exact creatinine cutoffs and grade assignment:
+
+https://www.iris-kidney.com/iris-guidelines-1
+
+Do not reproduce potentially outdated grading thresholds from memory. If the current IRIS table is unavailable, report the measured creatinine and clinical findings without inventing a grade.
+
+### Urine output assessment
+
+In a euvolemic and euhydrated patient receiving IV fluids:
+
+- Sustained urine production below 1 mL/kg/hour over 6 hours should raise concern for reduced urine production.
+- Urine production below 0.3 mL/kg/hour over 6 hours indicates an oligoanuric state in the 2024 IRIS consensus guideline.
+- Anuria indicates no measurable urine production.
+
+Urine output must be interpreted in the context of hydration, perfusion, obstruction, and measurement accuracy.
+
+## 6. Fluid Therapy
+
+### 6.1 Initial assessment
+
+Before prescribing fluids, determine:
+
+- Is the cat hypovolemic?
+- Is the cat dehydrated?
+- Is the cat already euvolemic?
+- Is there evidence of fluid overload?
+- Is urine production adequate?
+- Is there cardiac disease or another contraindication to rapid fluid administration?
+
+Hypovolemia and dehydration are different clinical problems and should not be treated as interchangeable terms.
+
+### 6.2 Correct perfusion deficits
+
+In a hypovolemic or poorly perfused cat, use an individualized isotonic crystalloid fluid strategy.
+
+Administer small, reassessed increments rather than automatically giving a large calculated shock dose.
+
+After each intervention reassess:
+
+- Heart rate and pulse quality.
+- Mucous membranes and capillary refill time.
 - Blood pressure.
-- Respiratory status.
-- Lung findings.
-- Evidence of fluid responsiveness.
+- Mentation.
+- Respiratory rate and effort.
+- Lung sounds.
+- Body weight.
+- Evidence of fluid accumulation.
 
-Reduce the rate or stop fluid administration if signs of fluid intolerance develop.
+The rate and volume depend on the severity and cause of hypovolemia and the patient's cardiovascular status.
 
-Cats with cardiac disease may require slower and more cautious fluid administration.
+Cats with cardiac disease or suspected fluid intolerance require particular caution.
 
-#### C. Correct dehydration
+### 6.3 Correct dehydration
 
-After intravascular volume has been restored, calculate the estimated dehydration deficit and correct it according to the patient's clinical status.
+Once perfusion is restored, estimate the dehydration deficit:
 
-The rate of correction should consider:
+Fluid deficit (mL) = body weight (kg) × dehydration fraction × 1000
 
-- Severity and duration of dehydration.
-- Cardiac function.
-- Sodium concentration.
-- Ongoing losses.
-- Urine production.
-- Risk of fluid overload.
+Add appropriate maintenance requirements and measured ongoing losses.
 
-Do not apply a fixed fluid rate to every patient with AKI.
+Correct the deficit over an individualized period based on clinical status, electrolyte abnormalities, and concurrent disease.
 
-#### D. After achieving euvolemia
+Do not use a fixed fluid rate for every cat with AKI.
 
-Once hydration and perfusion are appropriate:
+### 6.4 Maintenance and ongoing fluid balance
 
-- Reassess the need for IV fluids.
-- Account for measured urine production.
-- Replace ongoing gastrointestinal and other losses.
-- Account for insensible losses.
-- Monitor body weight and fluid balance.
-- Avoid forced diuresis as a routine objective.
+Once euvolemia is achieved, fluid administration should be adjusted to account for:
 
-In an anuric, euhydrated patient without additional losses, ongoing IV fluid administration should be discontinued or restricted according to the patient's needs to avoid fluid accumulation.
+- Urine output.
+- Vomiting and diarrhea.
+- Other measurable losses.
+- Insensible losses.
+- Enteral water intake.
+- Medication and nutritional fluid inputs.
 
-#### E. Fluid overload
+In anuric patients, ongoing IV fluid administration should not continue automatically as if urine production were normal.
+
+Do not use IV fluids to force diuresis in a euvolemic oliguric or anuric patient.
+
+### 6.5 Fluid overload prevention
 
 Monitor for:
 
-- Increasing body weight unexplained by nutritional changes.
-- Increasing respiratory rate or effort.
-- Pulmonary edema.
-- Pleural effusion.
-- Peripheral edema.
-- Chemosis.
+- Increasing body weight.
+- Rising respiratory rate.
+- Increased respiratory effort.
+- Pulmonary crackles.
 - Serous nasal discharge.
-- Jugular venous distension.
-- New or worsening hypertension.
+- Peripheral or subcutaneous edema.
+- Pleural or peritoneal effusion.
+- Worsening oxygenation.
 
-Fluid overload is a major preventable complication of AKI.
+Body weight should be measured consistently, ideally at least twice daily in hospitalized patients receiving IV fluids.
 
-Do not continue fluid administration solely to lower creatinine or increase urine output.
+Fluid balance monitoring should include recorded intake, urine output, and other measurable losses.
 
-### 8. Management of Metabolic Complications
+If fluid overload is suspected:
 
-#### Hyperkalemia
+1. Reassess the patient immediately.
+2. Reduce or stop unnecessary fluid administration.
+3. Evaluate respiratory status and oxygenation.
+4. Consider thoracic imaging or point-of-care ultrasound.
+5. Treat clinically significant overload.
+6. Consider referral for renal replacement therapy when appropriate.
+
+## 7. Management of Common Complications
+
+### 7.1 Hyperkalemia
 
 Assess:
 
 - Serum potassium.
-- ECG when clinically indicated.
+- ECG findings.
 - Heart rate and rhythm.
-- Evidence of urinary obstruction.
+- Acid-base status.
 - Urine production.
+- Evidence of urinary obstruction.
 
-Severe hyperkalemia with ECG abnormalities requires emergency treatment.
+Severe hyperkalemia or ECG abnormalities require immediate intervention.
 
-Therapeutic options may include membrane stabilization with calcium gluconate, intracellular potassium shifting with insulin and dextrose, and other interventions according to the clinical situation.
+Potential treatment components include:
 
-Calcium gluconate stabilizes cardiac membranes but does not remove potassium from the body.
+- IV calcium gluconate for myocardial membrane stabilization when indicated.
+- Insulin with dextrose to shift potassium intracellularly.
+- Beta-2 agonists in selected cases.
+- Correction of contributing acidosis when appropriate.
+- Restoration of perfusion when indicated.
+- Relief of urinary obstruction.
+- Renal replacement therapy for refractory cases.
 
-Definitive management requires addressing the cause and restoring potassium elimination when possible.
+Calcium gluconate stabilizes the myocardium but does not reduce total body potassium.
 
-#### Metabolic acidosis
+Insulin therapy requires frequent glucose monitoring.
 
-Assess blood gas parameters and the underlying cause.
+### 7.2 Metabolic acidosis
 
-Correct perfusion and address the primary disorder.
+Evaluate blood gas, bicarbonate, electrolytes, perfusion, and underlying cause.
 
-Bicarbonate therapy should not be used routinely without evaluating the severity of acidemia, sodium status, and potential complications.
+Prioritize correction of hypoperfusion, shock, obstruction, and other reversible causes.
 
-#### Hyperphosphatemia
+Sodium bicarbonate should not be administered routinely for every low bicarbonate result. Consider it only in selected severe cases after evaluating pH, sodium, volume status, and potential complications.
 
-Monitor serum phosphorus and interpret it in relation to renal function and clinical status.
+### 7.3 Hyperphosphatemia
 
-Dietary management and phosphate binders may be considered when indicated, particularly when enteral nutrition is established.
+- Monitor serum phosphorus serially.
+- Address the underlying renal dysfunction.
+- Consider enteral phosphate binders when persistent hyperphosphatemia is present and the patient is eating.
+- Select treatment according to phosphorus concentration, diet, and calcium status.
 
-#### Hypertension
+Phosphate binders are not a substitute for correction of the underlying cause.
 
-Measure systemic blood pressure using appropriate technique.
+### 7.4 Hypertension
 
-Assess for target-organ damage, including ocular, neurologic, and cardiovascular abnormalities.
+Measure systemic blood pressure using an appropriate standardized technique.
 
-Treat persistent clinically significant hypertension according to current veterinary recommendations.
+Assess for target-organ damage, including ocular and neurologic abnormalities.
 
-#### Nausea, vomiting, and uremia
+Treat persistent clinically significant hypertension according to current feline hypertension guidance and the patient's volume status.
 
-Assess appetite, vomiting, oral ulceration, hydration, and nutritional status.
+Do not assume that every cat with AKI is hypertensive.
 
-Provide appropriate antiemetic and supportive treatment.
+### 7.5 Uremic complications
 
-Early nutritional support is important in cats with prolonged anorexia.
+Monitor for:
 
-### 9. Diuretics and Oligoanuria
+- Nausea and vomiting.
+- Anorexia.
+- Oral ulceration.
+- Gastrointestinal bleeding.
+- Neurologic abnormalities.
+- Severe lethargy.
 
-Do not administer diuretics before correcting dehydration and hypovolemia.
+Provide individualized antiemetic, nutritional, and supportive care.
 
-Diuretics may increase urine production in selected patients, but increased urine output does not necessarily indicate renal recovery.
+Avoid medications with potential nephrotoxicity or those requiring renal dose adjustment unless the benefit clearly outweighs the risk.
 
-There is no convincing evidence that routine diuretic administration improves renal recovery or overall AKI outcome.
+### 7.6 Oliguria and anuria
 
-In selected oliguric or anuric patients, diuretics may be considered to help manage fluid overload or hyperkalemia when appropriate.
+Before concluding that oliguria is due to intrinsic renal failure:
 
-Do not delay referral for renal replacement therapy by repeatedly attempting pharmacologic conversion of persistent anuria.
+1. Confirm accurate urine output measurement.
+2. Assess hydration and perfusion.
+3. Exclude urinary obstruction.
+4. Evaluate for urinary leakage.
+5. Review medications and recent interventions.
+6. Reassess for fluid overload.
 
-### 10. Specific Etiologic Treatment
+Do not repeatedly administer fluid boluses to an euvolemic oliguric patient.
 
-Treatment must target the underlying cause whenever possible.
+Diuretics may be considered in selected patients for management of fluid overload, but they do not reliably restore renal function or improve survival.
+
+Persistent oliguria/anuria despite correction of perfusion and exclusion of obstruction warrants urgent specialist consultation.
+
+## 8. Nutrition and General Support
+
+- Treat nausea and vomiting.
+- Maintain adequate caloric intake.
+- Avoid prolonged fasting.
+- Consider early enteral nutrition when clinically appropriate.
+- Monitor body weight and muscle condition.
+- Correct electrolyte abnormalities.
+- Provide appropriate analgesia.
+- Review all medications for nephrotoxicity and renal clearance.
+
+Do not automatically impose a long-term CKD diet during unstable AKI without considering nutritional tolerance, caloric intake, and the underlying cause.
+
+## 9. Nephrotoxic Drug Review
+
+At presentation, review all current and recent medications.
+
+Consider discontinuation, substitution, or dose adjustment of potentially nephrotoxic or renally cleared drugs.
 
 Examples include:
 
-- Immediate intervention for urinary obstruction.
-- Appropriate antimicrobial treatment for confirmed or strongly suspected bacterial infection.
-- Specific toxicant-directed management when exposure is identified.
-- Discontinuation of causative nephrotoxins.
-- Correction of hypoperfusion and hypotension.
-- Management of concurrent systemic disease.
+- Aminoglycosides.
+- NSAIDs.
+- Certain chemotherapeutic agents.
+- Other drugs associated with renal injury in susceptible patients.
 
-Do not prescribe antibiotics routinely for every AKI patient.
+Do not discontinue essential treatment without evaluating the risk-benefit balance.
 
-Do not assume that all AKI cases are caused by dehydration.
+Dose adjustment should consider current renal function, clinical status, drug pharmacokinetics, and therapeutic monitoring where available.
 
-### 11. Renal Replacement Therapy and Referral
+## 10. Monitoring During Hospitalization
 
-Early referral should be considered when advanced renal support may be required.
+Monitoring frequency should be determined by severity and clinical stability.
 
-Indications for specialist consultation include:
+For hospitalized cats with significant AKI, monitor:
 
-- Persistent oligoanuria despite appropriate volume correction.
-- Refractory fluid overload.
-- Severe or refractory hyperkalemia.
-- Severe metabolic acidosis not adequately controlled medically.
-- Uremic complications not responding to medical treatment.
-- Severe azotemia with progressive clinical deterioration.
-- Suspected toxin exposure for which extracorporeal treatment may be beneficial.
+- Body weight, preferably at least twice daily.
+- Fluid intake and output.
+- Urine production.
+- Hydration and perfusion.
+- Respiratory rate and effort.
+- Blood pressure.
+- Serum creatinine and BUN.
+- Potassium, sodium, chloride, phosphorus, and calcium.
+- Acid-base status when indicated.
+- Appetite, vomiting, and mentation.
 
-Renal replacement options may include:
+More frequent assessment is required in unstable patients or those with severe electrolyte abnormalities.
+
+Record trends rather than interpreting isolated values.
+
+A falling creatinine concentration does not necessarily indicate recovery if it is explained by hemodilution or reduced muscle mass.
+
+## 11. Renal Replacement Therapy and Referral
+
+Consider urgent referral to a facility capable of renal replacement therapy when there is:
+
+- Refractory hyperkalemia.
+- Severe or persistent fluid overload.
+- Severe metabolic derangements not responding to medical management.
+- Persistent oligoanuria with progressive complications.
+- Severe uremic complications.
+- Selected dialyzable toxin exposures.
+
+Available options may include:
 
 - Intermittent hemodialysis.
 - Continuous renal replacement therapy.
-- Peritoneal dialysis.
+- Peritoneal dialysis in selected circumstances.
 
-The decision to initiate renal replacement therapy must be individualized and discussed early with the referral center.
+Availability, cost, patient stability, and underlying cause influence treatment decisions.
 
-Do not wait for an arbitrary creatinine threshold if life-threatening complications are developing.
+Early referral is preferable to waiting until complications become irreversible.
 
-### 12. Monitoring During Hospitalization
+## 12. Prognosis
 
-AKI patients may deteriorate rapidly.
+Prognosis depends on:
 
-Monitoring frequency should be based on severity and clinical stability.
+- Underlying etiology.
+- Severity and duration of injury.
+- Presence of oliguria or anuria.
+- Concurrent diseases.
+- Response to supportive care.
+- Availability of renal replacement therapy.
+- Degree of renal recovery.
 
-Record at minimum:
+A high IRIS AKI grade does not independently prove that injury is irreversible.
 
-- Body weight, ideally at least twice daily.
-- Fluid input and output.
-- Urine production.
-- Hydration and perfusion status.
-- Respiratory rate and effort.
-- Blood pressure.
-- Serum creatinine and BUN trends.
-- Electrolytes, especially potassium and phosphorus.
-- Acid-base status when indicated.
-- Appetite, vomiting, and nutritional intake.
-- Evidence of uremic complications.
+Do not provide a definitive prognosis based on a single creatinine concentration.
 
-Use a standardized fluid balance chart.
+Infectious, toxic, ischemic, obstructive, and inflammatory causes may have different outcomes.
 
-Urinary catheterization may be appropriate when accurate urine output measurement is essential, but catheter placement must be performed with appropriate aseptic technique and consideration of infection risk.
+Cats with acute-on-chronic kidney injury may survive the acute episode but remain at risk of progressive CKD.
 
-### 13. Recovery Phase
+## 13. Discharge Criteria and Follow-up
 
-Some cats develop marked polyuria during renal recovery.
+Consider discharge when:
 
-This may cause:
-
-- Dehydration.
-- Hypokalemia.
-- Sodium abnormalities.
-- Further electrolyte losses.
-- Inadequate caloric intake.
-
-Reassess fluid requirements frequently.
-
-Adjust fluid administration to measured urine production and ongoing losses.
-
-Reduce IV fluid therapy gradually when the cat can maintain hydration through voluntary drinking or enteral support and renal function is stabilizing.
-
-Do not discontinue fluids solely because creatinine has improved if the patient remains unable to maintain hydration.
-
-### 14. Discharge and Long-Term Follow-Up
-
-Discharge may be considered when:
-
-- The patient is clinically stable.
+- The patient is hemodynamically stable.
 - Hydration can be maintained without IV fluids.
-- Major metabolic complications are controlled.
-- Urine production is adequate or an acceptable management plan is established.
-- Clinical signs are controlled without ongoing IV medication.
-- Renal function has stabilized sufficiently for outpatient monitoring.
+- Electrolyte and metabolic complications are controlled.
+- Clinical signs are adequately managed.
+- Serum creatinine has stabilized or is showing an acceptable trend.
+- The patient can maintain adequate nutrition and hydration.
+- No unresolved emergency obstruction or other critical cause remains.
 
-Schedule the first recheck according to the severity of AKI and degree of recovery, often within a few days after discharge.
+Arrange early reassessment based on the patient's clinical condition, often within several days after discharge.
 
-Long-term follow-up should evaluate:
+Long-term follow-up should include:
 
-- Creatinine.
-- BUN.
-- SDMA when available.
-- Phosphorus.
-- Electrolytes.
-- Urinalysis and urine concentrating ability.
+- Serum creatinine and other renal parameters.
+- SDMA where useful.
+- Electrolytes and phosphorus.
+- Urinalysis and urine specific gravity.
 - Blood pressure.
-- Body weight and muscle condition.
-- Proteinuria when indicated.
+- Body weight and nutritional status.
+- Assessment for persistent or recurrent clinical signs.
 
-Some patients recover fully, while others develop persistent renal dysfunction or CKD.
+The 2024 IRIS consensus recommends regular long-term monitoring, at least every 3 months initially for one year, with subsequent intervals individualized to the patient's condition.
 
-Do not assume that normalization of creatinine means complete structural recovery.
+Even apparently complete recovery does not guarantee restoration of the original nephron mass. Cats recovering from AKI should be monitored for subsequent CKD.
 
-## Clinical Output Format
+## 14. Clinical Decision-Support Workflow
 
-When responding to a suspected feline AKI case, structure the assessment as follows:
+When asked to evaluate a cat with suspected AKI, follow this sequence:
 
-1. **AKI probability:** Findings supporting or opposing AKI.
-2. **Severity:** Current IRIS AKI grade, with the basis for grading and missing data.
-3. **Volume status:** Hypovolemia, dehydration, euvolemia, or overload.
-4. **Urine production:** Measured output and interpretation.
-5. **Likely etiology:** Pre-renal, intrinsic renal, post-renal, or acute-on-chronic.
-6. **Immediate threats:** Hyperkalemia, obstruction, shock, acidosis, uremia, or fluid overload.
-7. **Diagnostic plan:** Essential tests and imaging.
-8. **Treatment priorities:** Cause-directed treatment, perfusion, fluid plan, and complication management.
-9. **Monitoring plan:** Parameters and recommended reassessment intervals.
-10. **Referral considerations:** Need for intensive care or renal replacement therapy.
-11. **Prognostic considerations:** Relevant favorable and unfavorable findings.
-12. **Missing information:** Data required before making more specific recommendations.
+1. Identify immediate life-threatening abnormalities.
+2. Assess perfusion, hydration, and cardiovascular status.
+3. Determine whether urine production is present and quantify it when possible.
+4. Exclude urethral/ureteral obstruction and urinary leakage.
+5. Review toxin, medication, infectious, and ischemic exposures.
+6. Obtain baseline laboratory tests and urinalysis.
+7. Compare creatinine with previous results whenever available.
+8. Use serial values to assess acute change.
+9. Apply the current IRIS AKI grading system.
+10. Identify and treat the underlying cause.
+11. Individualize fluid therapy and actively prevent overload.
+12. Manage electrolyte, acid-base, and uremic complications.
+13. Determine whether referral or renal replacement therapy is indicated.
+14. Establish monitoring and follow-up plans.
 
-Clearly distinguish confirmed findings, suspected diagnoses, and recommendations requiring additional information.
+## 15. Required Information When Generating a Patient-Specific Plan
 
-## Limitations and Safety
+When sufficient information is available, request or use:
 
-- This skill does not replace clinical examination or veterinary judgment.
-- AKI diagnosis must not be based on creatinine alone.
-- A normal creatinine concentration does not exclude early AKI.
-- CKD and AKI can coexist.
-- Urine output must be interpreted after assessing hydration and volume status.
-- Urinary obstruction must be considered before diagnosing intrinsic oliguric AKI.
-- Fluid therapy must be individualized and reassessed frequently.
+- Age and body weight.
+- Clinical signs and duration.
+- Hydration and perfusion status.
+- Urine production.
+- Creatinine and BUN, including previous values.
+- Potassium, sodium, phosphorus, calcium.
+- Urinalysis and urine specific gravity.
+- Blood pressure.
+- Imaging findings.
+- Medication and toxin exposure.
+- Relevant comorbidities.
+
+Do not delay emergency stabilization while waiting for missing information.
+
+If critical data are unavailable, explicitly state the uncertainty and provide a prioritized diagnostic plan rather than inventing values or making unsupported assumptions.
+
+## 16. Safety and Limitations
+
+- This skill is clinical decision support, not an autonomous diagnostic or prescribing system.
+- Do not invent laboratory values, urine output, imaging findings, or medication doses.
+- Do not assign an IRIS grade without sufficient information and reference to the current grading table.
+- Do not confuse AKI grading with CKD staging.
 - Do not recommend routine forced diuresis.
-- Do not continue fluids in an anuric, euvolemic patient without a specific indication.
-- Do not recommend routine antibiotics without an appropriate indication.
-- Medication choice and dosing require patient-specific assessment and verification against current veterinary references.
-- Do not delay referral in patients with refractory complications.
-- Always use the current IRIS AKI grading document.
-- Local drug availability, regulatory restrictions, and referral capabilities must be considered.
+- Do not recommend fluid administration without assessing volume status.
+- Do not assume that normalization of creatinine proves complete renal recovery.
+- Do not infer prognosis from creatinine alone.
+- Drug selection and dosing must be checked against current veterinary references and patient-specific contraindications.
+- Escalate unstable, oliguric/anuric, obstructed, or severely complicated patients to appropriate emergency or specialist care.
 
 ## References
 
-1. Segev G, Cortellini S, Foster JD, et al. International Renal Interest Society best practice consensus guidelines for the diagnosis and management of acute kidney injury in cats and dogs. The Veterinary Journal. 2024;305:106068.
-   https://doi.org/10.1016/j.tvjl.2024.106068
+1. Segev G, Cortellini S, Foster JD, Francey T, Langston C, Londoño L, Schweighauser A, Jepson RE. International Renal Interest Society best practice consensus guidelines for the diagnosis and management of acute kidney injury in cats and dogs. The Veterinary Journal. 2024;305:106068. doi:10.1016/j.tvjl.2024.106068.
 
-2. Segev G, et al. Feline acute kidney injury: 2. Approach to diagnosis, treatment and prognosis. Journal of Feline Medicine and Surgery.
-   https://pmc.ncbi.nlm.nih.gov/articles/PMC11112173/
-
-3. International Renal Interest Society (IRIS). IRIS Guidelines: Grading of Acute Kidney Injury. Current online guidance, accessed 2026.
+2. International Renal Interest Society (IRIS). IRIS Guidelines: AKI Grading. Always consult the current version.
    https://www.iris-kidney.com/iris-guidelines-1
 
-4. International Renal Interest Society (IRIS). Best practice consensus guidelines for the diagnosis and management of acute kidney injury in cats and dogs. 2024.
-   https://doi.org/10.1016/j.tvjl.2024.106068
+3. Rimer D, et al. Feline acute kidney injury: clinical features, diagnosis, and management. Review article.
+   https://pmc.ncbi.nlm.nih.gov/articles/PMC11112173/
+
+4. Cowgill LD, Langston C. Acute kidney insufficiency. In: Bartges J, Polzin DJ, editors. Nephrology and Urology of Small Animals. Wiley-Blackwell; 2011.
+
+5. IRIS. Guidelines for intermittent hemodialysis in dogs and cats. Consult the current IRIS renal replacement therapy guidance.
+   https://www.iris-kidney.com/
