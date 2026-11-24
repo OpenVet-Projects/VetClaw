@@ -1,13 +1,13 @@
-"""VetClaw ⇄ Hermes function-calling adapter.
+"""Animal Meridian ⇄ Hermes function-calling adapter.
 
 Hermes-family models (NousResearch Hermes 2 Pro / Hermes 3) call tools using a
 ChatML system prompt that lists tool schemas inside ``<tools></tools>`` and emit
 calls inside ``<tool_call></tool_call>``. Unlike OpenClaw — which auto-loads
-``<workspace>/skills`` — a Hermes agent has no built-in way to see VetClaw. This
-adapter bridges that gap by exposing VetClaw as ordinary function-calling tools:
+``<workspace>/skills`` — a Hermes agent has no built-in way to see Animal Meridian. This
+adapter bridges that gap by exposing Animal Meridian as ordinary function-calling tools:
 
-  * ``list_vetclaw_skills``  — discover skills (from index.json)
-  * ``get_vetclaw_skill``    — pull a skill's full SKILL.md into context on demand
+  * ``list_veterinary_skills``  — discover skills (from index.json)
+  * ``get_veterinary_skill``    — pull a skill's full SKILL.md into context on demand
   * ``check_veterinary_references`` — assess cited sources with VetEvidence
   * ``search_veterinary_adverse_events`` / ``top_adverse_reactions`` — openFDA SDK
 
@@ -43,9 +43,9 @@ from check_references import check_references
 HERMES_SYSTEM_PROMPT = (
     "You are a veterinary function calling AI model. You are provided with function "
     "signatures within <tools></tools> XML tags. You may call one or more functions "
-    "to assist with the user query. VetClaw is species-first: confirm the species "
+    "to assist with the user query. Animal Meridian is species-first: confirm the species "
     "before giving drug or dose information, and load the relevant skill with "
-    "get_vetclaw_skill before reasoning about a case. Don't make assumptions about "
+    "get_veterinary_skill before reasoning about a case. Don't make assumptions about "
     "what values to plug into functions. Here are the available tools: <tools> "
     "{tools} </tools> Use the following pydantic model json schema for each tool "
     'call you will make: {"properties": {"name": {"title": "Name", "type": '
@@ -64,16 +64,16 @@ def _load_index():
 
 
 def tool_schemas():
-    """Return the VetClaw tool schemas in OpenAI/Hermes function format."""
+    """Return the Animal Meridian tool schemas in OpenAI/Hermes function format."""
     index = _load_index()
     categories = sorted(index.get("categories", {}).keys())
     return [
         {
             "type": "function",
             "function": {
-                "name": "list_vetclaw_skills",
+                "name": "list_veterinary_skills",
                 "description": (
-                    "List available VetClaw veterinary skills (name, category, "
+                    "List available Animal Meridian veterinary skills (name, category, "
                     "description). Call first to discover which skill to load."
                 ),
                 "parameters": {
@@ -96,9 +96,9 @@ def tool_schemas():
         {
             "type": "function",
             "function": {
-                "name": "get_vetclaw_skill",
+                "name": "get_veterinary_skill",
                 "description": (
-                    "Return the full markdown of a VetClaw skill by name (e.g. "
+                    "Return the full markdown of an Animal Meridian skill by name (e.g. "
                     "'toxicology-calculator'). Load the relevant skill before "
                     "reasoning about a veterinary case."
                 ),
@@ -107,7 +107,7 @@ def tool_schemas():
                     "properties": {
                         "name": {
                             "type": "string",
-                            "description": "Skill name (kebab-case) from list_vetclaw_skills.",
+                            "description": "Skill name (kebab-case) from list_veterinary_skills.",
                         }
                     },
                     "required": ["name"],
@@ -167,7 +167,7 @@ def tool_schemas():
 
 
 def build_system_prompt(extra_tools=None):
-    """Return the Hermes system prompt with VetClaw (and any extra) tools embedded."""
+    """Return the Hermes system prompt with Animal Meridian (and any extra) tools embedded."""
     tools = tool_schemas() + list(extra_tools or [])
     tools_json = "\n".join(json.dumps(t) for t in tools)
     # plain replace, not str.format: the template embeds literal { } (the pydantic schema)
@@ -176,7 +176,7 @@ def build_system_prompt(extra_tools=None):
 
 # --- Tool implementations -------------------------------------------------
 
-def _tool_list_vetclaw_skills(category=None, query=None):
+def _tool_list_veterinary_skills(category=None, query=None):
     skills = _load_index()["skills"]
     if category:
         skills = [s for s in skills if s["category"] == category]
@@ -186,12 +186,12 @@ def _tool_list_vetclaw_skills(category=None, query=None):
     return [{"name": s["name"], "category": s["category"], "description": s["description"]} for s in skills]
 
 
-def _tool_get_vetclaw_skill(name):
+def _tool_get_veterinary_skill(name):
     for s in _load_index()["skills"]:
         if s["name"] == name:
             content = (REPO_ROOT / s["path"]).read_text(encoding="utf-8")
             return {"name": name, "path": s["path"], "content": content}
-    return {"error": f"unknown skill '{name}'. Call list_vetclaw_skills to see valid names."}
+    return {"error": f"unknown skill '{name}'. Call list_veterinary_skills to see valid names."}
 
 
 def _openfda_client():
@@ -231,8 +231,10 @@ def _tool_check_references(identifiers):
 
 DISPATCH = {
     "check_veterinary_references": _tool_check_references,
-    "list_vetclaw_skills": _tool_list_vetclaw_skills,
-    "get_vetclaw_skill": _tool_get_vetclaw_skill,
+    "list_veterinary_skills": _tool_list_veterinary_skills,
+    "list_vetclaw_skills": _tool_list_veterinary_skills,
+    "get_veterinary_skill": _tool_get_veterinary_skill,
+    "get_vetclaw_skill": _tool_get_veterinary_skill,
     "search_veterinary_adverse_events": _tool_search_veterinary_adverse_events,
     "top_adverse_reactions": _tool_top_adverse_reactions,
 }
@@ -273,7 +275,7 @@ def _demo():
     print(build_system_prompt()[:600], "...\n")
     sample = (
         'Sure, let me look that up.\n'
-        '<tool_call>\n{"name": "list_vetclaw_skills", "arguments": {"query": "toxic"}}\n</tool_call>'
+        '<tool_call>\n{"name": "list_veterinary_skills", "arguments": {"query": "toxic"}}\n</tool_call>'
     )
     for call in parse_tool_calls(sample):
         result = dispatch(call["name"], call.get("arguments"))

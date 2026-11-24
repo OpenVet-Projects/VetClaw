@@ -1,5 +1,5 @@
 <!--
-Thank you for contributing to VetClaw. Please complete this template so
+Thank you for contributing to Animal Meridian. Please complete this template so
 reviewers can verify clinical accuracy before merging. See CONTRIBUTING.md
 for the full guidelines. Accuracy over speed — every clinical claim must be
 supportable by a citable veterinary reference.

@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Python client for the openFDA Animal & Veterinary Adverse Events API."
 requires-python = ">=3.8"
 license = { text = "MIT" }
-authors = [{ name = "VetClaw / OpenVet Projects" }]
+authors = [{ name = "OpenVet" }]
 keywords = ["openfda", "veterinary", "fda", "adverse-events", "animal-health"]
 dependencies = ["requests>=2.20"]
 classifiers = [

@@ -270,4 +270,4 @@ publication. Specific survival data and immune correlates are not yet available.
 
 ## Advanced Integration
 
-Comparative oncology databases enable cross-species enrollment tracking and outcome comparison. VetClaw may integrate data from NCI Comparative Oncology Program for real-time clinical trial matching and genetic stratification. Consult the full veterinary-genomics and neoantigen-vaccine-design skills for precision medicine implementation.
+Comparative oncology databases enable cross-species enrollment tracking and outcome comparison. Animal Meridian may integrate data from NCI Comparative Oncology Program for real-time clinical trial matching and genetic stratification. Consult the full veterinary-genomics and neoantigen-vaccine-design skills for precision medicine implementation.

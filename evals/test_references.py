@@ -14,7 +14,7 @@ import check_references as client
 class ReferenceChecker(unittest.TestCase):
     def test_batch_with_failure_and_rate_limit(self):
         payload = {"results": [
-            {"id": "123", "effective_tier": "C", "source": {"title": "Test title"},
+            {"id": "123", "effective_tier": "C", "source": {"title": "=Test title"},
              "verifiability": "verified",
              "dimension_signals": [{"name": "Species applicability", "detail": "Study in dogs"}]},
             {"id": "PMC456", "error": "rate limited"},
@@ -29,6 +29,7 @@ class ReferenceChecker(unittest.TestCase):
         self.assertEqual(json.loads(request.data), {"ids": ["123", "PMC456", "10.1234/a+b"]})
         rows = list(csv.DictReader(io.StringIO(out.getvalue()), delimiter="\t"))
         self.assertEqual(rows[0]["VECS tier"], "III")
+        self.assertEqual(rows[0]["Title"], "'=Test title")
         self.assertEqual(rows[0]["Species applicability"], "Study in dogs")
         self.assertEqual(rows[1]["Status"], "rate limited")
         self.assertEqual(rows[2]["Status"], "No result returned")
@@ -52,6 +53,18 @@ class ReferenceChecker(unittest.TestCase):
                     client.main(args)
                 post.assert_not_called()
 
+
+    def test_existing_tool_names_still_resolve(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "integrations/hermes"))
+        import vetclaw_hermes as hermes
+        for current, previous, args in [
+            ("list_veterinary_skills", "list_vetclaw_skills", {"category": "literature"}),
+            ("get_veterinary_skill", "get_vetclaw_skill", {"name": "evidence-grading"}),
+        ]:
+            result = hermes.dispatch(current, args)
+            self.assertTrue(result)
+            self.assertNotIn("error", result)
+            self.assertEqual(result, hermes.dispatch(previous, args))
 
     def test_hermes_discovery_and_dispatch(self):
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "integrations/hermes"))

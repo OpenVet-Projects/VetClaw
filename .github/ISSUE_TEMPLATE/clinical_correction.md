@@ -1,13 +1,13 @@
 ---
 name: Clinical Correction
-about: Report a clinical inaccuracy in a VetClaw skill (a wrong dose, value, range, or claim)
+about: Report a clinical inaccuracy in an Animal Meridian skill (a wrong dose, value, range, or claim)
 title: "[Correction] "
 labels: clinical-accuracy
 assignees: ''
 ---
 
 <!--
-Thank you for helping keep VetClaw accurate. Clinical accuracy is our
+Thank you for helping keep Animal Meridian accurate. Clinical accuracy is our
 highest priority. Please complete every REQUIRED field below so a reviewer
 can verify and fix the issue quickly.
 

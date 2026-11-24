@@ -1,7 +1,8 @@
 {
-  "name": "VetClaw",
+  "name": "Animal Meridian",
   "version": "0.1.0",
-  "description": "Open veterinary workflows for literature review, clinical reasoning, and species safety.",
+  "description": "An open field guide to veterinary evidence",
+  "attribution": "by OpenVet",
   "license": "MIT",
   "skill_count": 51,
   "categories": {
@@ -53,7 +54,8 @@
       "name": "fluid-therapy",
       "category": "clinical",
       "description": "Dehydration assessment, crystalloid vs. colloid selection, resuscitation bolus protocols by species, maintenance calculation, electrolyte correction and potassium supplementation.",
-      "path": "skills/clinical/fluid-therapy/SKILL.md"
+      "path": "skills/clinical/fluid-therapy/SKILL.md",
+      "review_record": "docs/clinical-review-2026.md"
     },
     {
       "name": "laboratory-interpretation",
@@ -251,7 +253,8 @@
       "name": "nsaid-safety",
       "category": "safety",
       "description": "NSAID comparison (meloxicam, carprofen, deracoxib, firocoxib, robenacoxib), species-specific dosing, GI ulceration risk factors, renal monitoring protocols, corticosteroid washout requirements, COX-1 vs. COX-2 selectivity.",
-      "path": "skills/safety/nsaid-safety/SKILL.md"
+      "path": "skills/safety/nsaid-safety/SKILL.md",
+      "review_record": "docs/clinical-review-2026.md"
     },
     {
       "name": "toxicology-calculator",

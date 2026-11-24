@@ -288,4 +288,4 @@ mouse_species = 10090  # Mouse
 
 ## Advanced Integration
 
-VetClaw SDK provides convenience wrappers around Entrez API for species lookup and genomic data retrieval. See `/sessions/charming-practical-mayer/mnt/OpenVet/vetclaw/vetclaw/sdk/` for Python/TypeScript NCBI Taxonomy client examples.
+The [public SDK](../../../sdk/README.md) covers openFDA animal adverse-event reports. For this resource, use the access methods documented above.

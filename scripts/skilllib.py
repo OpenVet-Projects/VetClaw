@@ -1,4 +1,4 @@
-"""Shared helpers for VetClaw skill tooling (dependency-free, stdlib only).
+"""Shared helpers for Animal Meridian skill tooling (dependency-free, stdlib only).
 
 Used by validate_skills.py and generate_index.py. Deliberately avoids PyYAML so
 the tooling runs anywhere with a bare Python 3 interpreter.
@@ -33,7 +33,10 @@ def parse_frontmatter(text):
         if not stripped or stripped.startswith("#") or ":" not in line:
             continue
         key, _, value = line.partition(":")
-        fm[key.strip()] = value.strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+            value = value[1:-1]
+        fm[key.strip()] = value
     body = "\n".join(lines[end + 1:])
     return fm, body
 

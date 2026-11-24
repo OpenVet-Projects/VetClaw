@@ -7,7 +7,7 @@ description: Access the Vertebrate Breed Ontology (VBO) for standardized breed n
 
 ## Overview
 
-The Vertebrate Breed Ontology (VBO) is a standardized, structured taxonomy of animal breeds and varieties across 49 domesticated and semi-domesticated species. Developed and maintained by the VBO consortium (veterinary geneticists, bioinformaticians, breed club representatives), VBO enables consistent breed naming, automated breed-predisposition reasoning, and integration with genetic disease databases (OMIA, VetClaw). With 19,500+ breed concepts and hierarchical classification, VBO powers precision veterinary medicine.
+The Vertebrate Breed Ontology (VBO) is a standardized, structured taxonomy of animal breeds and varieties across 49 domesticated and semi-domesticated species. Developed and maintained by the VBO consortium (veterinary geneticists, bioinformaticians, breed club representatives), VBO enables consistent breed naming, automated breed-predisposition reasoning, and integration with genetic disease databases (OMIA, Animal Meridian). With 19,500+ breed concepts and hierarchical classification, VBO powers precision veterinary medicine.
 
 ## When to Use
 
@@ -161,7 +161,7 @@ Some breeds have recognized size/coat variants (not separate breed in FCI, but d
 
 ## Breed Predisposition Reasoning
 
-**Automated Workflow (VetClaw AI):**
+**Automated Workflow (Animal Meridian AI):**
 ```
 1. Patient Information Input:
    - Species: Canis familiaris
@@ -283,4 +283,4 @@ Use for breed-predisposition research (align datasets from different registries)
 
 ## Advanced Integration
 
-VetClaw SDK provides VBO breed lookups and OMIA predisposition queries integrated into clinical decision support. See `/sessions/charming-practical-mayer/mnt/OpenVet/vetclaw/vetclaw/sdk/` for Python/TypeScript breed ontology client examples.
+The [public SDK](../../../sdk/README.md) covers openFDA animal adverse-event reports. For this resource, use the access methods documented above.

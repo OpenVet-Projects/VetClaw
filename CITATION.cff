@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use VetClaw, please cite it."
-title: VetClaw
+message: "If you use Animal Meridian, please cite it."
+title: Animal Meridian
 type: software
 authors:
   # Single organization/entity author. Individual maintainers can be added as
@@ -8,7 +8,7 @@ authors:
   #   - given-names: Jane
   #     family-names: Doe
   #     affiliation: OpenVet.ai
-  - name: "OpenVet.ai"
+  - name: "OpenVet"
 version: 0.1.0
 license: MIT
 repository-code: "https://github.com/openvet-projects/vetclaw"

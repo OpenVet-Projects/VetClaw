@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Animal Meridian is the new name of VetClaw. The project is published by OpenVet.
+- Check a reference list with VetEvidence from Python or a function-calling agent. Individual citations retain their source links and verification status.
+- The community review cases exercise two updated safety warnings in the browser demo.
+
 ### Added
 
 - Community and governance files: Code of Conduct, security policy, citation

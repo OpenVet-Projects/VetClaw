@@ -1,4 +1,4 @@
-# Contributing to VetClaw
+# Contributing to Animal Meridian
 
 We welcome contributions from veterinary professionals, researchers, and developers.
 
@@ -59,3 +59,7 @@ Open an issue or reach out to the OpenVet team at openvet.ai.
 ## Contribute a review case
 
 Clinicians can contribute a fictional question and observable criteria for a good answer. Developers can use the same cases to compare assistant behavior. See the [community review cases](evals/README.md).
+
+## Publish a review record
+
+A review can cover individual claims. Record which values, species, and jurisdictions were examined and link the underlying sources. Set `review_record` in the skill header to the repository-relative path of that report. Include `reviewer` and an ISO `last_reviewed` date when the review identifies them. These fields appear in the generated catalog.

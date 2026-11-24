@@ -27,7 +27,7 @@ def validate(identifiers):
 def assess(identifiers):
     request = Request(ENDPOINT, data=json.dumps({"ids": identifiers}).encode(),
                       headers={"Content-Type": "application/json", "Accept": "application/json",
-                               "User-Agent": "VetClaw-reference-checker/1.0"})
+                               "User-Agent": "AnimalMeridian-reference-checker/1.0"})
     with urlopen(request, timeout=120) as response:
         return json.load(response)
 
@@ -85,13 +85,20 @@ def check_references(identifiers):
 
 
 def report(assessment, output, errors):
+    def spreadsheet_text(value):
+        text = str(value or "—")
+        if text.lstrip().startswith(("=", "+", "-", "@")) or text.startswith(("\t", "\r", "\n")):
+            return "'" + text
+        return text
+
     writer = csv.writer(output, delimiter="\t", lineterminator="\n")
     writer.writerow(("Identifier", "VECS tier", "Source verification", "Species applicability",
                      "Title", "Status", "VetEvidence"))
     for row in assessment["results"]:
         status = row["error"] or ("Assessed" if row["tier"] else "No usable tier")
-        writer.writerow((row["identifier"], row["tier"] or "—", row["verification"] or "—",
-                         row["species_applicability"] or "—", row["title"] or "—", status, row["url"]))
+        writer.writerow((row["identifier"], row["tier"] or "—", spreadsheet_text(row["verification"]),
+                         spreadsheet_text(row["species_applicability"]), spreadsheet_text(row["title"]),
+                         spreadsheet_text(status), row["url"]))
     for note in assessment["notes"]:
         print(note, file=errors)
     return int(any(row["error"] for row in assessment["results"]))

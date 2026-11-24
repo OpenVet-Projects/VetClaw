@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://openvet.ai/schemas/vetclaw-skill.schema.json",
-  "title": "VetClaw Skill Frontmatter",
-  "description": "Schema for the YAML frontmatter of a VetClaw SKILL.md file. `name` and `description` are required; the remaining fields are optional provenance metadata that contributors are encouraged to add over time.",
+  "title": "Animal Meridian Skill Frontmatter",
+  "description": "Schema for the YAML frontmatter of an Animal Meridian SKILL.md file. `name` and `description` are required; the remaining fields are optional provenance metadata that contributors are encouraged to add over time.",
   "type": "object",
   "required": ["name", "description"],
   "additionalProperties": true,
@@ -21,6 +21,10 @@
     "version": {
       "type": "string",
       "description": "Optional semantic version of the skill."
+    },
+    "review_record": {
+      "type": "string",
+      "description": "Repository-relative path to a published review that identifies the claims it examined."
     },
     "last_reviewed": {
       "type": "string",

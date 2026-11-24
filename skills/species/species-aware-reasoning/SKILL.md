@@ -62,6 +62,6 @@ Within a species, breed significantly affects disease risk, drug sensitivity, an
 
 ## Limitations
 
-- This skill defines reasoning rules, not a database. It works in conjunction with other VetClaw skills.
+- This skill defines reasoning rules, not a database. It works in conjunction with other Animal Meridian skills.
 - Exotic species (reptiles, amphibians, fish, invertebrates) have the least clinical data available.
 - Wildlife medicine often requires extrapolation from domestic species data.

@@ -27,6 +27,6 @@ This is why veterinary AI is not a subset of human AI. A dose that saves a dog c
 
 For the equine onion/garlic and feline meloxicam warnings, see [the cited clinical review, items 4 and 13](../docs/clinical-review-2026.md).
 
-**Source:** VetClaw skills: lethal-variance-detection, toxicology-calculator, nsaid-safety, feline-medicine, avian-medicine. Data from Plumb's Veterinary Drug Handbook, ASPCA toxicology references, Merck Veterinary Manual.
+**Source:** Animal Meridian skills: lethal-variance-detection, toxicology-calculator, nsaid-safety, feline-medicine, avian-medicine. Data from Plumb's Veterinary Drug Handbook, ASPCA toxicology references, Merck Veterinary Manual.
 
 **This matrix is not exhaustive.** Many substances have species-specific toxicity not listed here. Always consult a veterinarian.

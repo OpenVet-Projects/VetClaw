@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate every VetClaw SKILL.md against the frontmatter + structure rules.
+"""Validate every Animal Meridian SKILL.md against the frontmatter + structure rules.
 
 Errors (exit 1):
   - missing YAML frontmatter
@@ -17,6 +17,7 @@ Run:  python3 scripts/validate_skills.py
 """
 from __future__ import annotations
 
+from datetime import date
 import re
 import sys
 
@@ -62,6 +63,19 @@ def main():
             errors.append(f"{rel}: description too short ({len(desc)} chars)")
         elif len(desc) > 400:
             warnings.append(f"{rel}: description long ({len(desc)} chars); some runtimes truncate")
+
+        record = fm.get("review_record")
+        if record:
+            record_path = (REPO_ROOT / record).resolve()
+            if REPO_ROOT not in record_path.parents or not record_path.is_file() or record.startswith("/"):
+                errors.append(f"{rel}: review_record must point to a file in the repository")
+        if "last_reviewed" in fm:
+            try:
+                reviewed = date.fromisoformat(fm["last_reviewed"])
+                if reviewed.isoformat() != fm["last_reviewed"]:
+                    raise ValueError
+            except ValueError:
+                errors.append(f"{rel}: last_reviewed must use YYYY-MM-DD")
 
         if not has_heading(body, "Overview"):
             errors.append(f"{rel}: missing '## Overview' section")

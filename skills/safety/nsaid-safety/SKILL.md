@@ -1,6 +1,7 @@
 ---
 name: nsaid-safety
 description: NSAID comparison (meloxicam, carprofen, deracoxib, firocoxib, robenacoxib), species-specific dosing, GI ulceration risk factors, renal monitoring protocols, corticosteroid washout requirements, COX-1 vs. COX-2 selectivity.
+review_record: docs/clinical-review-2026.md
 ---
 
 # NSAID Safety
@@ -172,3 +173,5 @@ Evidence-based NSAID selection, dosing by species, contraindication recognition,
 - **GI protection efficacy**: Limited high-quality evidence for routine prophylaxis; many protection strategies add cost without proven benefit in short-term use
 - **Chronic NSAID use**: Long-term safety data limited; adjuvant agents (gabapentin, joint supplements) may reduce NSAID requirements but evidence variable
 - **Referral**: Complex polypharmacy, unexplained renal elevation during NSAID therapy, or refractory pain → internist/pain specialist consideration
+
+The [published clinical review](../../../docs/clinical-review-2026.md) documents the specific claims checked in items 4–6.
