@@ -1,6 +1,7 @@
 ---
 name: fluid-therapy
 description: Dehydration assessment, crystalloid vs. colloid selection, resuscitation bolus protocols by species, maintenance calculation, electrolyte correction and potassium supplementation.
+review_record: docs/clinical-review-2026.md
 ---
 
 # Fluid Therapy
@@ -177,3 +178,5 @@ Each row pairs a concentration with a maximum fluid rate so that potassium deliv
 - **Crystalloid distribution**: 75% shifts to interstitium; third-spacing common in peritonitis, sepsis; colloid consideration in severe cases
 - **Maintenance calculation**: Variation based on age, metabolism, disease state; formulas are approximations
 - **Referral**: Complex cases (multiple electrolyte disturbances, ongoing hemorrhage, sepsis) warrant internist/anesthesiology consultation
+
+The [published clinical review](../../../docs/clinical-review-2026.md) documents the specific claims checked in items 1–3.

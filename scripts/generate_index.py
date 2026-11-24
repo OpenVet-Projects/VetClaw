@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate ``index.json`` — a machine-readable manifest of all VetClaw skills.
+"""Generate ``index.json`` — a machine-readable manifest of all Animal Meridian skills.
 
 An agent runtime (or an installer) can read this file to enumerate skills,
 filter by category, and resolve paths without walking the tree or parsing README.
@@ -21,14 +21,16 @@ INDEX_PATH = REPO_ROOT / "index.json"
 def build_index():
     skills = []
     for path, category, fm, _body in iter_skills():
-        skills.append(
-            {
-                "name": fm.get("name", path.parent.name),
-                "category": category,
-                "description": fm.get("description", ""),
-                "path": str(path.relative_to(REPO_ROOT)),
-            }
-        )
+        entry = {
+            "name": fm.get("name", path.parent.name),
+            "category": category,
+            "description": fm.get("description", ""),
+            "path": str(path.relative_to(REPO_ROOT)),
+        }
+        for field in ("review_record", "last_reviewed", "reviewer"):
+            if fm.get(field):
+                entry[field] = fm[field]
+        skills.append(entry)
     skills.sort(key=lambda s: (s["category"], s["name"]))
 
     categories = {}
@@ -36,9 +38,10 @@ def build_index():
         categories[s["category"]] = categories.get(s["category"], 0) + 1
 
     return {
-        "name": "VetClaw",
+        "name": "Animal Meridian",
         "version": "0.1.0",
-        "description": "Veterinary AI skill library for OpenClaw and compatible agent frameworks.",
+        "description": "An open field guide to veterinary evidence",
+        "attribution": "by OpenVet",
         "license": "MIT",
         "skill_count": len(skills),
         "categories": dict(sorted(categories.items())),

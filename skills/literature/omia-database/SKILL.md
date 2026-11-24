@@ -299,4 +299,4 @@ OMIA links veterinary genetic diseases to human orthologous conditions via OMIM 
 
 ## Advanced Integration
 
-VetClaw SDK may provide OMIA query wrappers for automated breed risk stratification. Consult `/sessions/charming-practical-mayer/mnt/OpenVet/vetclaw/vetclaw/sdk/` for Python/TypeScript client examples integrating OMIA breed predisposition data.
+The [public SDK](../../../sdk/README.md) covers openFDA animal adverse-event reports. For this resource, use the access methods documented above.

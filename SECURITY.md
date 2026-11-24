@@ -1,6 +1,6 @@
 # Security Policy
 
-VetClaw is an open-source veterinary AI skill library. This policy covers
+Animal Meridian is an open-source veterinary AI skill library. This policy covers
 **technical security issues** in the repository and its reference SDK. Thank you
 for helping keep the project and its users safe.
 
@@ -44,7 +44,7 @@ disclosure.
 
 ## Supported versions
 
-VetClaw is in early development (0.x). Security fixes are applied to the latest
+Animal Meridian is in early development (0.x). Security fixes are applied to the latest
 version on the default branch. Please verify an issue against the current `main`
 before reporting.
 

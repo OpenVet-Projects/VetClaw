@@ -1,11 +1,8 @@
-# VetClaw Clinical Accuracy Review — 2026
+# Animal Meridian Clinical Accuracy Review — 2026
 
 ## Purpose and disclaimer
 
-This document provides a **citable source for every dosing and safety value** in the VetClaw
-clinical skills. Each value is verified against primary literature (PubMed) and authoritative
-references (FDA/EMA drug labels, FDA CVM, IRIS/AAHA/ISFM guidance, the NASPHV *Chlamydia
-psittaci* Compendium, and the Merck Veterinary Manual). We publish it **for transparency**, so
+This review documents the 14 items listed below. Each entry identifies the clinical claim, its supporting references, and the review’s conclusion. We publish it **for transparency**, so
 that anyone using the repository can see the evidence behind each value — and we welcome review
 and correction from board-certified specialists.
 

@@ -17,7 +17,11 @@ Evaluate and grade the quality of evidence supporting veterinary clinical recomm
 - When synthesizing information from multiple sources of varying quality
 - Keywords: evidence, evidence-based, strength, quality, level of evidence, recommendation grade, how strong, how reliable
 
-## Veterinary Evidence Hierarchy
+## Assess an individual source with VetEvidence
+
+For a paper, guideline, or label with an identifier, submit the PMID, PMCID, or DOI to [VetEvidence](https://vetevidence.com/#batch). In a tool-enabled session, call `check_veterinary_references` with the identifiers. For each source, record its identifier, returned VECS tier, verification status, and species applicability. Identify the patient's species separately. When the service cannot assess a source, record the reason and leave its VECS tier blank. Never infer a VECS tier from this skill's hierarchy.
+
+## Veterinary Evidence Hierarchy for Recommendations
 
 ### Level I: Strongest Evidence
 - Systematic reviews and meta-analyses of veterinary RCTs
@@ -62,7 +66,7 @@ This does NOT mean textbooks are infallible. When high-quality RCTs or systemati
 
 1. Identify the clinical claim or recommendation to be graded.
 2. Determine the highest-quality evidence source supporting it.
-3. Assign an evidence level (I-V).
+3. Assign a local recommendation evidence level (I–V) and explain which sources support the claim. Attribute any individual source tier explicitly to VetEvidence.
 4. Note the species-specificity of the evidence (same species, related species, or cross-species extrapolation).
 5. Note recency (evidence older than 10 years may not reflect current best practice).
 6. Communicate the evidence grade alongside the recommendation.
@@ -71,7 +75,7 @@ This does NOT mean textbooks are infallible. When high-quality RCTs or systemati
 
 ```
 **Recommendation:** [Clinical recommendation]
-**Evidence Level:** [I-V]
+**Local recommendation evidence level:** [I-V]
 **Source:** [Citation]
 **Species-specific:** [Yes/No -- if No, note the source species]
 **Recency:** [Publication year]

@@ -1,6 +1,6 @@
 ---
 name: New Skill Proposal
-about: Propose a new veterinary skill to add to the VetClaw library
+about: Propose a new veterinary skill to add to the Animal Meridian library
 title: "[Skill] "
 labels: new-skill
 assignees: ''

@@ -1,6 +1,6 @@
-# VetClaw + Hermes
+# Animal Meridian + Hermes
 
-Use VetClaw skills with a [NousResearch Hermes](https://huggingface.co/NousResearch)
+Use Animal Meridian skills with a [NousResearch Hermes](https://huggingface.co/NousResearch)
 function-calling agent (Hermes 2 Pro / Hermes 3), including agents that run **in
 front of** OpenClaw.
 
@@ -8,14 +8,17 @@ front of** OpenClaw.
 
 OpenClaw auto-loads every skill in `<workspace>/skills`. A Hermes agent has no
 such mechanism — it discovers capabilities through **function calling**. So the way
-to give a Hermes agent VetClaw is to expose the library as tools it can call:
+to give a Hermes agent Animal Meridian is to expose the library as tools it can call:
 
 | Tool | What it does |
 | --- | --- |
-| `list_vetclaw_skills(category?, query?)` | Discover skills (from [`index.json`](../../index.json)) |
-| `get_vetclaw_skill(name)` | Pull a skill's full `SKILL.md` into context on demand |
+| `list_veterinary_skills(category?, query?)` | Discover skills (from [`index.json`](../../index.json)) |
+| `check_veterinary_references(identifiers)` | Send 1–15 public citation IDs to VetEvidence and return per-source assessments and links |
+| `get_veterinary_skill(name)` | Pull a skill's full `SKILL.md` into context on demand |
 | `search_veterinary_adverse_events(...)` | Query the openFDA animal/vet adverse-event DB |
 | `top_adverse_reactions(species, drug?)` | Aggregate top reactions |
+
+Existing callers can still dispatch `list_vetclaw_skills` and `get_vetclaw_skill` and import `vetclaw_hermes`.
 
 The tool schemas (OpenAI/Hermes function format) are generated to
 [`tools.json`](tools.json); the reference dispatcher is
@@ -29,11 +32,11 @@ into the Hermes agent's system prompt. Zero code; best when your agent is narrow
 
 ### 2. Manifest + on-demand retrieval
 Put the skill list (name + description from `index.json`) in the system prompt so
-the model knows what exists, then let it call `get_vetclaw_skill(name)` to pull the
+the model knows what exists, then let it call `get_veterinary_skill(name)` to pull the
 one it needs. Keeps the context small while covering all 51 skills.
 
 ### 3. Full function-calling (recommended)
-Register all four tools and run the standard Hermes tool loop. The model discovers,
+Register the five tools and run the standard Hermes tool loop. The model discovers,
 loads, and applies skills itself, and can hit openFDA for live data.
 
 ## Quickstart (pattern 3)

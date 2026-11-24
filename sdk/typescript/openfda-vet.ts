@@ -2,7 +2,7 @@
  * OpenFDA Veterinary Adverse Events SDK
  * ======================================
  * TypeScript client for the openFDA Animal & Veterinary Adverse Events API.
- * Part of the VetClaw open veterinary AI skill library.
+ * Part of the Animal Meridian open veterinary AI skill library.
  *
  * Usage:
  *   import { OpenFDAVet } from "./openfda-vet";

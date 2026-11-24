@@ -14,7 +14,7 @@ openFDA provides free, public REST API access to FDA CVM (Center for Veterinary 
 - User queries adverse event frequency for a veterinary drug
 - User searches for FDA-approved animal drug products (NADA database)
 - User researches safety signals or patterns in veterinary pharmacovigilance
-- User programmatically integrates FDA data into a VetClaw application
+- User programmatically integrates FDA data into an Animal Meridian application
 - Keywords: openFDA, FDA CVM, adverse event, animal drug, NADA, API, veterinary device, safety signal
 
 ## API Endpoints
@@ -117,9 +117,9 @@ outcome:"Fatal"
 **Register for API Key:**
 https://open.fda.gov/apis/authentication/
 
-## VetClaw SDK Integration
+## Animal Meridian SDK Integration
 
-VetClaw includes reference clients for this API. See `sdk/` in the repo root.
+Animal Meridian includes reference clients for this API. See `sdk/` in the repo root.
 
 **Python** (`sdk/python/openfda_vet.py`):
 ```python
@@ -254,7 +254,7 @@ Count by year to track safety signal emergence over time
 - **OpenFDA Animal & Veterinary Guide:** https://open.fda.gov/apis/animalandveterinary/
 - **FDA CVM:** https://www.fda.gov/animal-veterinary
 - **VEDDRA Terminology:** Available in FDA CVM databases
-- **VetClaw SDK Documentation:** Reference sdk/ folder for Python/TypeScript client libraries
+- **Animal Meridian SDK Documentation:** Reference sdk/ folder for Python/TypeScript client libraries
 
 ## Rate Limit Best Practices
 

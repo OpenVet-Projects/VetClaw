@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate ``integrations/hermes/tools.json`` — the VetClaw tool schemas in
+"""Generate ``integrations/hermes/tools.json`` — the Animal Meridian tool schemas in
 OpenAI/Hermes function-calling format, ready to drop into a Hermes agent's
 ``<tools>`` block. Regenerated from index.json so the category enum stays in sync.
 

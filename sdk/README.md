@@ -1,6 +1,6 @@
-# VetClaw SDKs
+# Animal Meridian SDKs
 
-API client libraries for veterinary data sources referenced by VetClaw skills.
+API client libraries for veterinary data sources referenced by Animal Meridian skills.
 
 ## openFDA Animal & Veterinary Adverse Events
 

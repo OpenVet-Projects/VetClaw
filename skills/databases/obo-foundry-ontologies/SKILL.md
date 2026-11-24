@@ -217,4 +217,4 @@ print(f"Anatomy: {kidney.name}, Definition: {kidney.definition}")
 
 ## Advanced Integration
 
-VetClaw SDK may provide convenience wrappers around SPARQL queries and ontology traversal. Consult `/sessions/charming-practical-mayer/mnt/OpenVet/vetclaw/vetclaw/sdk/` for Python/TypeScript ontology client examples.
+The [public SDK](../../../sdk/README.md) covers openFDA animal adverse-event reports. For this resource, use the access methods documented above.

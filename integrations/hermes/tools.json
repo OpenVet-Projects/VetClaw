@@ -2,8 +2,8 @@
   {
     "type": "function",
     "function": {
-      "name": "list_vetclaw_skills",
-      "description": "List available VetClaw veterinary skills (name, category, description). Call first to discover which skill to load.",
+      "name": "list_veterinary_skills",
+      "description": "List available Animal Meridian veterinary skills (name, category, description). Call first to discover which skill to load.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -31,18 +31,42 @@
   {
     "type": "function",
     "function": {
-      "name": "get_vetclaw_skill",
-      "description": "Return the full markdown of a VetClaw skill by name (e.g. 'toxicology-calculator'). Load the relevant skill before reasoning about a veterinary case.",
+      "name": "get_veterinary_skill",
+      "description": "Return the full markdown of an Animal Meridian skill by name (e.g. 'toxicology-calculator'). Load the relevant skill before reasoning about a veterinary case.",
       "parameters": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
-            "description": "Skill name (kebab-case) from list_vetclaw_skills."
+            "description": "Skill name (kebab-case) from list_veterinary_skills."
           }
         },
         "required": [
           "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "check_veterinary_references",
+      "description": "Assess individual sources with VetEvidence. Send only public citation identifiers.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifiers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 15,
+            "items": {
+              "type": "string",
+              "description": "Bare PMID, PMCID or DOI"
+            }
+          }
+        },
+        "required": [
+          "identifiers"
         ]
       }
     }

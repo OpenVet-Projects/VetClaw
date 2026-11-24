@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VetClaw Species Safety Checker</title>
+<title>Animal Meridian Species Safety Checker</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; min-height: 100vh; }
@@ -50,13 +50,13 @@
 <body>
 <div class="container">
   <div class="header">
-    <h1>VetClaw Species Safety Checker</h1>
-    <p>Powered by <a href="https://github.com/OpenVet-Projects/VetClaw">VetClaw</a> lethal-variance-detection skill | <a href="https://openvet.ai">OpenVet.ai</a></p>
+    <h1>Animal Meridian Species Safety Checker</h1>
+    <p>An open field guide to veterinary evidence · by <a href="https://openvet.ai">OpenVet</a></p>
   </div>
 
   <div class="form">
     <div class="field">
-      <label>Species</label>
+      <label for="species">Species</label>
       <select id="species">
         <option value="">Select species...</option>
         <option value="dog">Dog</option>
@@ -68,29 +68,29 @@
       </select>
     </div>
     <div class="field">
-      <label>Drug or Substance</label>
+      <label for="substance">Drug or substance name</label>
       <input type="text" id="substance" placeholder="e.g., acetaminophen, chocolate, xylitol, permethrin..." list="substances">
       <datalist id="substances">
-        <option value="Acetaminophen (Tylenol)">
-        <option value="Ibuprofen (Advil)">
-        <option value="Permethrin">
-        <option value="Chocolate">
-        <option value="Xylitol">
-        <option value="Grapes / Raisins">
-        <option value="Lilies">
-        <option value="Ivermectin">
-        <option value="Ethylene Glycol (Antifreeze)">
-        <option value="Onions / Garlic">
-        <option value="Meloxicam">
-        <option value="Carprofen (Rimadyl)">
-        <option value="5-Fluorouracil (5-FU / Efudex)">
-        <option value="Marijuana / THC">
-        <option value="Macadamia Nuts">
-        <option value="PTFE / Teflon Fumes">
+        <option value="Acetaminophen (Tylenol)" data-key="acetaminophen">
+        <option value="Ibuprofen (Advil)" data-key="ibuprofen">
+        <option value="Permethrin" data-key="permethrin">
+        <option value="Chocolate" data-key="chocolate">
+        <option value="Xylitol" data-key="xylitol">
+        <option value="Grapes / Raisins" data-key="grapes">
+        <option value="Lilies" data-key="lily">
+        <option value="Ivermectin" data-key="ivermectin">
+        <option value="Ethylene Glycol (Antifreeze)" data-key="ethylene glycol">
+        <option value="Onions / Garlic" data-key="onion">
+        <option value="Meloxicam" data-key="meloxicam">
+        <option value="Carprofen (Rimadyl)" data-key="carprofen">
+        <option value="5-Fluorouracil (5-FU / Efudex)" data-key="5-fu">
+        <option value="Marijuana / THC" data-key="thc">
+        <option value="Macadamia Nuts" data-key="macadamia">
+        <option value="PTFE / Teflon Fumes" data-key="ptfe">
       </datalist>
     </div>
     <button class="btn" onclick="checkSafety()">Check Safety</button>
-    <div id="result" class="result"></div>
+    <div id="result" class="result" role="status"></div>
   </div>
 
   <div class="matrix">
@@ -150,7 +150,7 @@
       <tr>
         <td>Meloxicam</td>
         <td class="cell-safe">&#9989; Safe</td>
-        <td class="cell-caution">&#9888; Monitor renal</td>
+        <td class="cell-caution" data-substance="Meloxicam" data-species="cat"><strong>US FDA boxed warning.</strong> Repeated meloxicam use in cats has been associated with acute renal failure and death. US labeling allows a single injection for specific indications. Check the local product label with a veterinarian.</td>
         <td class="cell-safe">&#9989; Safe</td>
         <td class="cell-caution">&#9888; Limited data</td>
         <td class="cell-caution">&#9888; Limited</td>
@@ -183,23 +183,36 @@
         <td>Onions / Garlic</td>
         <td class="cell-caution">&#9888; Toxic</td>
         <td class="cell-lethal">&#128308; More sensitive</td>
-        <td class="cell-safe">&#9989; Safe</td>
+        <td class="cell-caution" data-substance="Onions / Garlic" data-species="horse"><strong>Toxic to horses.</strong> Onion and garlic exposure can cause Heinz body anemia. Contact a veterinarian about suspected exposure.</td>
         <td class="cell-unknown">? Limited</td>
         <td class="cell-caution">&#9888; Toxic</td>
       </tr>
     </table>
-    <p style="text-align:center;color:#484f58;font-size:11px;margin-top:8px;">Source: VetClaw lethal-variance-detection + toxicology-calculator skills. Not exhaustive. Always consult a veterinarian.</p>
+    <p style="text-align:center;color:#484f58;font-size:11px;margin-top:8px;">Source: Animal Meridian lethal-variance-detection + toxicology-calculator skills. Not exhaustive. Always consult a veterinarian.</p>
   </div>
 
   <div class="disclaimer">
     <strong>This tool is for educational reference only.</strong> It is not a substitute for veterinary care.<br>
     In an emergency, contact your veterinarian or:<br>
     ASPCA Poison Control: <strong>888-426-4435</strong> | Pet Poison Helpline: <strong>855-764-7661</strong><br><br>
-    Data sourced from VetClaw skills (MIT licensed) | <a href="https://github.com/OpenVet-Projects/VetClaw" style="color:#58a6ff;">GitHub</a> | <a href="https://openvet.ai" style="color:#58a6ff;">OpenVet.ai</a>
+    Data sourced from Animal Meridian skills (MIT licensed) | <a href="https://github.com/OpenVet-Projects/VetClaw" style="color:#58a6ff;">GitHub</a> | <a href="https://openvet.ai" style="color:#58a6ff;">OpenVet.ai</a>
   </div>
 </div>
 
 <script>
+// The reviewed matrix cells also supply the corresponding lookup results.
+function reviewedWarning(substance, species) {
+  const cell = document.querySelector(`[data-substance="${substance}"][data-species="${species}"]`);
+  const summary = cell.cloneNode(true);
+  const headline = summary.querySelector("strong");
+  const title = headline.innerHTML;
+  headline.remove();
+  return {
+    level: "caution", title,
+    body: summary.innerHTML + ' <a href="https://github.com/OpenVet-Projects/VetClaw/blob/main/docs/clinical-review-2026.md">Clinical review and sources</a>'
+  };
+}
+
 const DB = {
   acetaminophen: {
     dog: { level: "caution", title: "Use With Caution", body: "<strong>Acetaminophen</strong> can be used in dogs at <strong>10-15 mg/kg PO q8-12h</strong> with caution. Monitor for GI signs. Do NOT combine with NSAIDs. Not FDA-approved for veterinary use." },
@@ -308,14 +321,14 @@ const DB = {
   onion: {
     dog: { level: "caution", title: "Toxic — Dose-Dependent", body: "<strong>Onions and garlic contain organosulfoxides</strong> that cause oxidative damage to red blood cells (Heinz body anemia) in dogs. Toxic dose: >0.5% of body weight. All forms (raw, cooked, powder, dehydrated) are toxic. Signs: Lethargy, dark urine, weakness. Onset may be delayed 1-5 days." },
     cat: { level: "lethal", title: "MORE SENSITIVE — Toxic", body: "<strong>Cats are more sensitive to onion/garlic toxicity than dogs.</strong> Even small amounts can cause Heinz body hemolytic anemia. Baby food containing onion powder has caused toxicity in cats. Avoid all allium species." },
-    horse: { level: "safe", title: "Generally Safe", body: "Horses are relatively resistant to onion/garlic toxicity at typical exposure levels." },
+    horse: reviewedWarning("Onions / Garlic", "horse"),
     rabbit: { level: "unknown", title: "Limited Data", body: "Avoid as a precaution." },
     bird: { level: "caution", title: "Potentially Toxic", body: "Some reports of allium toxicity in birds. Avoid." },
     cattle: { level: "caution", title: "Toxic in Quantity", body: "Cattle grazing on wild onions can develop hemolytic anemia." }
   },
   meloxicam: {
     dog: { level: "safe", title: "Safe — FDA Approved", body: "Meloxicam is FDA-approved for dogs at <strong>0.1-0.2 mg/kg PO daily</strong>. COX-2 preferential. Check renal function before starting and at 7-10 days. Do not combine with corticosteroids." },
-    cat: { level: "caution", title: "Use With Monitoring", body: "Meloxicam is used in cats at <strong>0.1 mg/kg daily</strong> but requires <strong>mandatory renal monitoring</strong> (baseline + 2-4 weeks). Feline meloxicam dosing remains controversial. Cats are more sensitive to renal effects." },
+    cat: reviewedWarning("Meloxicam", "cat"),
     horse: { level: "safe", title: "Safe", body: "Meloxicam is used in equine practice. Firocoxib is often preferred." },
     rabbit: { level: "caution", title: "Limited Data", body: "Meloxicam 0.6-1 mg/kg PO/SC BID used anecdotally in rabbits. Monitor GI function." },
     bird: { level: "caution", title: "Limited Data", body: "Some avian use reported. Consult an avian veterinarian for dosing." },
@@ -345,7 +358,7 @@ const ALIASES = {
   thc: "thc", marijuana: "thc", cannabis: "thc", weed: "thc", edible: "thc", edibles: "thc",
   macadamia: "macadamia", "macadamia nut": "macadamia", "macadamia nuts": "macadamia",
   ptfe: "ptfe", teflon: "ptfe", "non-stick": "ptfe", "nonstick": "ptfe",
-  onion: "onion", onions: "onion", garlic: "onion", "onions / garlic": "onion",
+  onion: "onion", onions: "onion", garlic: "onion", "onion powder": "onion", "garlic powder": "onion", "onions / garlic": "onion",
   meloxicam: "meloxicam", metacam: "meloxicam",
   carprofen: "carprofen", rimadyl: "carprofen"
 };
@@ -362,16 +375,14 @@ function checkSafety() {
     return;
   }
 
-  // Normalize substance
-  let substance = null;
-  for (const [alias, canonical] of Object.entries(ALIASES)) {
-    if (rawSubstance.includes(alias)) { substance = canonical; break; }
-  }
+  const preset = Array.from(document.querySelectorAll("#substances option"))
+    .find(option => option.value.toLowerCase() === rawSubstance);
+  const substance = preset ? preset.dataset.key : ALIASES[rawSubstance];
 
-  if (!substance || !DB[substance] || !DB[substance][species]) {
+  if (!Object.hasOwn(DB, substance) || !DB[substance][species]) {
     resultDiv.style.display = "block";
     resultDiv.className = "result unknown";
-    resultDiv.innerHTML = '<div class="result-icon">&#10067;</div><div class="result-title">Substance Not Found</div><div class="result-body"><span class="query-echo"></span> is not in our database yet. <strong>Contact your veterinarian or poison control for guidance.</strong></div><div class="emergency">ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> ($95 fee) | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a> ($85 fee)</div>';
+    resultDiv.innerHTML = '<div class="result-icon">&#10067;</div><div class="result-title">Substance Not Found</div><div class="result-body"><span class="query-echo"></span> did not match a listed substance. Use one substance name at a time. <strong>Contact your veterinarian or poison control for guidance.</strong></div><div class="emergency">ASPCA Poison Control: <a href="tel:8884264435">888-426-4435</a> ($95 fee) | Pet Poison Helpline: <a href="tel:8557647661">855-764-7661</a> ($85 fee)</div>';
     // Insert the user's raw input as text, never HTML, to prevent reflected XSS.
     resultDiv.querySelector(".query-echo").textContent = `"${document.getElementById("substance").value}"`;
     return;
