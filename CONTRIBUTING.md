@@ -63,3 +63,9 @@ Clinicians can contribute a fictional question and observable criteria for a goo
 ## Publish a review record
 
 A review can cover individual claims. Record which values, species, and jurisdictions were examined and link the underlying sources. Set `review_record` in the skill header to the repository-relative path of that report. Include `reviewer` and an ISO `last_reviewed` date when the review identifies them. These fields appear in the generated catalog.
+
+## Contribute a field note
+
+Choose a published veterinary paper or a pair of related papers. Write the question that brought you to them, identify the study species and enrollment criteria, and show one detail that changes how you interpret the result. Link the original source and its VetEvidence assessment. Give readers one question they can investigate themselves.
+
+The [EPIC journal-club note](field-notes/epic.md) is a worked example. A first contribution can be as small as a correction to one observation, with the paper and the passage that supports it.

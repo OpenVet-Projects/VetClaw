@@ -4,7 +4,15 @@
 
 by [OpenVet](https://openvet.ai)
 
-A dog study turns up in a search about rabbits. What did the paper establish, and what would it take to apply that finding to another species? Animal Meridian brings together literature workflows, public data clients, and species-specific review cases for questions like this.
+![Field-guide illustration of a songbird, a sighthound, and a horse against a faint meridian grid](assets/animal-meridian.jpg)
+
+Animal Meridian is a field guide for reading veterinary research across species. Start with a paper, examine which animals were studied, and follow the evidence back to its source.
+
+## Two papers, one population of dogs
+
+A search about canine heart disease turns up two papers from the EPIC study. One reports time to heart failure or cardiac-related death. The other follows changes in heart size and clinical measurements in the same trial. Counting the papers is easy. Recognizing the shared population changes what you can conclude.
+
+[Read the field note](field-notes/epic.md) · [Open the first paper in VetEvidence](https://vetevidence.com/?pmid=27678080)
 
 ## Check a reference list
 
@@ -13,7 +21,7 @@ Paste up to 15 PMIDs, PMCIDs, or DOIs into [VetEvidence’s reference-list check
 You can also check a journal club reading list from a checkout with Python 3:
 
 ```sh
-python3 scripts/check_references.py 5061884 10.1111/jvim.15488
+python3 scripts/check_references.py 27678080 29214723
 python3 scripts/check_references.py < references.txt > assessments.tsv
 ```
 
