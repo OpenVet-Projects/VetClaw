@@ -10,11 +10,11 @@ This is why veterinary AI is not a subset of human AI. A dose that saves a dog c
 | **Chocolate** | **Toxic** (dose-dependent) | Less sensitive | Safe | Toxic | Limited data |
 | **Lilies** | No renal toxicity | **LETHAL** (acute kidney failure) | Safe | Limited data | Limited data |
 | **Ivermectin** | MDR1 breeds: **neurotoxic** | Safe | Safe | Safe | Species-dependent |
-| **Meloxicam** | Safe (FDA-approved) | **Caution — FDA black-box** (repeat dosing → fatal renal failure; single-dose US label) | Safe | Limited data | Limited data |
+| **Meloxicam** | Safe (FDA-approved) | **US FDA boxed warning.** Repeated meloxicam use in cats has been associated with acute renal failure and death. US labeling allows a single injection for specific indications. Check the local product label with a veterinarian. | Safe | Limited data | Limited data |
 | **Ethylene Glycol** | **LETHAL** (6.6 mL/kg) | **LETHAL** (1.5 mL/kg, 4x sensitive) | **LETHAL** | **LETHAL** | **LETHAL** |
 | **5-FU (Efudex)** | **LETHAL** (even topical licking) | **LETHAL** | Limited data | Unknown | Unknown |
 | **PTFE / Teflon fumes** | Safe | Safe | Safe | Sensitive | **LETHAL** (acute, minutes) |
-| **Onions / Garlic** | Toxic (Heinz body anemia) | **More sensitive** | **Toxic** (Heinz body anemia; horses are susceptible) | Limited data | Potentially toxic |
+| **Onions / Garlic** | Toxic (Heinz body anemia) | **More sensitive** | **Toxic to horses.** Onion and garlic exposure can cause Heinz body anemia. Contact a veterinarian about suspected exposure. | Limited data | Potentially toxic |
 | **Grapes / Raisins** | **LETHAL** (idiosyncratic AKI) | Potentially toxic | Safe | Avoid | Safe |
 | **THC / Marijuana** | **Toxic** (ataxia, coma possible) | Toxic | Limited data | Unknown | Unknown |
 | **Macadamia Nuts** | Toxic (self-limiting, 24-48h) | Limited data | No data | No data | No data |
@@ -24,6 +24,8 @@ This is why veterinary AI is not a subset of human AI. A dose that saves a dog c
 **Emergency contacts:**
 - ASPCA Poison Control: 888-426-4435
 - Pet Poison Helpline: 855-764-7661
+
+For the equine onion/garlic and feline meloxicam warnings, see [the cited clinical review, items 4 and 13](../docs/clinical-review-2026.md).
 
 **Source:** VetClaw skills: lethal-variance-detection, toxicology-calculator, nsaid-safety, feline-medicine, avian-medicine. Data from Plumb's Veterinary Drug Handbook, ASPCA toxicology references, Merck Veterinary Manual.
 

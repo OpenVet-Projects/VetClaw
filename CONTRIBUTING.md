@@ -55,3 +55,7 @@ Clinical accuracy is paramount. Submissions will be reviewed for veterinary accu
 ## Questions?
 
 Open an issue or reach out to the OpenVet team at openvet.ai.
+
+## Contribute a review case
+
+Clinicians can contribute a fictional question and observable criteria for a good answer. Developers can use the same cases to compare assistant behavior. See the [community review cases](evals/README.md).

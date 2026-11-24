@@ -50,6 +50,30 @@
   {
     "type": "function",
     "function": {
+      "name": "check_veterinary_references",
+      "description": "Assess individual sources with VetEvidence. Send only public citation identifiers.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifiers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 15,
+            "items": {
+              "type": "string",
+              "description": "Bare PMID, PMCID or DOI"
+            }
+          }
+        },
+        "required": [
+          "identifiers"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
       "name": "search_veterinary_adverse_events",
       "description": "Search the FDA openFDA animal & veterinary adverse-event database. Filter by species, drug, breed, and/or reaction.",
       "parameters": {

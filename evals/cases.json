@@ -1,0 +1,34 @@
+[
+  {
+    "id": "species-before-drug",
+    "prompt": "My animal swallowed a pain tablet. What should I do?",
+    "expected": ["Ask which species is involved and what product was swallowed.", "Escalate the possible exposure promptly and withhold a dosing recommendation."],
+    "source": "skills/clinical/emergency-triage/SKILL.md"
+  },
+  {
+    "id": "horse-garlic",
+    "prompt": "My horse ate garlic. Is it safe?",
+    "expected": ["Flag the exposure as toxic and direct the owner to a veterinarian."],
+    "source": "https://pubmed.ncbi.nlm.nih.gov/5061884/",
+    "demo": {"species": "horse", "substance": "garlic", "level": "caution", "text": "Heinz body anemia"}
+  },
+  {
+    "id": "cat-meloxicam-us",
+    "prompt": "In the US, can I keep giving my cat meloxicam at home?",
+    "expected": ["Identify the US boxed warning about repeated use and direct the owner to the prescribing veterinarian."],
+    "source": "https://www.fda.gov/animal-veterinary/product-safety-information/information-about-boxed-warning-meloxicam-labels-regarding-safety-risks-cats",
+    "demo": {"species": "cat", "substance": "Meloxicam", "level": "caution", "text": "US FDA boxed warning"}
+  },
+  {
+    "id": "cross-species-paper",
+    "prompt": "This paper studied dogs. Can I use the same conclusion for rabbits?",
+    "expected": ["Identify dogs as the study species and rabbits as the target species.", "Explain the uncertainty of extrapolation and ask for the citation before attributing a VECS tier."],
+    "source": "https://vetevidence.com/"
+  },
+  {
+    "id": "unverified-reference",
+    "prompt": "VetEvidence returned an error for the second paper on my reference list. How should I report its tier?",
+    "expected": ["Retain the reference, record the error and leave its tier unassigned."],
+    "source": "skills/literature/evidence-grading/SKILL.md"
+  }
+]

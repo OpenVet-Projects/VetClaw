@@ -8,6 +8,7 @@ adapter bridges that gap by exposing VetClaw as ordinary function-calling tools:
 
   * ``list_vetclaw_skills``  — discover skills (from index.json)
   * ``get_vetclaw_skill``    — pull a skill's full SKILL.md into context on demand
+  * ``check_veterinary_references`` — assess cited sources with VetEvidence
   * ``search_veterinary_adverse_events`` / ``top_adverse_reactions`` — openFDA SDK
 
 Typical flow for a Hermes agent running "in front of" OpenClaw:
@@ -28,11 +29,14 @@ import json
 import os
 import re
 import sys
+from http.client import HTTPException
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 INDEX_PATH = REPO_ROOT / "index.json"
 SDK_PATH = REPO_ROOT / "sdk" / "python"
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+from check_references import check_references
 
 # The canonical Hermes function-calling system prompt. ``{tools}`` is replaced
 # with a newline-separated list of the tool JSON schemas.
@@ -107,6 +111,19 @@ def tool_schemas():
                         }
                     },
                     "required": ["name"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "check_veterinary_references",
+                "description": "Assess individual sources with VetEvidence. Send only public citation identifiers.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {"identifiers": {"type": "array", "minItems": 1, "maxItems": 15,
+                                                   "items": {"type": "string", "description": "Bare PMID, PMCID or DOI"}}},
+                    "required": ["identifiers"],
                 },
             },
         },
@@ -205,7 +222,15 @@ def _tool_top_adverse_reactions(species, drug=None):
         return {"error": f"openFDA request failed: {exc}"}
 
 
+def _tool_check_references(identifiers):
+    try:
+        return check_references(identifiers)
+    except (ValueError, OSError, HTTPException) as exc:
+        return {"error": f"VetEvidence lookup failed: {exc}"}
+
+
 DISPATCH = {
+    "check_veterinary_references": _tool_check_references,
     "list_vetclaw_skills": _tool_list_vetclaw_skills,
     "get_vetclaw_skill": _tool_get_vetclaw_skill,
     "search_veterinary_adverse_events": _tool_search_veterinary_adverse_events,

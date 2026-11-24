@@ -4,7 +4,7 @@
 
 # VetClaw
 
-**An open veterinary AI skill library for OpenClaw and compatible agent frameworks.**
+**Open veterinary workflows for finding evidence, checking citations, and reasoning across species.**
 
 [![Skills](https://img.shields.io/badge/skills-51-blue?style=flat-square)](/skills)
 [![Clinical](https://img.shields.io/badge/%F0%9F%A9%BA_clinical-17-brightgreen?style=flat-square)](/skills/clinical)
@@ -15,12 +15,22 @@
 [![Databases](https://img.shields.io/badge/%F0%9F%97%84_databases-4-cyan?style=flat-square)](/skills/databases)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)](/LICENSE)
 
-**English**
+## Check a reference list
 
-> **Note**
-> VetClaw is a skill library, not a monolithic application. Install the full collection or copy only the skill folders relevant to your veterinary workflows.
+For a journal club or a literature review, paste up to 15 PMIDs, PMCIDs or DOIs into [VetEvidence’s reference-list checker](https://vetevidence.com/#batch). Each source gets its own assessment.
 
----
+From a checkout, Python 3 can send the same public identifiers to the hosted service and print a tab-separated table:
+
+```sh
+python3 scripts/check_references.py 5061884 10.1111/jvim.15488
+python3 scripts/check_references.py < references.txt > assessments.tsv
+```
+
+Use one bare identifier per line in the file. The output keeps study strength, source verification, and the reported species note in separate columns. Each row links to the full assessment on VetEvidence. Missing values appear as a dash. A failed or unreturned citation stays in its original row and the command exits with status 1. Check the original source before drawing a conclusion for a patient.
+
+## Use a veterinary skill
+
+Start with the [PubMed search workflow](skills/literature/veterinary-pubmed-search/SKILL.md) or explore the [catalog](index.json). Read a workflow directly, copy a skill folder into your project, or use the [agent integrations](#agent-integrations). Community contributors can also [run or add a synthetic review case](evals/README.md).
 
 ## Why VetClaw Exists
 
@@ -65,7 +75,7 @@ VetClaw skills are AI reasoning templates only. They are **not** a substitute fo
 
 ## Tested Workflows
 
-Try these prompts in an OpenClaw session after installing VetClaw skills:
+Try these prompts in an agent with the listed skills loaded:
 
 **Toxicology triage:**
 > "My 10kg dog ate 100g of dark chocolate 2 hours ago. What's the toxicity risk and what do I do?"
@@ -82,7 +92,9 @@ Try these prompts in an OpenClaw session after installing VetClaw skills:
 >
 > Expected: Agent loads `lethal-variance-detection` + `contraindication-checker`, immediately flags acetaminophen as **lethal in cats** (toxic methemoglobinemia), recommends species-safe alternatives.
 
-## Quick Start
+## Agent integrations
+
+### OpenClaw
 
 OpenClaw loads workspace skills from `<workspace>/skills`. Setup:
 
@@ -96,7 +108,7 @@ Start a new OpenClaw session so skill folders are picked up. If you already keep
 
 ### Using VetClaw with Hermes or other agents
 
-OpenClaw auto-loads `skills/`, but a [Hermes](https://huggingface.co/NousResearch) agent (or any function-calling model) discovers capabilities through **tools**. VetClaw ships a Hermes function-calling integration — a skill-discovery pair (`list_vetclaw_skills` / `get_vetclaw_skill`) backed by [`index.json`](/index.json), plus the openFDA tools — so a Hermes agent can pull the relevant skill on demand, including when it runs in front of OpenClaw. See [`integrations/hermes/`](/integrations/hermes).
+OpenClaw auto-loads `skills/`, but a [Hermes](https://huggingface.co/NousResearch) agent (or any function-calling model) discovers capabilities through **tools**. VetClaw ships a Hermes function-calling integration — a skill-discovery pair (`list_vetclaw_skills` / `get_vetclaw_skill`) backed by [`index.json`](/index.json), plus `check_veterinary_references` for hosted VetEvidence assessments and the openFDA tools — so a Hermes agent can pull the relevant skill on demand, including when it runs in front of OpenClaw. See [`integrations/hermes/`](/integrations/hermes).
 
 ## Repository Layout
 

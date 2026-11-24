@@ -13,6 +13,7 @@ to give a Hermes agent VetClaw is to expose the library as tools it can call:
 | Tool | What it does |
 | --- | --- |
 | `list_vetclaw_skills(category?, query?)` | Discover skills (from [`index.json`](../../index.json)) |
+| `check_veterinary_references(identifiers)` | Send 1–15 public citation IDs to VetEvidence and return per-source assessments and links |
 | `get_vetclaw_skill(name)` | Pull a skill's full `SKILL.md` into context on demand |
 | `search_veterinary_adverse_events(...)` | Query the openFDA animal/vet adverse-event DB |
 | `top_adverse_reactions(species, drug?)` | Aggregate top reactions |
@@ -33,7 +34,7 @@ the model knows what exists, then let it call `get_vetclaw_skill(name)` to pull 
 one it needs. Keeps the context small while covering all 51 skills.
 
 ### 3. Full function-calling (recommended)
-Register all four tools and run the standard Hermes tool loop. The model discovers,
+Register the five tools and run the standard Hermes tool loop. The model discovers,
 loads, and applies skills itself, and can hit openFDA for live data.
 
 ## Quickstart (pattern 3)

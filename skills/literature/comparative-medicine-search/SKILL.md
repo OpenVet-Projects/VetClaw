@@ -25,7 +25,7 @@ When veterinary-specific evidence is insufficient, human medical research may pr
    - Is the pathophysiology similar between species?
    - Are the drug targets conserved?
    - Are pharmacokinetic parameters known in the target species?
-4. Grade the comparative evidence as Level IV (see `evidence-grading` skill).
+4. Describe the source species, target species, and limits of extrapolation. Use the local recommendation hierarchy in `evidence-grading` when synthesizing the claim. Obtain any individual study's VECS tier from [VetEvidence](https://vetevidence.com/).
 5. Clearly label all cross-species extrapolations in the output.
 
 ## Successful Comparative Medicine Examples
@@ -48,7 +48,7 @@ When using comparative evidence, always include this framing:
 ```
 **Note: Veterinary-specific evidence is limited for this question.**
 
-The following information is drawn from human medical research and should be considered Level IV evidence (cross-species extrapolation) for veterinary application:
+The following information is drawn from human medical research and is indirect evidence for veterinary application because it requires cross-species extrapolation:
 
 [Information with citation]
 

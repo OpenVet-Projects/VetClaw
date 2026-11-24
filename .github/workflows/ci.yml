@@ -33,3 +33,14 @@ jobs:
         run: pip install requests
       - name: Run SDK unit tests
         run: python3 -m unittest discover -s sdk/python -p "test_*.py" -v
+
+  community-workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/sync_safety_warnings.py --check
+      - run: pip install playwright && python3 -m playwright install --with-deps chromium
+      - run: python3 -m unittest discover -s evals -v

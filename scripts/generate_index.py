@@ -38,7 +38,7 @@ def build_index():
     return {
         "name": "VetClaw",
         "version": "0.1.0",
-        "description": "Veterinary AI skill library for OpenClaw and compatible agent frameworks.",
+        "description": "Open veterinary workflows for literature review, clinical reasoning, and species safety.",
         "license": "MIT",
         "skill_count": len(skills),
         "categories": dict(sorted(categories.items())),
